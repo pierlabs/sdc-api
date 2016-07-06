@@ -1,6 +1,8 @@
 
 package br.com.conductor.sbc.rest;
 
+import static br.com.conductor.sbc.util.Constantes.json;
+
 import java.beans.IntrospectionException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -9,18 +11,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.Column;
-
-import org.reflections.Reflections;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.google.common.collect.Lists;
-
 import br.com.conductor.sbc.entidades.Cartao;
 import br.com.conductor.sbc.entidades.Conta;
+import br.com.conductor.sbc.entidades.GenericEntity;
 import br.com.twsoftware.alfred.object.Objeto;
 import br.com.twsoftware.alfred.reflexao.Reflexao;
 import lombok.extern.slf4j.Slf4j;
@@ -58,7 +56,7 @@ public abstract class GenericResource{
 
      }
 
-     public ResponseEntity createOrUpdate(Object entitty) {
+     public ResponseEntity create(GenericEntity entitty) {
 
           ResponseEntity response = null;
           try {
@@ -68,7 +66,7 @@ public abstract class GenericResource{
                     response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
                } else {
-
+                    
                     Object entity_ = getJpaRepository().save(entitty);
                     response = ResponseEntity.ok(entity_);
 
@@ -78,6 +76,41 @@ public abstract class GenericResource{
                response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
           }
 
+          return response;
+     }
+     
+     public ResponseEntity update(GenericEntity entitty) {
+          
+          ResponseEntity response = null;
+          try {
+
+               if (Objeto.isBlank(entitty)) {
+
+                    response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+
+               } else {
+
+                    if (Objeto.isBlank(entitty.getId())) {
+
+                         response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("É obrigatorio informa o ID do objeto que deseja atualizar."));
+
+                    } else if (Objeto.isBlank(getJpaRepository().findOne(entitty.getId()))) {
+
+                         response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Objeto não encontrado para ser atualizado."));
+
+                    } else {
+
+                         Object entity_ = getJpaRepository().save(entitty);
+                         response = ResponseEntity.ok(entity_);
+
+                    }
+
+               }
+
+          } catch (Exception e) {
+               response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+          }
+          
           return response;
      }
 
@@ -91,9 +124,15 @@ public abstract class GenericResource{
                     response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
                } else {
-
+                    
+                    Object tmp_ = getJpaRepository().findOne(id);
+                    if(Objeto.isBlank(tmp_)){
+                         response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Objeto não encontrado"));
+                    }
+                         
                     getJpaRepository().delete(id);
                     response = ResponseEntity.ok().build();
+                    
                }
 
           } catch (Exception e) {

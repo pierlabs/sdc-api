@@ -20,6 +20,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Table(name = "CARTOES")
@@ -38,6 +40,9 @@ public class Cartao implements GenericEntity{
      @Column(name = "ID")
      private Long id;
 
+     @Column(name = "NOME")
+     private String nome;
+     
      @Column(name = "NUMERO")
      private String numero;
 
@@ -52,12 +57,15 @@ public class Cartao implements GenericEntity{
      
      @ManyToOne
      @JoinColumn(name="CONTA_ID")
+     @JsonIgnore
      private Conta conta;
      
      @OneToMany(mappedBy = "cartao", fetch=FetchType.EAGER)
+     @JsonIgnore
      private Set<Credito> creditos;
      
      @OneToMany(mappedBy = "cartao", fetch=FetchType.EAGER)
+     @JsonIgnore
      private Set<Compra> compras;
      
      @Enumerated(EnumType.STRING)

@@ -23,6 +23,8 @@ public class Constantes{
      public static final String PATH_CARTAO = "/cartoes";
      
      public static final String PATH_CONTAS = "/contas";
+     
+     public static final String PATH_CARTOES = PATH_CONTAS + "/{idConta}/cartoes";
 
      public static String MSG_NO_CONTENT_EXTRATO_CONTA = "Nenhum extrato da conta informada foi encontrado.";
      

@@ -53,7 +53,7 @@ public class ContaResource extends GenericResource{
      @RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity create(@RequestBody Conta conta) {
 
-          return super.createOrUpdate(conta);
+          return super.create(conta);
 
      }
 
@@ -62,8 +62,8 @@ public class ContaResource extends GenericResource{
      @ApiOperation(value = Constantes.PATH_CONTAS, notes = "Atualiza uma conta", response = Conta.class)
      @RequestMapping(value = "", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity update(@RequestBody Conta conta) {
-
-          return super.createOrUpdate(conta);
+          
+          return super.update(conta);
 
      }
 
