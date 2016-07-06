@@ -95,6 +95,8 @@ public class CartaoResourceTest{
 
           limite = cartaoRepositorio.limite(cartao.getId());
           TestCase.assertTrue(-100L == limite );
+          
+          contaRepositorio.deleteCascadeAll(c.getId());
 
      }
 

@@ -9,28 +9,28 @@ public class CartaoRepositorioImpl implements CartaoRepositorioCustom{
 
      @Autowired
      private CartaoRepositorio cartaoRepositorio;
-     
-     public Long limite(Long idCartao){
-          
+
+     public Long limite(Long idCartao) {
+
           Long somaCreditos = cartaoRepositorio.somaCreditos(idCartao);
-          if(Objeto.isBlank(somaCreditos)){
+          if (Objeto.isBlank(somaCreditos)) {
                somaCreditos = 0L;
           }
-          
+
           Long somaTransacoes = cartaoRepositorio.somaTransacoes(idCartao);
-          if(Objeto.isBlank(somaTransacoes)){
+          if (Objeto.isBlank(somaTransacoes)) {
                somaTransacoes = 0L;
           }
-          
+
           return somaCreditos - somaTransacoes;
-          
+
      }
 
-     public boolean limiteDisponivel(Long idCartao, Long valor){
-          
+     public boolean limiteDisponivel(Long idCartao, Long valor) {
+
           Long limite = limite(idCartao);
           return valor > limite ? false : true;
-          
+
      }
 
 }

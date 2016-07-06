@@ -25,5 +25,4 @@ public interface CartaoRepositorio extends JpaRepository<Cartao, Long>, CartaoRe
      @Query("select (select sum(credito.valor) from Credito credito where credito.cartao.id = :idCartao) - (select sum(t.valor) from Transacao t where t.cartao.id = :idCartao) from Cartao c where c.id = :idCartao")
      Long limite2(@Param("idCartao") Long idCartao);
      
-
 }

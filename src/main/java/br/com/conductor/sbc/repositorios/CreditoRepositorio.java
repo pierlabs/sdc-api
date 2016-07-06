@@ -6,5 +6,5 @@ import br.com.conductor.sbc.entidades.Credito;
 
 
 public interface CreditoRepositorio extends JpaRepository<Credito, Long>{
-
+     
 }

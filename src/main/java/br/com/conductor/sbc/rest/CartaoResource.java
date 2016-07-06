@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +30,7 @@ import br.com.conductor.sbc.repositorios.CreditoRepositorio;
 import br.com.conductor.sbc.repositorios.TransacaoRepositorio;
 import br.com.conductor.sbc.util.Constantes;
 import br.com.conductor.sbc.util.CreditCardNumberGenerator;
+import br.com.conductor.sbc.util.Transacional;
 import br.com.twsoftware.alfred.object.Objeto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -54,7 +56,7 @@ public class CartaoResource extends GenericResource{
      
      @Timed
      @ResponseBody
-     @ApiOperation(value = Constantes.PATH_CARTOES, notes = "Retorna todos os cartões", response = Cartao.class, httpMethod = "GET", responseContainer = "List")
+     @ApiOperation(value = "Retona todos os cartão de uma conta", notes = "Retona todos os cartão de uma conta", response = Cartao.class, httpMethod = "GET", responseContainer = "List")
      @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity getAll(@ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta) {
           
@@ -69,11 +71,11 @@ public class CartaoResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = Constantes.PATH_CARTOES + "/{id}", notes = "Retorna um cartão", response = Cartao.class)
-     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+     @ApiOperation(value = "Retorna um cartão", notes = "Retorna um cartão", response = Cartao.class)
+     @RequestMapping(value = "/{idCartao}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity getOne(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
-               @ApiParam(value = "ID do Cartão", required = true) @PathVariable("id") Long id) {
+               @ApiParam(value = "ID do Cartão", required = true) @PathVariable("idCartao") Long id) {
 
           Cartao cartao = cartaoRepositorio.findOneByIdAndContaId(id, idConta);
           if (Objeto.notBlank(cartao)) {
@@ -86,7 +88,7 @@ public class CartaoResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = Constantes.PATH_CARTOES, notes = "Cria um cartão", response = Cartao.class)
+     @ApiOperation(value = "Cria um cartão", notes = "Cria um cartão", response = Cartao.class)
      @RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity create(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -112,7 +114,7 @@ public class CartaoResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = Constantes.PATH_CARTOES, notes = "Atualiza um cartão", response = Cartao.class)
+     @ApiOperation(value = "Atualiza um cartão", notes = "Atualiza um cartão", response = Cartao.class)
      @RequestMapping(value = "", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity update(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -137,11 +139,11 @@ public class CartaoResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = Constantes.PATH_CARTOES + "/{id}/cancelar", notes = "Cancelar um cartão")
-     @RequestMapping(value = "/{id}/cancelar", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+     @ApiOperation(value = "Cancelar um cartão", notes = "Cancelar um cartão")
+     @RequestMapping(value = "/{idCartao}/cancelar", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity cancelar(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
-               @ApiParam(value = "Cartão a ser cancelado", required = true) @PathVariable("id") Long id) {
+               @ApiParam(value = "Cartão a ser cancelado", required = true) @PathVariable("idCartao") Long id) {
           
           return atualizarStatus(idConta, id, StatusCartao.CANCELADO, "Cartão cancelado com sucesso");
 
@@ -149,11 +151,11 @@ public class CartaoResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = Constantes.PATH_CARTOES + "/{id}/bloquear", notes = "Bloquear um cartão.")
-     @RequestMapping(value = "/{id}/bloquear", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+     @ApiOperation(value = "Bloquear um cartão.", notes = "Bloquear um cartão.")
+     @RequestMapping(value = "/{idCartao}/bloquear", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity bloquear(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
-               @ApiParam(value = "Cartão a ser bloqueado", required = true) @PathVariable("id") Long id) {
+               @ApiParam(value = "Cartão a ser bloqueado", required = true) @PathVariable("idCartao") Long id) {
           
           
           return atualizarStatus(idConta, id, StatusCartao.BLOQUEADO, "Cartão bloqueado com sucesso");
@@ -162,11 +164,11 @@ public class CartaoResource extends GenericResource{
      
      @Timed
      @ResponseBody
-     @ApiOperation(value = Constantes.PATH_CARTOES + "/{id}/desbloquear", notes = "Desbloquear um cartão.")
-     @RequestMapping(value = "/{id}/desbloquear", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+     @ApiOperation(value = "Desbloquear um cartão.", notes = "Desbloquear um cartão.")
+     @RequestMapping(value = "/{idCartao}/desbloquear", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity desbloquear(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
-               @ApiParam(value = "Cartão a ser desbloqueado", required = true) @PathVariable("id") Long id) {
+               @ApiParam(value = "Cartão a ser desbloqueado", required = true) @PathVariable("idCartao") Long id) {
           
           return atualizarStatus(idConta, id, StatusCartao.ATIVO, "Cartão desbloqueado com sucesso");
           
@@ -174,11 +176,11 @@ public class CartaoResource extends GenericResource{
      
      @Timed
      @ResponseBody
-     @ApiOperation(value = Constantes.PATH_CARTOES + "/{id}/creditar", notes = "Creditar dinheiro em um cartão")
-     @RequestMapping(value = "/{id}/creditar", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+     @ApiOperation(value = "Creditar dinheiro em um cartão", notes = "Creditar dinheiro em um cartão")
+     @RequestMapping(value = "/{idCartao}/creditar", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity creditar(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
-               @ApiParam(value = "ID do Cartao a ser creditado", required = true) @PathVariable("id") Long idCartao,
+               @ApiParam(value = "ID do Cartao a ser creditado", required = true) @PathVariable("idCartao") Long idCartao,
                @ApiParam(value = "Valor a ser creditado", required = true) @RequestBody Long valor) {
           
           ResponseEntity response = null;
@@ -193,21 +195,16 @@ public class CartaoResource extends GenericResource{
                     
                     response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json("Não é possível creditar um valor menor ou igual a zero"));
                     
+               }else if(!cartao.getStatus().equals(StatusCartao.ATIVO)){
+                    
+                    response = ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(json("O cartão se encontra bloqueado"));
+                    
                }else{
                     
-                    Cartao cartao_ = cartaoRepositorio.findOneByIdAndContaId(cartao.getId(), idConta);
-                    if(Objeto.isBlank(cartao_)){
-                         
-                         response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Cartão não encontrado ou não pertence a conta informada"));
-                         
-                    }else{
-                         
-                         Credito credito = new Credito();
-                         credito.setCartao(cartao);
-                         credito.setValor(valor);
-                         creditoRepositorio.save(credito);
-                         
-                    }
+                    Credito credito = new Credito();
+                    credito.setCartao(cartao);
+                    credito.setValor(valor);
+                    creditoRepositorio.save(credito);
                     
                     response = ResponseEntity.ok().body(json("Credito realizado com sucesso."));
                }
@@ -221,7 +218,7 @@ public class CartaoResource extends GenericResource{
      
      @Timed
      @ResponseBody
-     @ApiOperation(value = Constantes.PATH_CARTOES + "/{idCartao}/transacionar", notes = "Transacionar algum valor utilziando um determinado cartão")
+     @ApiOperation(value = "Transacionar valores", notes = "Transacionar algum valor utilizando um determinado cartão")
      @RequestMapping(value = "/{idCartao}/transacionar", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity transacionar(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -239,6 +236,10 @@ public class CartaoResource extends GenericResource{
                }else if(valor <= 0){
                     
                     response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json("Não é possível transacionar um valor menor ou igual a zero"));
+                    
+               }else if(!cartao.getStatus().equals(StatusCartao.ATIVO)){
+                    
+                    response = ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(json("O cartão se encontra bloqueado"));
                     
                }else{
                     
@@ -263,6 +264,99 @@ public class CartaoResource extends GenericResource{
                response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
           }
           
+          return response;
+     }     
+     
+     @Timed
+     @ResponseBody
+     @ApiOperation(value = "Consultar o limite de um determinado cartão", notes = "Consultar o limite de um determinado cartão")
+     @RequestMapping(value = "/{idCartao}/limite", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+     public ResponseEntity limite(
+               @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
+               @ApiParam(value = "ID do Cartao a ser creditado", required = true) @PathVariable("idCartao") Long idCartao) {
+          
+          ResponseEntity response = null;
+          try {
+               
+               Cartao cartao = cartaoRepositorio.findOneByIdAndContaId(idCartao, idConta);
+               if (Objeto.isBlank(cartao)) {
+                    
+                    response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Cartão não encontrado"));
+                    
+               }else if(!cartao.getStatus().equals(StatusCartao.ATIVO)){
+                    
+                    response = ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(json("O cartão se encontra bloqueado"));
+                    
+               }else{
+                    
+                    Long limite = cartaoRepositorio.limite(idCartao);
+                    response = ResponseEntity.ok().body(limite);
+                    
+               }
+               
+          } catch (Exception e) {
+               response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+          }
+          
+          return response;
+     }     
+     
+     @Timed
+     @Transacional
+     @ResponseBody
+     @ApiOperation(value = "Transferir valores entre dois cartões distintos", notes = "Transferir valores entre dois cartões")
+     @RequestMapping(value = "/{idCartao}transferir", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+     public ResponseEntity transferir(
+               @ApiParam(value = "ID do cartão de origem", required = true) @PathVariable("idCartao") Long idCartaoOrigem,
+               @ApiParam(value = "ID do cartão de destino", required = true) @RequestParam("idCartaoDestino") Long idCartaoDestino,
+               @ApiParam(value = "Valor a ser transferido", required = true) @RequestBody Long valor
+               ) {
+          
+          ResponseEntity response = null;
+          
+          if(idCartaoOrigem.equals(idCartaoDestino)){
+               
+               response = ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(json("Não é permitido transferir valores para o mesmo cartão."));
+               
+          }else{
+               
+               Cartao origem = cartaoRepositorio.findOne(idCartaoOrigem);
+               Cartao destino = cartaoRepositorio.findOne(idCartaoDestino);
+               
+               if (Objeto.isBlank(origem)) {
+                    
+                    response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Cartão origem não encontrado"));
+                    
+               } else if (Objeto.isBlank(destino)) {
+                    
+                    response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Cartão destino não encontrado"));
+                    
+               } else {
+                    
+                    if (cartaoRepositorio.limiteDisponivel(idCartaoOrigem, valor)) {
+                         
+                         Transacao t = new Transacao();
+                         t.setCartao(origem);
+                         t.setValor(valor);
+                         transacaoRepositorio.save(t);
+                         
+                         Credito c = new Credito();
+                         c.setCartao(destino);
+                         c.setValor(valor);
+                         creditoRepositorio.save(c);
+                         
+                         response = ResponseEntity.ok().body(json("Transferência realizada com sucesso"));
+                         
+                    } else {
+                         
+                         response = ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(json("Limite indisponível."));
+                         
+                    }
+                    
+               }
+               
+          }
+
           return response;
      }     
 
