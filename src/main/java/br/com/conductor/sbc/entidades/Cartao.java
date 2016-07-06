@@ -8,7 +8,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -60,13 +59,13 @@ public class Cartao implements GenericEntity{
      @JsonIgnore
      private Conta conta;
      
-     @OneToMany(mappedBy = "cartao", fetch=FetchType.EAGER)
+     @OneToMany(mappedBy = "cartao")
      @JsonIgnore
      private Set<Credito> creditos;
      
-     @OneToMany(mappedBy = "cartao", fetch=FetchType.EAGER)
+     @OneToMany(mappedBy = "cartao")
      @JsonIgnore
-     private Set<Compra> compras;
+     private Set<Transacao> transacoes;
      
      @Enumerated(EnumType.STRING)
      @Column(name = "STATUS")

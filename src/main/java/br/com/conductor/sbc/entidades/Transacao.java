@@ -14,17 +14,20 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import lombok.Data;
 
-@Table(name = "COMPRAS")
+@Table(name = "TRANSACOES")
 @Entity
 @Data
 @DynamicInsert
 @DynamicUpdate
-public class Compra implements GenericEntity{
+public class Transacao implements GenericEntity{
      
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      @Column(name = "ID")
      private Long id;   
+     
+     @Column(name = "VALOR")
+     private Long valor;
      
      @ManyToOne
      @JoinColumn(name="CARTAO_ID")

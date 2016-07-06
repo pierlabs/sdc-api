@@ -24,7 +24,10 @@ public class Credito implements GenericEntity{
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      @Column(name = "ID")
-     private Long id;  
+     private Long id;
+     
+     @Column(name = "VALOR")
+     private Long valor;
      
      @ManyToOne
      @JoinColumn(name="CARTAO_ID")

@@ -21,8 +21,12 @@ import com.codahale.metrics.annotation.Timed;
 import br.com.conductor.sbc.entidades.Cartao;
 import br.com.conductor.sbc.entidades.Cartao.StatusCartao;
 import br.com.conductor.sbc.entidades.Conta;
+import br.com.conductor.sbc.entidades.Credito;
+import br.com.conductor.sbc.entidades.Transacao;
 import br.com.conductor.sbc.repositorios.CartaoRepositorio;
 import br.com.conductor.sbc.repositorios.ContaRepositorio;
+import br.com.conductor.sbc.repositorios.CreditoRepositorio;
+import br.com.conductor.sbc.repositorios.TransacaoRepositorio;
 import br.com.conductor.sbc.util.Constantes;
 import br.com.conductor.sbc.util.CreditCardNumberGenerator;
 import br.com.twsoftware.alfred.object.Objeto;
@@ -41,6 +45,12 @@ public class CartaoResource extends GenericResource{
 
      @Autowired
      private ContaRepositorio contaRepositorio;
+     
+     @Autowired
+     private CreditoRepositorio creditoRepositorio;
+     
+     @Autowired
+     private TransacaoRepositorio transacaoRepositorio;
      
      @Timed
      @ResponseBody
@@ -119,10 +129,7 @@ public class CartaoResource extends GenericResource{
           }
           
           cartao.setConta(conta);
-          
-          if (Objeto.isBlank(cartao.getId())) {
-               cartao.setStatus(StatusCartao.ATIVO);
-          }
+          cartao.setStatus(StatusCartao.ATIVO);
 
           return super.update(cartao);
 
@@ -164,6 +171,100 @@ public class CartaoResource extends GenericResource{
           return atualizarStatus(idConta, id, StatusCartao.ATIVO, "Cartão desbloqueado com sucesso");
           
      }
+     
+     @Timed
+     @ResponseBody
+     @ApiOperation(value = Constantes.PATH_CARTOES + "/{id}/creditar", notes = "Creditar dinheiro em um cartão")
+     @RequestMapping(value = "/{id}/creditar", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+     public ResponseEntity creditar(
+               @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
+               @ApiParam(value = "ID do Cartao a ser creditado", required = true) @PathVariable("id") Long idCartao,
+               @ApiParam(value = "Valor a ser creditado", required = true) @RequestBody Long valor) {
+          
+          ResponseEntity response = null;
+          try {
+               
+               Cartao cartao = cartaoRepositorio.findOneByIdAndContaId(idCartao, idConta);
+               if (Objeto.isBlank(cartao)) {
+                    
+                    response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Cartão não encontrado"));
+                    
+               }else if(valor <= 0){
+                    
+                    response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json("Não é possível creditar um valor menor ou igual a zero"));
+                    
+               }else{
+                    
+                    Cartao cartao_ = cartaoRepositorio.findOneByIdAndContaId(cartao.getId(), idConta);
+                    if(Objeto.isBlank(cartao_)){
+                         
+                         response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Cartão não encontrado ou não pertence a conta informada"));
+                         
+                    }else{
+                         
+                         Credito credito = new Credito();
+                         credito.setCartao(cartao);
+                         credito.setValor(valor);
+                         creditoRepositorio.save(credito);
+                         
+                    }
+                    
+                    response = ResponseEntity.ok().body(json("Credito realizado com sucesso."));
+               }
+               
+          } catch (Exception e) {
+               response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+          }
+          
+          return response;
+     }     
+     
+     @Timed
+     @ResponseBody
+     @ApiOperation(value = Constantes.PATH_CARTOES + "/{idCartao}/transacionar", notes = "Transacionar algum valor utilziando um determinado cartão")
+     @RequestMapping(value = "/{idCartao}/transacionar", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+     public ResponseEntity transacionar(
+               @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
+               @ApiParam(value = "ID do Cartao a ser creditado", required = true) @PathVariable("idCartao") Long idCartao,
+               @ApiParam(value = "Valor da transação", required = true) @RequestBody Long valor) {
+          
+          ResponseEntity response = null;
+          try {
+               
+               Cartao cartao = cartaoRepositorio.findOneByIdAndContaId(idCartao, idConta);
+               if (Objeto.isBlank(cartao)) {
+                    
+                    response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Cartão não encontrado"));
+                    
+               }else if(valor <= 0){
+                    
+                    response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json("Não é possível transacionar um valor menor ou igual a zero"));
+                    
+               }else{
+                    
+                    if(cartaoRepositorio.limiteDisponivel(idCartao, valor)){
+                         
+                         Transacao t = new Transacao();
+                         t.setCartao(cartao);
+                         t.setValor(valor);
+                         transacaoRepositorio.save(t);
+                         
+                         response = ResponseEntity.ok().body(json("Transação realizada com sucesso."));
+                         
+                    }else{
+                         
+                         response = ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(json("Limite indisponível."));
+                         
+                    }
+                    
+               }
+               
+          } catch (Exception e) {
+               response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+          }
+          
+          return response;
+     }     
 
      @Override
      public CartaoRepositorio getJpaRepository() {
