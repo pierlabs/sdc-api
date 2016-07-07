@@ -51,9 +51,6 @@ public class Cartao implements GenericEntity{
      @Column(name = "CVV")
      private String cvv;
 
-     @Column(name = "DATA_VALIDADE")
-     private Date dataValidade;
-     
      @ManyToOne
      @JoinColumn(name="CONTA_ID")
      @JsonIgnore

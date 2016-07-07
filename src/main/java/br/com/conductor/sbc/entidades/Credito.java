@@ -15,6 +15,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Table(name = "CREDITOS")
@@ -35,6 +37,7 @@ public class Credito implements GenericEntity{
      @Column(name = "DATA_CREDITO")
      private Date dataCredito;
      
+     @JsonIgnore
      @ManyToOne
      @JoinColumn(name="CARTAO_ID")
      private Cartao cartao;

@@ -16,6 +16,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import br.com.conductor.sbc.Aplicacao;
 import br.com.conductor.sbc.entidades.Cartao;
 import br.com.conductor.sbc.entidades.Cartao.StatusCartao;
+import br.com.twsoftware.alfred.object.Objeto;
 import junit.framework.TestCase;
 import br.com.conductor.sbc.entidades.Conta;
 import br.com.conductor.sbc.entidades.Credito;
@@ -79,6 +80,13 @@ public class CartaoResourceTest{
           transacaoRepositorio.transacionar(cartao, new BigDecimal(200.00));
           limite = cartaoRepositorio.limite(cartao.getId());
           TestCase.assertTrue(new BigDecimal(-100.00).compareTo(limite) == 0);
+          
+          contaRepositorio.deleteCascadeAll(c.getId());
+          
+          TestCase.assertTrue(Objeto.isBlank(creditoRepositorio.findByContaId(c.getId())));
+          TestCase.assertTrue(Objeto.isBlank(transacaoRepositorio.findByContaId(c.getId())));
+          TestCase.assertTrue(Objeto.isBlank(cartaoRepositorio.findByConta(c.getId())));
+          TestCase.assertTrue(Objeto.isBlank(contaRepositorio.findOne(c.getId())));
 
      }
 
