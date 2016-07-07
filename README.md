@@ -1,4 +1,6 @@
 # SDC-API
+![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)  ![travis](https://travis-ci.org/pierlabs/sdc-api.svg?branch=master)
+
 ### API desenvolvida para a 15ª semanda da computação da UFPB em 2016
 
 Essa API tem como objetivo simular os métodos básicos de uma administradora de cartão de crédito. Resolvemos escrever uma API que fosse de fácil entendimento e simples para desenvolver. Nesse projeto não só temos ao API como vários SDKs para consumo. 
