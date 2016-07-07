@@ -24,7 +24,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@Api(value = Constantes.PATH_CONTAS, produces = MediaType.APPLICATION_JSON_VALUE, description = "Operaçoes com Contas", tags = { "Conta" })
+@Api(value = Constantes.PATH_CONTAS, produces = MediaType.APPLICATION_JSON_VALUE, description = "OperaÃ§oes com Contas", tags = { "Conta" })
 @RequestMapping(value = Constantes.API_PATH + Constantes.PATH_CONTAS, produces = MediaType.APPLICATION_JSON_VALUE)
 @SuppressWarnings("rawtypes")
 public class ContaResource extends GenericResource{
@@ -73,7 +73,7 @@ public class ContaResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Deleta uma conta", notes = "Deleta um cartão")
+     @ApiOperation(value = "Deleta uma conta", notes = "Deleta um cartï¿½o")
      @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity delete(@PathVariable("id") Long id) {
 
@@ -88,7 +88,7 @@ public class ContaResource extends GenericResource{
                     
                     Object tmp_ = getJpaRepository().findOne(id);
                     if(Objeto.isBlank(tmp_)){
-                         response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Conta não encontrada"));
+                         response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Conta nï¿½o encontrada"));
                     }
                          
                     contaRepositorio.deleteCascadeAll(id);

@@ -301,7 +301,7 @@ public class CartaoResource extends GenericResource{
      @Timed
      @Transacional
      @ResponseBody
-     @ApiOperation(value = "Transferir valores entre dois cart�es distintos", notes = "Transferir valores entre dois cartões")
+     @ApiOperation(value = "Transferir valores entre dois cartões distintos", notes = "Transferir valores entre dois cartões")
      @RequestMapping(value = "/{idCartao}/transferir", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity transferir(
                @ApiParam(value = "ID da Conta do cartão de origem", required = true) @PathVariable("idConta") Long idConta,
