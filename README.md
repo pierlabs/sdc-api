@@ -53,3 +53,15 @@ cd sdc-api
 ```
   mvn clean package
 ```
+## Demo
+
+Subimos a API no [heroku](https://sdc-api.herokuapp.com) para que você possa utilizar. Você pode testar a API utilizando uma dessas duas interfaces, [https://sdc-api.herokuapp.com](https://sdc-api.herokuapp.com) ou [https://sdc-api.herokuapp.com/swagger-ui.html](https://sdc-api.herokuapp.com/swagger-ui.html).
+
+## Screenshots
+
+### [API Browser 01](https://sdc-api.herokuapp.com/swagger-ui.html)
+
+![swagger-ui-1](https://raw.githubusercontent.com/pierlabs/sdc-api/master/sdc-api/src/main/resources/static/images/swagger-ui-01.png)
+
+### [API Browser 02](https://sdc-api.herokuapp.com)
+![swagger-ui-2](https://raw.githubusercontent.com/pierlabs/sdc-api/master/sdc-api/src/main/resources/static/images/swagger-ui-02.png)
