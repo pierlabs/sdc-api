@@ -1,6 +1,7 @@
 
 package br.com.conductor.sbc.repositorios;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,12 +18,12 @@ public interface CartaoRepositorio extends JpaRepository<Cartao, Long>, CartaoRe
      Cartao findOneByIdAndContaId(Long id, Long idConta);
 
      @Query("select sum(c.valor) from Credito c where c.cartao.id = :idCartao")
-     Long somaCreditos(@Param("idCartao") Long idCartao);
+     BigDecimal somaCreditos(@Param("idCartao") Long idCartao);
 
      @Query("select sum(t.valor) from Transacao t where t.cartao.id = :idCartao")
-     Long somaTransacoes(@Param("idCartao") Long idCartao);
+     BigDecimal somaTransacoes(@Param("idCartao") Long idCartao);
      
      @Query("select (select sum(credito.valor) from Credito credito where credito.cartao.id = :idCartao) - (select sum(t.valor) from Transacao t where t.cartao.id = :idCartao) from Cartao c where c.id = :idCartao")
-     Long limite2(@Param("idCartao") Long idCartao);
+     BigDecimal limite2(@Param("idCartao") Long idCartao);
      
 }

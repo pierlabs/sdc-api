@@ -1,6 +1,8 @@
 
 package br.com.conductor.sbc.repositorios;
 
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.twsoftware.alfred.object.Objeto;
@@ -9,28 +11,28 @@ public class CartaoRepositorioImpl implements CartaoRepositorioCustom{
 
      @Autowired
      private CartaoRepositorio cartaoRepositorio;
+     
+     public BigDecimal limite(Long idCartao) {
 
-     public Long limite(Long idCartao) {
-
-          Long somaCreditos = cartaoRepositorio.somaCreditos(idCartao);
+          BigDecimal somaCreditos = cartaoRepositorio.somaCreditos(idCartao);
           if (Objeto.isBlank(somaCreditos)) {
-               somaCreditos = 0L;
+               somaCreditos = BigDecimal.ZERO;
           }
 
-          Long somaTransacoes = cartaoRepositorio.somaTransacoes(idCartao);
+          BigDecimal somaTransacoes = cartaoRepositorio.somaTransacoes(idCartao);
           if (Objeto.isBlank(somaTransacoes)) {
-               somaTransacoes = 0L;
+               somaTransacoes = BigDecimal.ZERO;
           }
 
-          return somaCreditos - somaTransacoes;
+          return somaCreditos.subtract(somaTransacoes);
 
      }
 
-     public boolean limiteDisponivel(Long idCartao, Long valor) {
+     public boolean limiteDisponivel(Long idCartao, BigDecimal valor) {
 
-          Long limite = limite(idCartao);
-          return valor > limite ? false : true;
+          BigDecimal limite = limite(idCartao);
+          return valor.compareTo(limite) > 0 ? false : true;
 
      }
-
+     
 }

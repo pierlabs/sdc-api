@@ -18,7 +18,8 @@ public class ContaRepositorioImpl implements ContaRepositorioCustom{
      private TransacaoRepositorio transacaoRepositorio;
 
      public void deleteCascadeAll(Long idConta) {
-
+          
+          
 
      }
 

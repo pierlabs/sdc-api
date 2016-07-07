@@ -56,47 +56,29 @@ public class CartaoResourceTest{
           cartao.setStatus(StatusCartao.ATIVO);
           cartao = cartaoRepositorio.save(cartao);
 
-          Credito credito = new Credito();
-          credito.setCartao(cartao);
-          credito.setValor(100L);
-          credito = creditoRepositorio.save(credito);
-
-          Transacao t = new Transacao();
-          t.setCartao(cartao);
-          t.setValor(10L);
-          t = transacaoRepositorio.save(t);
-
-          Long somaCreditos = cartaoRepositorio.somaCreditos(cartao.getId());
-          TestCase.assertTrue(100L == somaCreditos);
-
-          Long somaDebitos = cartaoRepositorio.somaTransacoes(cartao.getId());
-          TestCase.assertTrue(10L == somaDebitos);
-
-          Long limite = cartaoRepositorio.limite(cartao.getId());
-          TestCase.assertTrue(90L == limite);
-
-          t = new Transacao();
-          t.setCartao(cartao);
-          t.setValor(90L);
-          t = transacaoRepositorio.save(t);
-
-          limite = cartaoRepositorio.limite(cartao.getId());
-          TestCase.assertTrue(0L == limite);
-
-          credito = new Credito();
-          credito.setCartao(cartao);
-          credito.setValor(100L);
-          credito = creditoRepositorio.save(credito);
-
-          t = new Transacao();
-          t.setCartao(cartao);
-          t.setValor(200L);
-          t = transacaoRepositorio.save(t);
-
-          limite = cartaoRepositorio.limite(cartao.getId());
-          TestCase.assertTrue(-100L == limite );
+          creditoRepositorio.creditar(cartao, new BigDecimal(100));
           
-          contaRepositorio.deleteCascadeAll(c.getId());
+          transacaoRepositorio.transacionar(cartao, new BigDecimal(10));
+
+          BigDecimal somaCreditos = cartaoRepositorio.somaCreditos(cartao.getId());
+          TestCase.assertTrue(new BigDecimal(100.00).compareTo(somaCreditos) == 0);
+
+          BigDecimal somaDebitos = cartaoRepositorio.somaTransacoes(cartao.getId());
+          TestCase.assertTrue(new BigDecimal(10.00).compareTo(somaDebitos) == 0);
+
+          BigDecimal limite = cartaoRepositorio.limite(cartao.getId());
+          TestCase.assertTrue(new BigDecimal(90.00).compareTo(limite) == 0);
+
+          transacaoRepositorio.transacionar(cartao, new BigDecimal(90.00));
+
+          limite = cartaoRepositorio.limite(cartao.getId());
+          TestCase.assertTrue(BigDecimal.ZERO.compareTo(limite) == 0);
+
+          creditoRepositorio.creditar(cartao, new BigDecimal(100.00));
+
+          transacaoRepositorio.transacionar(cartao, new BigDecimal(200.00));
+          limite = cartaoRepositorio.limite(cartao.getId());
+          TestCase.assertTrue(new BigDecimal(-100.00).compareTo(limite) == 0);
 
      }
 

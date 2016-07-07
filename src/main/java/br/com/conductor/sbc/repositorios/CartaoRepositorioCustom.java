@@ -1,9 +1,11 @@
 package br.com.conductor.sbc.repositorios;
 
+import java.math.BigDecimal;
+
 public interface CartaoRepositorioCustom {
 
-     boolean limiteDisponivel(Long idCartao, Long valor);
+     boolean limiteDisponivel(Long idCartao, BigDecimal valor);
 
-     Long limite(Long idCartao);
+     BigDecimal limite(Long idCartao);
 
 }

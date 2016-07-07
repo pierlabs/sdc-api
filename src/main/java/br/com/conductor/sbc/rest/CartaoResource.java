@@ -3,6 +3,7 @@ package br.com.conductor.sbc.rest;
 
 import static br.com.conductor.sbc.util.Constantes.json;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -181,7 +182,7 @@ public class CartaoResource extends GenericResource{
      public ResponseEntity creditar(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
                @ApiParam(value = "ID do Cartao a ser creditado", required = true) @PathVariable("idCartao") Long idCartao,
-               @ApiParam(value = "Valor a ser creditado", required = true) @RequestBody Long valor) {
+               @ApiParam(value = "Valor a ser creditado", required = true) @RequestBody BigDecimal valor) {
           
           ResponseEntity response = null;
           try {
@@ -191,7 +192,7 @@ public class CartaoResource extends GenericResource{
                     
                     response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Cartão não encontrado"));
                     
-               }else if(valor <= 0){
+               }else if(valor.compareTo(BigDecimal.ZERO) <= 0){
                     
                     response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json("Não é possível creditar um valor menor ou igual a zero"));
                     
@@ -223,7 +224,7 @@ public class CartaoResource extends GenericResource{
      public ResponseEntity transacionar(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
                @ApiParam(value = "ID do Cartao a ser creditado", required = true) @PathVariable("idCartao") Long idCartao,
-               @ApiParam(value = "Valor da transação", required = true) @RequestBody Long valor) {
+               @ApiParam(value = "Valor da transação", required = true) @RequestBody BigDecimal valor) {
           
           ResponseEntity response = null;
           try {
@@ -233,7 +234,7 @@ public class CartaoResource extends GenericResource{
                     
                     response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Cartão não encontrado"));
                     
-               }else if(valor <= 0){
+               }else if(valor.compareTo(BigDecimal.ZERO) <= 0){
                     
                     response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json("Não é possível transacionar um valor menor ou igual a zero"));
                     
@@ -245,11 +246,7 @@ public class CartaoResource extends GenericResource{
                     
                     if(cartaoRepositorio.limiteDisponivel(idCartao, valor)){
                          
-                         Transacao t = new Transacao();
-                         t.setCartao(cartao);
-                         t.setValor(valor);
-                         transacaoRepositorio.save(t);
-                         
+                         transacaoRepositorio.transacionar(cartao, valor);
                          response = ResponseEntity.ok().body(json("Transação realizada com sucesso."));
                          
                     }else{
@@ -289,7 +286,7 @@ public class CartaoResource extends GenericResource{
                     
                }else{
                     
-                    Long limite = cartaoRepositorio.limite(idCartao);
+                    BigDecimal limite = cartaoRepositorio.limite(idCartao);
                     response = ResponseEntity.ok().body(limite);
                     
                }
@@ -305,11 +302,12 @@ public class CartaoResource extends GenericResource{
      @Transacional
      @ResponseBody
      @ApiOperation(value = "Transferir valores entre dois cartões distintos", notes = "Transferir valores entre dois cartões")
-     @RequestMapping(value = "/{idCartao}transferir", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+     @RequestMapping(value = "/{idCartao}/transferir", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity transferir(
+               @ApiParam(value = "ID da Conta do cartão de origem", required = true) @PathVariable("idConta") Long idConta,
                @ApiParam(value = "ID do cartão de origem", required = true) @PathVariable("idCartao") Long idCartaoOrigem,
                @ApiParam(value = "ID do cartão de destino", required = true) @RequestParam("idCartaoDestino") Long idCartaoDestino,
-               @ApiParam(value = "Valor a ser transferido", required = true) @RequestBody Long valor
+               @ApiParam(value = "Valor a ser transferido", required = true) @RequestBody BigDecimal valor
                ) {
           
           ResponseEntity response = null;
@@ -335,10 +333,7 @@ public class CartaoResource extends GenericResource{
                     
                     if (cartaoRepositorio.limiteDisponivel(idCartaoOrigem, valor)) {
                          
-                         Transacao t = new Transacao();
-                         t.setCartao(origem);
-                         t.setValor(valor);
-                         transacaoRepositorio.save(t);
+                         transacaoRepositorio.transacionar(origem, valor);
                          
                          Credito c = new Credito();
                          c.setCartao(destino);
@@ -357,6 +352,39 @@ public class CartaoResource extends GenericResource{
                
           }
 
+          return response;
+     }     
+     
+     @Timed
+     @Transacional
+     @ResponseBody
+     @ApiOperation(value = "Retonar os extratos de transações do cartão", notes = "Retorna os extratos de todas as transações de um determinado cartão")
+     @RequestMapping(value = "/{idCartao}/extratos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+     public ResponseEntity extratos(
+               @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
+               @ApiParam(value = "ID do cartão", required = true) @PathVariable("idCartao") Long idCartao) {
+          
+          ResponseEntity response = null;
+          
+          Cartao cartao = cartaoRepositorio.findOneByIdAndContaId(idCartao, idConta);
+          if (Objeto.isBlank(cartao)) {
+               
+               response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Cartão não encontrado"));
+               
+          } else {
+               
+               List<Transacao> transacoes = transacaoRepositorio.findByCartaoId(idCartao);
+               if(Objeto.isBlank(transacoes)){
+                    
+                    response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Nenhuma transação encontrada para esse cartão"));
+                    
+               }else{
+                    
+                    response = ResponseEntity.ok(transacoes);
+               }
+               
+          }
+          
           return response;
      }     
 

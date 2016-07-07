@@ -1,5 +1,8 @@
 package br.com.conductor.sbc.entidades;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +30,10 @@ public class Credito implements GenericEntity{
      private Long id;
      
      @Column(name = "VALOR")
-     private Long valor;
+     private BigDecimal valor;
+     
+     @Column(name = "DATA_CREDITO")
+     private Date dataCredito;
      
      @ManyToOne
      @JoinColumn(name="CARTAO_ID")
