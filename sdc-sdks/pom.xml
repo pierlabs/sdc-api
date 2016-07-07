@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>br.com.conductor.sdc</groupId>
+		<artifactId>sdc-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<groupId>br.com.conductor.sdc</groupId>
+	<artifactId>sdc-sdks</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>SDC SDKS Parent Project</name>
+
+	<properties>
+		<swagger.json>${basedir}/../sdc-api/src/main/resources/json/swagger.json</swagger.json>
+		<swagger.main.class>io.swagger.codegen.Codegen</swagger.main.class>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>${basedir}/config-swagger</directory>
+				<targetPath>${project.build.directory}/config-swagger</targetPath>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<failIfNoTests>false</failIfNoTests>
+					<systemProperties>
+						<property>
+							<name>failIfNoTests</name>
+							<value>false</value>
+						</property>
+					</systemProperties>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<failOnError>true</failOnError>
+							<target name="main">
+								<delete failonerror="true" verbose="true" includeemptydirs="true">
+									<fileset dir="${basedir}/sdc-sdk-android" >
+										<include name="**/*"/>
+										<exclude name="**/pom.xml"/>
+										<exclude name="**/.keep"/>
+									</fileset>
+									<fileset dir="${basedir}/sdc-sdk-csharp" >
+										<include name="**/*"/>
+										<exclude name="**/.keep"/>
+									</fileset>
+									<fileset dir="${basedir}/sdc-sdk-java" >
+										<include name="**/*"/>
+										<exclude name="**/pom.xml"/>
+										<exclude name="**/.keep"/>
+									</fileset>
+									<fileset dir="${basedir}/sdc-sdk-javascript" >
+										<include name="**/*"/>
+										<exclude name="**/pom.xml"/>
+										<exclude name="**/.keep"/>
+									</fileset>>
+									<fileset dir="${basedir}/sdc-sdk-swift" >
+										<include name="**/*"/>
+										<exclude name="**/pom.xml"/>
+										<exclude name="**/.keep"/>
+									</fileset>
+									<fileset dir="${basedir}/sdc-sdk-objc" >
+										<include name="**/*"/>
+										<exclude name="**/pom.xml"/>
+										<exclude name="**/.keep"/>
+									</fileset>
+									<fileset dir="${basedir}/sdc-sdk-php" >
+										<include name="**/*"/>
+										<exclude name="**/pom.xml"/>
+										<exclude name="**/.keep"/>
+									</fileset>
+									<fileset dir="${basedir}/sdc-sdk-clojure" >
+										<include name="**/*"/>
+										<exclude name="**/pom.xml"/>
+										<exclude name="**/.keep"/>
+									</fileset>
+									<fileset dir="${basedir}/sdc-sdk-python" >
+										<include name="**/*"/>
+										<exclude name="**/pom.xml"/>
+										<exclude name="**/.keep"/>
+									</fileset>
+									<fileset dir="${basedir}/sdc-sdk-ruby" >
+										<include name="**/*"/>
+										<exclude name="**/pom.xml"/>
+										<exclude name="**/.keep"/>
+									</fileset>	
+								</delete>
+							</target>							
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.4.0</version>
+				<executions>
+					<execution>
+						<id>sdk-java</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>${swagger.main.class}</mainClass>
+							<arguments>
+								<argument>-i</argument>
+								<argument>${swagger.json}</argument>
+								<argument>-l</argument>
+								<argument>java</argument>
+								<argument>-o</argument>
+								<argument>${basedir}/sdc-sdk-java</argument>
+								<argument>-c</argument>
+								<argument>${project.build.directory}/config-swagger/config-java.json</argument>
+								<argument>-t</argument>
+								<argument>${basedir}/templates/Java</argument>
+							</arguments>
+							<includePluginDependencies>true</includePluginDependencies>
+						</configuration>
+					</execution>
+					<execution>
+						<id>sdk-swift</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>${swagger.main.class}</mainClass>
+							<arguments>
+								<argument>-i</argument>
+								<argument>${swagger.json}</argument>
+								<argument>-l</argument>
+								<argument>swift</argument>
+								<argument>-o</argument>
+								<argument>${basedir}/sdc-sdk-swift</argument>
+								<argument>-c</argument>
+								<argument>${project.build.directory}/config-swagger/config-swift.json</argument>
+							</arguments>
+							<includePluginDependencies>true</includePluginDependencies>
+						</configuration>
+					</execution>
+					<execution>
+						<id>sdk-csharp</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>${swagger.main.class}</mainClass>
+							<arguments>
+								<argument>-i</argument>
+								<argument>${swagger.json}</argument>
+								<argument>-l</argument>
+								<argument>csharp</argument>
+								<argument>-o</argument>
+								<argument>${basedir}/sdc-sdk-csharp</argument>
+								<argument>-c</argument>
+								<argument>${project.build.directory}/config-swagger/config-csharp.json</argument>
+							</arguments>
+							<includePluginDependencies>true</includePluginDependencies>
+						</configuration>
+					</execution>
+					<execution>
+						<id>sdk-javascript</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>${swagger.main.class}</mainClass>
+							<arguments>
+								<argument>-i</argument>
+								<argument>${swagger.json}</argument>
+								<argument>-l</argument>
+								<argument>javascript</argument>
+								<argument>-o</argument>
+								<argument>${basedir}/sdc-sdk-javascript</argument>
+								<argument>-c</argument>
+								<argument>${project.build.directory}/config-swagger/config-javascript.json</argument>
+							</arguments>
+							<includePluginDependencies>true</includePluginDependencies>
+						</configuration>
+					</execution>
+					<execution>
+						<id>sdk-objc</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>${swagger.main.class}</mainClass>
+							<arguments>
+								<argument>-i</argument>
+								<argument>${swagger.json}</argument>
+								<argument>-l</argument>
+								<argument>objc</argument>
+								<argument>-o</argument>
+								<argument>${basedir}/sdc-sdk-objc</argument>
+								<argument>-c</argument>
+								<argument>${project.build.directory}/config-swagger/config-objc.json</argument>
+							</arguments>
+							<includePluginDependencies>true</includePluginDependencies>
+						</configuration>
+					</execution>
+					<execution>
+						<id>sdk-android</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>${swagger.main.class}</mainClass>
+							<arguments>
+								<argument>-i</argument>
+								<argument>${swagger.json}</argument>
+								<argument>-l</argument>
+								<argument>android</argument>
+								<argument>-o</argument>
+								<argument>${basedir}/sdc-sdk-android</argument>
+								<argument>-c</argument>
+								<argument>${project.build.directory}/config-swagger/config-android.json</argument>
+								<argument>-t</argument>
+								<argument>${basedir}/templates/android</argument>
+							</arguments>
+							<includePluginDependencies>true</includePluginDependencies>
+						</configuration>
+					</execution>
+					<execution>
+						<id>sdk-php</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>${swagger.main.class}</mainClass>
+							<arguments>
+								<argument>-i</argument>
+								<argument>${swagger.json}</argument>
+								<argument>-l</argument>
+								<argument>php</argument>
+								<argument>-o</argument>
+								<argument>${basedir}/sdc-sdk-php</argument>
+								<argument>-c</argument>
+								<argument>${project.build.directory}/config-swagger/config-php.json</argument>
+							</arguments>
+							<includePluginDependencies>true</includePluginDependencies>
+						</configuration>
+					</execution>
+					<execution>
+						<id>sdk-clojure</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>${swagger.main.class}</mainClass>
+							<arguments>
+								<argument>-i</argument>
+								<argument>${swagger.json}</argument>
+								<argument>-l</argument>
+								<argument>clojure</argument>
+								<argument>-o</argument>
+								<argument>${basedir}/sdc-sdk-clojure</argument>
+								<argument>-c</argument>
+								<argument>${project.build.directory}/config-swagger/config-clojure.json</argument>
+							</arguments>
+							<includePluginDependencies>true</includePluginDependencies>
+						</configuration>
+					</execution>	
+					<execution>
+						<id>sdk-python</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>${swagger.main.class}</mainClass>
+							<arguments>
+								<argument>-i</argument>
+								<argument>${swagger.json}</argument>
+								<argument>-l</argument>
+								<argument>python</argument>
+								<argument>-o</argument>
+								<argument>${basedir}/sdc-sdk-python</argument>
+								<argument>-c</argument>
+								<argument>${project.build.directory}/config-swagger/config-python.json</argument>
+							</arguments>
+							<includePluginDependencies>true</includePluginDependencies>
+						</configuration>
+					</execution>																
+					<execution>
+						<id>sdk-ruby</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>${swagger.main.class}</mainClass>
+							<arguments>
+								<argument>-i</argument>
+								<argument>${swagger.json}</argument>
+								<argument>-l</argument>
+								<argument>ruby</argument>
+								<argument>-o</argument>
+								<argument>${basedir}/sdc-sdk-ruby</argument>
+								<argument>-c</argument>
+								<argument>${project.build.directory}/config-swagger/config-ruby.json</argument>
+								<argument>-t</argument>
+								<argument>${basedir}/templates/ruby</argument>								
+							</arguments>
+							<includePluginDependencies>true</includePluginDependencies>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>io.swagger</groupId>
+						<artifactId>swagger-codegen-cli</artifactId>
+						<version>2.1.6</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-antrun-plugin
+										</artifactId>
+										<versionRange>
+											[1.8,)
+										</versionRange>
+										<goals>
+											<goal>run</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

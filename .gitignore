@@ -17,55 +17,55 @@ hs_err_pid*
 pom.xml.bak
 .project
 .classpath
-pier.pid
+sdc.pid
  
-pier-sdks/pier-sdk-java/*
-!pier-sdks/pier-sdk-java/pom.xml
-!pier-sdks/pier-sdk-java/.keep
-!pier-sdks/pier-sdk-java/.gitignore
+sdc-sdks/sdc-sdk-java/*
+!sdc-sdks/sdc-sdk-java/pom.xml
+!sdc-sdks/sdc-sdk-java/.keep
+!sdc-sdks/sdc-sdk-java/.gitignore
 
-pier-sdks/pier-sdk-android/*
-!pier-sdks/pier-sdk-android/pom.xml
-!pier-sdks/pier-sdk-android/.keep
-!pier-sdks/pier-sdk-android/.gitignore
+sdc-sdks/sdc-sdk-android/*
+!sdc-sdks/sdc-sdk-android/pom.xml
+!sdc-sdks/sdc-sdk-android/.keep
+!sdc-sdks/sdc-sdk-android/.gitignore
 
-pier-sdks/pier-sdk-clojure/*
-!pier-sdks/pier-sdk-clojure/.keep
-!pier-sdks/pier-sdk-clojure/.gitignore
+sdc-sdks/sdc-sdk-clojure/*
+!sdc-sdks/sdc-sdk-clojure/.keep
+!sdc-sdks/sdc-sdk-clojure/.gitignore
 
-pier-sdks/pier-sdk-csharp/*
-!pier-sdks/pier-sdk-csharp/.keep
-!pier-sdks/pier-sdk-csharp.Test/
-!pier-sdks/pier-sdk-csharp/.gitignore
+sdc-sdks/sdc-sdk-csharp/*
+!sdc-sdks/sdc-sdk-csharp/.keep
+!sdc-sdks/sdc-sdk-csharp.Test/
+!sdc-sdks/sdc-sdk-csharp/.gitignore
 
-pier-sdks/pier-sdk-java/*
-!pier-sdks/pier-sdk-java/.keep
-!pier-sdks/pier-sdk-java/.gitignore
+sdc-sdks/sdc-sdk-java/*
+!sdc-sdks/sdc-sdk-java/.keep
+!sdc-sdks/sdc-sdk-java/.gitignore
 
-pier-sdks/pier-sdk-javascript/*
-!pier-sdks/pier-sdk-javascript/.keep
-!pier-sdks/pier-sdk-javascript/.gitignore
+sdc-sdks/sdc-sdk-javascript/*
+!sdc-sdks/sdc-sdk-javascript/.keep
+!sdc-sdks/sdc-sdk-javascript/.gitignore
 
-pier-sdks/pier-sdk-nodejs/*
-!pier-sdks/pier-sdk-nodejs/.keep
-!pier-sdks/pier-sdk-nodejs/.gitignore
+sdc-sdks/sdc-sdk-nodejs/*
+!sdc-sdks/sdc-sdk-nodejs/.keep
+!sdc-sdks/sdc-sdk-nodejs/.gitignore
 
-pier-sdks/pier-sdk-objc/*
-!pier-sdks/pier-sdk-objc/.keep
-!pier-sdks/pier-sdk-objc/.gitignore
+sdc-sdks/sdc-sdk-objc/*
+!sdc-sdks/sdc-sdk-objc/.keep
+!sdc-sdks/sdc-sdk-objc/.gitignore
 
-pier-sdks/pier-sdk-php/*
-!pier-sdks/pier-sdk-php/.keep
-!pier-sdks/pier-sdk-php/.gitignore
+sdc-sdks/sdc-sdk-php/*
+!sdc-sdks/sdc-sdk-php/.keep
+!sdc-sdks/sdc-sdk-php/.gitignore
 
-pier-sdks/pier-sdk-python/*
-!pier-sdks/pier-sdk-python/.keep
-!pier-sdks/pier-sdk-python/.gitignore
+sdc-sdks/sdc-sdk-python/*
+!sdc-sdks/sdc-sdk-python/.keep
+!sdc-sdks/sdc-sdk-python/.gitignore
 
-pier-sdks/pier-sdk-ruby/*
-!pier-sdks/pier-sdk-ruby/.keep
-!pier-sdks/pier-sdk-ruby/.gitignore
+sdc-sdks/sdc-sdk-ruby/*
+!sdc-sdks/sdc-sdk-ruby/.keep
+!sdc-sdks/sdc-sdk-ruby/.gitignore
 
-pier-sdks/pier-sdk-swift/*
-!pier-sdks/pier-sdk-swift/.keep
-!pier-sdks/pier-sdk-swift/.gitignore
+sdc-sdks/sdc-sdk-swift/*
+!sdc-sdks/sdc-sdk-swift/.keep
+!sdc-sdks/sdc-sdk-swift/.gitignore
