@@ -5,6 +5,37 @@
 
 Essa API tem como objetivo simular os métodos básicos de uma administradora de cartão de crédito. Resolvemos escrever uma API que fosse de fácil entendimento e simples para desenvolver. Nesse projeto não só temos ao API como vários SDKs para consumo. 
 
+## API Endpoints
+
+Temos dois principais recursos expostos na API, Contas e Cartões.
+
+### Endpoint Contas
+MÉTODO | URL | DESCRIÇAO
+-------|-----|-----------
+    GET | /v1/contas | Retorna todas as contas
+    GET | /v1/contas/{id} | Retorna uma conta
+    POST | /v1/contas | Cria uma conta
+    PUT | /v1/contas | Atualiza uma conta 
+    DELETE | /v1/contas/{id} | Deleta uma conta
+
+### Endpoint Cartões 
+MÉTODO | URL | DESCRIÇAO
+-------|-----|-----------    
+    GET | /v1/contas/{idConta}/cartoes | Retona todos os cartão de uma conta
+    POST| /v1/contas/{idConta}/cartoes | Cria um cartão
+    PUT | /v1/contas/{idConta}/cartoes | Atualiza um cartão
+    GET | /v1/contas/{idConta}/cartoes/{idCartao} |Retorna um cartão
+    PUT |/v1/contas/{idConta}/cartoes/{idCartao}/bloquear | Bloquear um cartão.
+ DELETE |/v1/contas/{idConta}/cartoes/{idCartao}/cancelar|Cancelar um cartão
+    PUT | /v1/contas/{idConta}/cartoes/{idCartao}/creditar | Creditar dinheiro em um cartão
+    PUT | /v1/contas/{idConta}/cartoes/{idCartao}/desbloquear | Desbloquear um cartão.
+    POST|/v1/contas/{idConta}/cartoes/{idCartao}/extratos | Retonar os extratos de transaçoes do cartão
+    GET | /v1/contas/{idConta}/cartoes/{idCartao}/limite | Consultar o limite de um determinado cartão
+    PUT | /v1/contas/{idConta}/cartoes/{idCartao}/transacionar | Transacionar valores
+    POST|/v1/contas/{idConta}/cartoes/{idCartao}/transferir| Transferir valores entre dois cartões distintos
+
+
+
 ## Tecnologias Utilizadas
 
 - Java 8
