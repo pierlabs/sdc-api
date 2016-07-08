@@ -84,15 +84,20 @@ cd sdc-api
 ```
   mvn clean package
 ```
-## Demo
+## Utilização
 
-Subimos a API no [heroku](https://sdc-api.herokuapp.com) para que você possa utilizar. Você pode testar a API utilizando uma dessas duas interfaces, [https://sdc-api.herokuapp.com](https://sdc-api.herokuapp.com) ou [https://sdc-api.herokuapp.com/swagger-ui.html](https://sdc-api.herokuapp.com/swagger-ui.html).
+Para que você consiga consumir a API é necessário ter em mãos um `TOKEN` de acesso. Esse token pode ser obtido fazendo o seu cadastro no portal do [PIER Labs](htttp://pierlabs.io). Abaixo segue os passos que você deve seguir para obter o seu token.
+
+Entre no portal do [PIER Labs](htttp://pierlabs.io), clique em [Cadastre-se](http://pierlabs.io/api-portal/user/register), preencha os dados e clique em `Criar nova conta`, depois do cadastro efetuado no menu clique em `Desenvolvedor` -> `Minhas Aplicações`, em seguida clique em [Criar Aplicação](http://pierlabs.io/api-portal/myapps/new). Depois da aplicação cadastrada basta clicar no nome da aplicação que você acabou de cadastrar, em seguida clique em `Details` para ver o token que foi criado para você. Essa será a sua chave de acesso a nossa API.
+
+Subimos a API em [https://api.conductor.com.br/sdc/](https://api.conductor.com.br/sdc/) para que você possa utilizar. 
+
+## API Browser
+
+Agora que você já possui seu cadastro, criou sua aplicação e obteve o seu token, vamos acessar o [API Browser](http://pierlabs.io/api-portal/swagger/sdc-2016) para que você consiga testar todos os endpoints.
 
 ## Screenshots
 
-### [API Browser 01](https://sdc-api.herokuapp.com/swagger-ui.html)
+### [API Browser 01](http://pierlabs.io/api-portal/swagger/sdc-2016)
 
 ![swagger-ui-1](https://raw.githubusercontent.com/pierlabs/sdc-api/master/sdc-api/src/main/resources/static/images/swagger-ui-01.png)
-
-### [API Browser 02](https://sdc-api.herokuapp.com)
-![swagger-ui-2](https://raw.githubusercontent.com/pierlabs/sdc-api/master/sdc-api/src/main/resources/static/images/swagger-ui-02.png)
