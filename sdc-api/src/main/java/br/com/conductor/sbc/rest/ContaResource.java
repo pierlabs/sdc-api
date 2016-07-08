@@ -74,7 +74,7 @@ public class ContaResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Deleta uma conta", notes = "Deleta um cartão", response = Response.class)
+     @ApiOperation(value = "Deleta uma conta", notes = "Deleta uma conta", response = Response.class)
      @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity delete(@PathVariable("id") Long id) {
 
