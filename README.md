@@ -3,7 +3,7 @@
 
 ### API desenvolvida para a 15ª semanda da computação da UFPB em 2016
 
-Essa API tem como objetivo simular os métodos básicos de uma administradora de cartão de crédito. Resolvemos escrever uma API que fosse de fácil entendimento e simples para desenvolver. Nesse projeto não só temos ao API como vários SDKs para consumo. 
+Essa API tem como objetivo simular os métodos básicos de uma administradora de cartão de crédito. Resolvemos escrever uma API que fosse de fácil entendimento e simples para desenvolver. Nesse projeto não só temos a API como vários SDKs para consumo. 
 
 ## API Endpoints
 
@@ -58,7 +58,7 @@ MÉTODO | URL | DESCRIÇAO
 - Lombok 1.16+
 
 ## SDKs
-Para utilizar algum SDK basta fazder o clone do projeto, ir até a pasta `sdc-sdks` e escolher qual linguagem deseja utilizar. Temos os seguintes SDKs desenvolvidos:
+Para utilizar algum SDK basta fazer o clone do projeto, ir até a pasta `sdc-sdks` e escolher qual linguagem deseja utilizar. Temos os seguintes SDKs desenvolvidos:
 
 - [sdc-sdk-android](https://github.com/devconductor/sdc-api/tree/master/sdc-sdks/sdc-sdk-android)
 - [sdc-sdk-clojure](https://github.com/devconductor/sdc-api/tree/master/sdc-sdks/sdc-sdk-clojure)
@@ -94,7 +94,9 @@ Subimos a API em [https://api.conductor.com.br/sdc/](https://api.conductor.com.b
 
 ## API Browser
 
-Agora que você já possui seu cadastro, criou sua aplicação e obteve o seu token, vamos acessar o [API Browser](http://pierlabs.io/api-portal/swagger/sdc-2016) para que você consiga testar todos os endpoints.
+Agora que você já possui seu cadastro, criou sua aplicação e obteve o seu token, vamos acessar o [API Browser](http://pierlabs.io/api-portal/swagger/sdc-2016) para que você consiga testar todos os endpoints. Disponibilizamos um console web feito com swagger, com todos os endpoints publicados. Com esse console você preenche o campo `AccessToken` com o token que você obteve criando sua aplicação e em seguida pode utilizar qualquer método do console. 
+
+Para acessar esse console entre no [PIER Labs](htttp://pierlabs.io), logue com seu usuário e senha e no menu acesse `Ferramentas` -> `API Browser` que será exibido todas as APIs disponibilizadas. Procure a API `SDC 2016` e clique em seu link. Pronto, o Console Web será exibido conforme os screens abaixo.
 
 ## Screenshots
 
