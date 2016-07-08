@@ -56,8 +56,8 @@ public class SwaggerConfiguration implements EnvironmentAware{
           watch.start();
           Docket docket = new Docket(DocumentationType.SWAGGER_2)
                     .apiInfo(apiInfo())
-                    .directModelSubstitute(ResponseEntity.class, Response.class)
                     .genericModelSubstitutes(ResponseEntity.class)
+                    .directModelSubstitute(ResponseEntity.class, Response.class)
                     .forCodeGeneration(true)
                     .securitySchemes(apiKeys())
                     .securityContexts(newArrayList(securityContext()))
@@ -89,7 +89,7 @@ public class SwaggerConfiguration implements EnvironmentAware{
      @Bean
      SecurityConfiguration security() {
 
-          return new SecurityConfiguration(null, null, null, "sdc", "access_token", ApiKeyVehicle.HEADER, "access_token", "," );
+          return new SecurityConfiguration("client_id", null, null, "sdc", "access_token", ApiKeyVehicle.HEADER, "access_token", "," );
           
      }
 
