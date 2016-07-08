@@ -33,8 +33,6 @@ public class MetricsConfiguration extends MetricsConfigurerAdapter{
 
      private static final String PROP_METRIC_REG_JVM_FILES = "jvm.files";
 
-     private static final String PROP_METRIC_REG_JVM_BUFFERS = "jvm.buffers";
-
      public static final String PROP_METRIC_REG_DISK_USAGE = "disk";
 
      private MetricRegistry metricRegistry = new MetricRegistry();

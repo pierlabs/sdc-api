@@ -18,8 +18,10 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Lists;
 
 import br.com.conductor.sbc.util.Constantes;
+import br.com.conductor.sbc.util.Response;
 import br.com.twsoftware.alfred.object.Objeto;
 import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.schema.AlternateTypeRule;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.ApiKey;
 import springfox.documentation.service.AuthorizationScope;
@@ -54,9 +56,9 @@ public class SwaggerConfiguration implements EnvironmentAware{
           watch.start();
           Docket docket = new Docket(DocumentationType.SWAGGER_2)
                     .apiInfo(apiInfo())
+                    .directModelSubstitute(ResponseEntity.class, Response.class)
                     .genericModelSubstitutes(ResponseEntity.class)
                     .forCodeGeneration(true)
-                    .genericModelSubstitutes(ResponseEntity.class)
                     .securitySchemes(apiKeys())
                     .securityContexts(newArrayList(securityContext()))
                     .select()

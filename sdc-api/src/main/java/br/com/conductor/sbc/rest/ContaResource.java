@@ -19,6 +19,7 @@ import com.codahale.metrics.annotation.Timed;
 import br.com.conductor.sbc.entidades.Conta;
 import br.com.conductor.sbc.repositorios.ContaRepositorio;
 import br.com.conductor.sbc.util.Constantes;
+import br.com.conductor.sbc.util.Response;
 import br.com.twsoftware.alfred.object.Objeto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -73,7 +74,7 @@ public class ContaResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Deleta uma conta", notes = "Deleta um cart�o")
+     @ApiOperation(value = "Deleta uma conta", notes = "Deleta um cartão", response = Response.class)
      @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity delete(@PathVariable("id") Long id) {
 
@@ -88,7 +89,7 @@ public class ContaResource extends GenericResource{
                     
                     Object tmp_ = getJpaRepository().findOne(id);
                     if(Objeto.isBlank(tmp_)){
-                         response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Conta n�o encontrada"));
+                         response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Conta não encontrada"));
                     }
                          
                     contaRepositorio.deleteCascadeAll(id);

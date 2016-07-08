@@ -33,8 +33,8 @@ info:
         version: @project.version@
         
 swagger:
-    title: PIER Labs 
-    description: PIER Labs - API desenvolvida para a 15ª semanda da computação da UFPB em 2016
+    title: API SDC 2016 
+    description: API desenvolvida para a 15ª semanda da computação da UFPB em 2016
     version: @project.version@
     termsOfServiceUrl: http://pierlabs.io/terms/
     contact:

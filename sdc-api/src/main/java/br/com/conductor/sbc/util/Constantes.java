@@ -28,9 +28,9 @@ public class Constantes{
 
      public static String MSG_NO_CONTENT_EXTRATO_CONTA = "Nenhum extrato da conta informada foi encontrado.";
      
-     public static String json(String constante) {
+     public static Response json(String constante) {
 
-          return "{\"msg\":\"" + constante + "\"}";
+          return new Response(constante);
      }
 
 }
