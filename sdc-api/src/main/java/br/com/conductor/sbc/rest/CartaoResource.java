@@ -57,7 +57,7 @@ public class CartaoResource extends GenericResource{
      
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Retona todos os cartão de uma conta", notes = "Retona todos os cartão de uma conta", response = Cartao.class, httpMethod = "GET", responseContainer = "List")
+     @ApiOperation(value = "Retona todos os cartão de uma conta", notes = "Consulte todos os carteos de uma determinada conta.", response = Cartao.class, httpMethod = "GET", responseContainer = "List")
      @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity getAll(@ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta) {
           
@@ -72,7 +72,7 @@ public class CartaoResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Retorna um cartão", notes = "Retorna um cartão", response = Cartao.class)
+     @ApiOperation(value = "Retorna um cartão", notes = "Consulte um determinado cartão", response = Cartao.class)
      @RequestMapping(value = "/{idCartao}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity getOne(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -89,7 +89,7 @@ public class CartaoResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Cria um cartão", notes = "Cria um cartão", response = Cartao.class)
+     @ApiOperation(value = "Cria um cartão", notes = "Você pode criar um cartão ligado há uma determinada conta.", response = Cartao.class)
      @RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity create(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -115,7 +115,7 @@ public class CartaoResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Atualiza um cartão", notes = "Atualiza um cartão", response = Cartao.class)
+     @ApiOperation(value = "Atualiza um cartão", notes = "Atualiza um determinado cartão", response = Cartao.class)
      @RequestMapping(value = "", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity update(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -140,7 +140,7 @@ public class CartaoResource extends GenericResource{
 
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Cancelar um cartão", notes = "Cancelar um cartão")
+     @ApiOperation(value = "Cancelar um cartão", notes = "Cancelar um determinado cartão")
      @RequestMapping(value = "/{idCartao}/cancelar", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity cancelar(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -165,7 +165,7 @@ public class CartaoResource extends GenericResource{
      
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Desbloquear um cartão.", notes = "Desbloquear um cartão.")
+     @ApiOperation(value = "Desbloquear um cartão.", notes = "Desbloquear um determinado cartão.")
      @RequestMapping(value = "/{idCartao}/desbloquear", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity desbloquear(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -177,12 +177,12 @@ public class CartaoResource extends GenericResource{
      
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Creditar dinheiro em um cartão", notes = "Creditar dinheiro em um cartão")
+     @ApiOperation(value = "Creditar dinheiro em um cartão", notes = "Com esse método é possivel creditar qualquer valor em um cartão.")
      @RequestMapping(value = "/{idCartao}/creditar", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity creditar(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
                @ApiParam(value = "ID do Cartao a ser creditado", required = true) @PathVariable("idCartao") Long idCartao,
-               @ApiParam(value = "Valor a ser creditado", required = true) @RequestBody BigDecimal valor) {
+               @ApiParam(value = "Valor a ser creditado", example = "100.10", required = true) @RequestBody BigDecimal valor) {
           
           ResponseEntity response = null;
           try {
@@ -224,7 +224,7 @@ public class CartaoResource extends GenericResource{
      public ResponseEntity transacionar(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
                @ApiParam(value = "ID do Cartao a ser creditado", required = true) @PathVariable("idCartao") Long idCartao,
-               @ApiParam(value = "Valor da transação", required = true) @RequestBody BigDecimal valor) {
+               @ApiParam(value = "Valor da transação", example = "100.10", required = true) @RequestBody BigDecimal valor) {
           
           ResponseEntity response = null;
           try {
@@ -266,7 +266,7 @@ public class CartaoResource extends GenericResource{
      
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Consultar o limite de um determinado cartão", notes = "Consultar o limite de um determinado cartão")
+     @ApiOperation(value = "Retorna o limite do cartão", notes = "Consultar o limite de um determinado cartão")
      @RequestMapping(value = "/{idCartao}/limite", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity limite(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -301,13 +301,13 @@ public class CartaoResource extends GenericResource{
      @Timed
      @Transacional
      @ResponseBody
-     @ApiOperation(value = "Transferir valores entre dois cartões distintos", notes = "Transferir valores entre dois cartões")
+     @ApiOperation(value = "Transferir valores entre dois cartões distintos", notes = "Com esse método é permitido transferir qualquer valores entre dois cartões. Basta o cartão possuir limite e estar desbloqueado.")
      @RequestMapping(value = "/{idCartao}/transferir", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity transferir(
                @ApiParam(value = "ID da Conta do cartão de origem", required = true) @PathVariable("idConta") Long idConta,
                @ApiParam(value = "ID do cartão de origem", required = true) @PathVariable("idCartao") Long idCartaoOrigem,
                @ApiParam(value = "ID do cartão de destino", required = true) @RequestParam("idCartaoDestino") Long idCartaoDestino,
-               @ApiParam(value = "Valor a ser transferido", required = true) @RequestBody BigDecimal valor
+               @ApiParam(value = "Valor a ser transferido", example = "100.10", required = true) @RequestBody BigDecimal valor
                ) {
           
           ResponseEntity response = null;
