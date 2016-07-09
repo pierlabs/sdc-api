@@ -1,9 +1,8 @@
-# SDC::ResponseEntity
+# SDC.Response
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**body** | **Object** |  | [optional] 
-**status_code** | **String** |  | [optional] 
+**msg** | **String** |  | [optional] 
 
 

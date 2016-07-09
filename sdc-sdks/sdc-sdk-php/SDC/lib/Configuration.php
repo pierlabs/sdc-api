@@ -516,7 +516,7 @@ class Configuration
         $report  = "PHP SDK (br.com.conductor.sdc.api.v1.invoker) Debug Report:\n";
         $report .= "    OS: ".php_uname()."\n";
         $report .= "    PHP Version: ".phpversion()."\n";
-        $report .= "    OpenAPI Spec Version: 0.0.1\n";
+        $report .= "    OpenAPI Spec Version: 1.0.0\n";
         $report .= "    SDK Package Version: 1.0.0\n";
         $report .= "    Temp Folder Path: ".self::getDefaultConfiguration()->getTempFolderPath()."\n";
 

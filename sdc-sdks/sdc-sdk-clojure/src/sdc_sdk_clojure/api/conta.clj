@@ -24,7 +24,7 @@
 
 (defn delete-using-delete-with-http-info
   "Deleta uma conta
-  Deleta um cartï¿½o"
+  Deleta um cartÃ£o"
   [id ]
   (call-api "/v1/contas/{id}" :delete
             {:path-params   {"id" id }
@@ -37,7 +37,7 @@
 
 (defn delete-using-delete
   "Deleta uma conta
-  Deleta um cartï¿½o"
+  Deleta um cartÃ£o"
   [id ]
   (:data (delete-using-delete-with-http-info id)))
 

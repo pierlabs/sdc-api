@@ -62,11 +62,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteUsingDELETE**
-> \br.com.conductor.sdc.api.v1.model\ResponseEntity deleteUsingDELETE($id)
+> \br.com.conductor.sdc.api.v1.model\Response deleteUsingDELETE($id)
 
 Deleta uma conta
 
-Deleta um cart\u00EF\u00BF\u00BDo
+Deleta um cart\u00C3\u00A3o
 
 ### Example 
 ```php
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\br.com.conductor.sdc.api.v1.model\ResponseEntity**](ResponseEntity.md)
+[**\br.com.conductor.sdc.api.v1.model\Response**](Response.md)
 
 ### Authorization
 

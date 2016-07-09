@@ -7,19 +7,16 @@ import br.com.conductor.sdc.api.v1.invoker.ApiClient;
 import br.com.conductor.sdc.api.v1.invoker.Configuration;
 import br.com.conductor.sdc.api.v1.invoker.Pair;
 
-import br.com.conductor.sdc.api.v1.model.ResponseEntity;
+import br.com.conductor.sdc.api.v1.model.Response;
 import br.com.conductor.sdc.api.v1.model.Cartao;
-
-
+import br.com.conductor.sdc.api.v1.model.Limite;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class CartaoApi {
   private ApiClient apiClient;
 
@@ -41,13 +38,13 @@ public class CartaoApi {
 
   
   /**
-   * Bloquear um cart\u00EF\u00BF\u00BDo.
-   * Bloquear um cart\u00EF\u00BF\u00BDo.
+   * Bloquear um cart\u00C3\u00A3o.
+   * Bloquear um cart\u00C3\u00A3o.
    * @param idConta ID da Conta
-   * @param idCartao Cart\u00EF\u00BF\u00BDo a ser bloqueado
-   * @return ResponseEntity
+   * @param idCartao Cart\u00C3\u00A3o a ser bloqueado
+   * @return Response
    */
-  public ResponseEntity bloquearUsingPUT(Long idConta, Long idCartao) throws ApiException {
+  public Response bloquearUsingPUT(Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
@@ -86,22 +83,22 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<ResponseEntity> returnType = new GenericType<ResponseEntity>() {};
+    GenericType<Response> returnType = new GenericType<Response>() {};
     return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Cancelar um cart\u00EF\u00BF\u00BDo
-   * Cancelar um cart\u00EF\u00BF\u00BDo
+   * Cancelar um cart\u00C3\u00A3o
+   * Cancelar um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
-   * @param idCartao Cart\u00EF\u00BF\u00BDo a ser cancelado
-   * @return ResponseEntity
+   * @param idCartao Cart\u00C3\u00A3o a ser cancelado
+   * @return Response
    */
-  public ResponseEntity cancelarUsingDELETE(Long idConta, Long idCartao) throws ApiException {
+  public Response cancelarUsingDELETE(Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
@@ -140,19 +137,19 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<ResponseEntity> returnType = new GenericType<ResponseEntity>() {};
+    GenericType<Response> returnType = new GenericType<Response>() {};
     return apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Cria um cart\u00EF\u00BF\u00BDo
-   * Cria um cart\u00EF\u00BF\u00BDo
+   * Cria um cart\u00C3\u00A3o
+   * Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
    * @param idConta ID da Conta
-   * @param cartao Cart\u00EF\u00BF\u00BDo a ser criado
+   * @param cartao Cart\u00C3\u00A3o a ser criado
    * @return Cartao
    */
   public Cartao createUsingPOST(Long idConta, Cartao cartao) throws ApiException {
@@ -193,7 +190,7 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
     GenericType<Cartao> returnType = new GenericType<Cartao>() {};
@@ -202,14 +199,14 @@ public class CartaoApi {
   }
   
   /**
-   * Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
-   * Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+   * Creditar dinheiro em um cart\u00C3\u00A3o
+   * Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
    * @param idConta ID da Conta
    * @param idCartao ID do Cartao a ser creditado
    * @param valor Valor a ser creditado
-   * @return ResponseEntity
+   * @return Response
    */
-  public ResponseEntity creditarUsingPUT(Long idConta, Long idCartao, Double valor) throws ApiException {
+  public Response creditarUsingPUT(Long idConta, Long idCartao, Double valor) throws ApiException {
     Object postBody = valor;
     
      // verify the required parameter 'idConta' is set
@@ -253,22 +250,22 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<ResponseEntity> returnType = new GenericType<ResponseEntity>() {};
+    GenericType<Response> returnType = new GenericType<Response>() {};
     return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Desbloquear um cart\u00EF\u00BF\u00BDo.
-   * Desbloquear um cart\u00EF\u00BF\u00BDo.
+   * Desbloquear um cart\u00C3\u00A3o.
+   * Desbloquear um determinado cart\u00C3\u00A3o.
    * @param idConta ID da Conta
-   * @param idCartao Cart\u00EF\u00BF\u00BDo a ser desbloqueado
-   * @return ResponseEntity
+   * @param idCartao Cart\u00C3\u00A3o a ser desbloqueado
+   * @return Response
    */
-  public ResponseEntity desbloquearUsingPUT(Long idConta, Long idCartao) throws ApiException {
+  public Response desbloquearUsingPUT(Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
@@ -307,22 +304,22 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<ResponseEntity> returnType = new GenericType<ResponseEntity>() {};
+    GenericType<Response> returnType = new GenericType<Response>() {};
     return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
-   * Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+   * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+   * Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
-   * @param idCartao ID do cart\u00EF\u00BF\u00BDo
-   * @return ResponseEntity
+   * @param idCartao ID do cart\u00C3\u00A3o
+   * @return Response
    */
-  public ResponseEntity extratosUsingPOST(Long idConta, Long idCartao) throws ApiException {
+  public Response extratosUsingPOST(Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
@@ -361,17 +358,17 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<ResponseEntity> returnType = new GenericType<ResponseEntity>() {};
+    GenericType<Response> returnType = new GenericType<Response>() {};
     return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
-   * Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+   * Retona todos os cart\u00C3\u00A3o de uma conta
+   * Consulte todos os carteos de uma determinada conta.
    * @param idConta ID da Conta
    * @return List<Cartao>
    */
@@ -408,7 +405,7 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
     GenericType<List<Cartao>> returnType = new GenericType<List<Cartao>>() {};
@@ -417,10 +414,10 @@ public class CartaoApi {
   }
   
   /**
-   * Retorna um cart\u00EF\u00BF\u00BDo
-   * Retorna um cart\u00EF\u00BF\u00BDo
+   * Retorna um cart\u00C3\u00A3o
+   * Consulte um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
-   * @param idCartao ID do Cart\u00EF\u00BF\u00BDo
+   * @param idCartao ID do Cart\u00C3\u00A3o
    * @return Cartao
    */
   public Cartao getOneUsingGET(Long idConta, Long idCartao) throws ApiException {
@@ -462,7 +459,7 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
     GenericType<Cartao> returnType = new GenericType<Cartao>() {};
@@ -471,13 +468,13 @@ public class CartaoApi {
   }
   
   /**
-   * Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
-   * Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+   * Retorna o limite do cart\u00C3\u00A3o
+   * Consultar o limite de um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
    * @param idCartao ID do Cartao a ser creditado
-   * @return ResponseEntity
+   * @return Limite
    */
-  public ResponseEntity limiteUsingGET(Long idConta, Long idCartao) throws ApiException {
+  public Limite limiteUsingGET(Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
@@ -516,23 +513,23 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<ResponseEntity> returnType = new GenericType<ResponseEntity>() {};
+    GenericType<Limite> returnType = new GenericType<Limite>() {};
     return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * Transacionar valores
-   * Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+   * Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
    * @param idCartao ID do Cartao a ser creditado
-   * @param valor Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo
-   * @return ResponseEntity
+   * @param valor Valor da transa\u00C3\u00A7\u00C3\u00A3o
+   * @return Response
    */
-  public ResponseEntity transacionarUsingPUT(Long idConta, Long idCartao, Double valor) throws ApiException {
+  public Response transacionarUsingPUT(Long idConta, Long idCartao, Double valor) throws ApiException {
     Object postBody = valor;
     
      // verify the required parameter 'idConta' is set
@@ -576,24 +573,24 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<ResponseEntity> returnType = new GenericType<ResponseEntity>() {};
+    GenericType<Response> returnType = new GenericType<Response>() {};
     return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
-   * Transferir valores entre dois cart\u00EF\u00BF\u00BDes
-   * @param idConta ID da Conta do cart\u00EF\u00BF\u00BDo de origem
-   * @param idCartao ID do cart\u00EF\u00BF\u00BDo de origem
-   * @param idCartaoDestino ID do cart\u00EF\u00BF\u00BDo de destino
+   * Transferir valores entre dois cart\u00C3\u00B5es distintos
+   * Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
+   * @param idConta ID da Conta do cart\u00C3\u00A3o de origem
+   * @param idCartao ID do cart\u00C3\u00A3o de origem
+   * @param idCartaoDestino ID do cart\u00C3\u00A3o de destino
    * @param valor Valor a ser transferido
-   * @return ResponseEntity
+   * @return Response
    */
-  public ResponseEntity transferirUsingPOST(Long idConta, Long idCartao, Long idCartaoDestino, Double valor) throws ApiException {
+  public Response transferirUsingPOST(Long idConta, Long idCartao, Long idCartaoDestino, Double valor) throws ApiException {
     Object postBody = valor;
     
      // verify the required parameter 'idConta' is set
@@ -644,19 +641,19 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<ResponseEntity> returnType = new GenericType<ResponseEntity>() {};
+    GenericType<Response> returnType = new GenericType<Response>() {};
     return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Atualiza um cart\u00EF\u00BF\u00BDo
-   * Atualiza um cart\u00EF\u00BF\u00BDo
+   * Atualiza um cart\u00C3\u00A3o
+   * Atualiza um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
-   * @param cartao Cart\u00EF\u00BF\u00BDo a ser atualizado
+   * @param cartao Cart\u00C3\u00A3o a ser atualizado
    * @return Cartao
    */
   public Cartao updateUsingPUT(Long idConta, Cartao cartao) throws ApiException {
@@ -697,7 +694,7 @@ public class CartaoApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
     GenericType<Cartao> returnType = new GenericType<Cartao>() {};
@@ -706,4 +703,3 @@ public class CartaoApi {
   }
   
 }
-

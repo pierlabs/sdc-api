@@ -76,7 +76,7 @@ namespace Conductor.SDC.Test
             long? id = null; // TODO: replace null with proper value
             
             var response = instance.DeleteUsingDELETE(id);
-            Assert.IsInstanceOf<ResponseEntity> (response, "response is ResponseEntity"); 
+            Assert.IsInstanceOf<Response> (response, "response is Response"); 
         }
         
         /// <summary>

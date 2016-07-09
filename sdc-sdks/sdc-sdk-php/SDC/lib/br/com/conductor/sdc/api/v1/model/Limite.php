@@ -1,6 +1,6 @@
 <?php
 /**
- * ResponseEntity
+ * Limite
  *
  * PHP version 5
  *
@@ -35,7 +35,7 @@ namespace br.com.conductor.sdc.api.v1.model;
 
 use \ArrayAccess;
 /**
- * ResponseEntity Class Doc Comment
+ * Limite Class Doc Comment
  *
  * @category    Class
  * @description 
@@ -44,15 +44,15 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ResponseEntity implements ArrayAccess
+class Limite implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'body' => 'object',
-        'status_code' => 'string'
+        'msg' => 'string',
+        'valor' => 'double'
     );
   
     static function swaggerTypes() {
@@ -64,8 +64,8 @@ class ResponseEntity implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'body' => 'body',
-        'status_code' => 'statusCode'
+        'msg' => 'msg',
+        'valor' => 'valor'
     );
   
     static function attributeMap() {
@@ -77,8 +77,8 @@ class ResponseEntity implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'body' => 'setBody',
-        'status_code' => 'setStatusCode'
+        'msg' => 'setMsg',
+        'valor' => 'setValor'
     );
   
     static function setters() {
@@ -90,8 +90,8 @@ class ResponseEntity implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'body' => 'getBody',
-        'status_code' => 'getStatusCode'
+        'msg' => 'getMsg',
+        'valor' => 'getValor'
     );
   
     static function getters() {
@@ -100,16 +100,16 @@ class ResponseEntity implements ArrayAccess
 
     
     /**
-      * $body 
-      * @var object
-      */
-    protected $body;
-    
-    /**
-      * $status_code 
+      * $msg 
       * @var string
       */
-    protected $status_code;
+    protected $msg;
+    
+    /**
+      * $valor 
+      * @var double
+      */
+    protected $valor;
     
 
     /**
@@ -120,53 +120,50 @@ class ResponseEntity implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->body = $data["body"];
-            $this->status_code = $data["status_code"];
+            $this->msg = $data["msg"];
+            $this->valor = $data["valor"];
         }
     }
     
     /**
-     * Gets body
-     * @return object
+     * Gets msg
+     * @return string
      */
-    public function getBody()
+    public function getMsg()
     {
-        return $this->body;
+        return $this->msg;
     }
   
     /**
-     * Sets body
-     * @param object $body 
+     * Sets msg
+     * @param string $msg 
      * @return $this
      */
-    public function setBody($body)
+    public function setMsg($msg)
     {
         
-        $this->body = $body;
+        $this->msg = $msg;
         return $this;
     }
     
     /**
-     * Gets status_code
-     * @return string
+     * Gets valor
+     * @return double
      */
-    public function getStatusCode()
+    public function getValor()
     {
-        return $this->status_code;
+        return $this->valor;
     }
   
     /**
-     * Sets status_code
-     * @param string $status_code 
+     * Sets valor
+     * @param double $valor 
      * @return $this
      */
-    public function setStatusCode($status_code)
+    public function setValor($valor)
     {
-        $allowed_values = array("100", "101", "102", "103", "200", "201", "202", "203", "204", "205", "206", "207", "208", "226", "300", "301", "302", "302", "303", "304", "305", "307", "308", "400", "401", "402", "403", "404", "405", "406", "407", "408", "409", "410", "411", "412", "413", "413", "414", "414", "415", "416", "417", "418", "419", "420", "421", "422", "423", "424", "426", "428", "429", "431", "500", "501", "502", "503", "504", "505", "506", "507", "508", "509", "510", "511");
-        if (!in_array($status_code, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'status_code', must be one of '100', '101', '102', '103', '200', '201', '202', '203', '204', '205', '206', '207', '208', '226', '300', '301', '302', '302', '303', '304', '305', '307', '308', '400', '401', '402', '403', '404', '405', '406', '407', '408', '409', '410', '411', '412', '413', '413', '414', '414', '415', '416', '417', '418', '419', '420', '421', '422', '423', '424', '426', '428', '429', '431', '500', '501', '502', '503', '504', '505', '506', '507', '508', '509', '510', '511'");
-        }
-        $this->status_code = $status_code;
+        
+        $this->valor = $valor;
         return $this;
     }
     

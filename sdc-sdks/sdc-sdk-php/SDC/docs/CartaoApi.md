@@ -4,26 +4,26 @@ All URIs are relative to *https://localhost/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bloquearUsingPUT**](CartaoApi.md#bloquearUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/bloquear | Bloquear um cart\u00EF\u00BF\u00BDo.
-[**cancelarUsingDELETE**](CartaoApi.md#cancelarUsingDELETE) | **DELETE** /v1/contas/{idConta}/cartoes/{idCartao}/cancelar | Cancelar um cart\u00EF\u00BF\u00BDo
-[**createUsingPOST**](CartaoApi.md#createUsingPOST) | **POST** /v1/contas/{idConta}/cartoes | Cria um cart\u00EF\u00BF\u00BDo
-[**creditarUsingPUT**](CartaoApi.md#creditarUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/creditar | Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
-[**desbloquearUsingPUT**](CartaoApi.md#desbloquearUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/desbloquear | Desbloquear um cart\u00EF\u00BF\u00BDo.
-[**extratosUsingPOST**](CartaoApi.md#extratosUsingPOST) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/extratos | Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
-[**getAllUsingGET**](CartaoApi.md#getAllUsingGET) | **GET** /v1/contas/{idConta}/cartoes | Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
-[**getOneUsingGET**](CartaoApi.md#getOneUsingGET) | **GET** /v1/contas/{idConta}/cartoes/{idCartao} | Retorna um cart\u00EF\u00BF\u00BDo
-[**limiteUsingGET**](CartaoApi.md#limiteUsingGET) | **GET** /v1/contas/{idConta}/cartoes/{idCartao}/limite | Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+[**bloquearUsingPUT**](CartaoApi.md#bloquearUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/bloquear | Bloquear um cart\u00C3\u00A3o.
+[**cancelarUsingDELETE**](CartaoApi.md#cancelarUsingDELETE) | **DELETE** /v1/contas/{idConta}/cartoes/{idCartao}/cancelar | Cancelar um cart\u00C3\u00A3o
+[**createUsingPOST**](CartaoApi.md#createUsingPOST) | **POST** /v1/contas/{idConta}/cartoes | Cria um cart\u00C3\u00A3o
+[**creditarUsingPUT**](CartaoApi.md#creditarUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/creditar | Creditar dinheiro em um cart\u00C3\u00A3o
+[**desbloquearUsingPUT**](CartaoApi.md#desbloquearUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/desbloquear | Desbloquear um cart\u00C3\u00A3o.
+[**extratosUsingPOST**](CartaoApi.md#extratosUsingPOST) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/extratos | Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+[**getAllUsingGET**](CartaoApi.md#getAllUsingGET) | **GET** /v1/contas/{idConta}/cartoes | Retona todos os cart\u00C3\u00A3o de uma conta
+[**getOneUsingGET**](CartaoApi.md#getOneUsingGET) | **GET** /v1/contas/{idConta}/cartoes/{idCartao} | Retorna um cart\u00C3\u00A3o
+[**limiteUsingGET**](CartaoApi.md#limiteUsingGET) | **GET** /v1/contas/{idConta}/cartoes/{idCartao}/limite | Retorna o limite do cart\u00C3\u00A3o
 [**transacionarUsingPUT**](CartaoApi.md#transacionarUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/transacionar | Transacionar valores
-[**transferirUsingPOST**](CartaoApi.md#transferirUsingPOST) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/transferir | Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
-[**updateUsingPUT**](CartaoApi.md#updateUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes | Atualiza um cart\u00EF\u00BF\u00BDo
+[**transferirUsingPOST**](CartaoApi.md#transferirUsingPOST) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/transferir | Transferir valores entre dois cart\u00C3\u00B5es distintos
+[**updateUsingPUT**](CartaoApi.md#updateUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes | Atualiza um cart\u00C3\u00A3o
 
 
 # **bloquearUsingPUT**
-> \br.com.conductor.sdc.api.v1.model\ResponseEntity bloquearUsingPUT($id_conta, $id_cartao)
+> \br.com.conductor.sdc.api.v1.model\Response bloquearUsingPUT($id_conta, $id_cartao)
 
-Bloquear um cart\u00EF\u00BF\u00BDo.
+Bloquear um cart\u00C3\u00A3o.
 
-Bloquear um cart\u00EF\u00BF\u00BDo.
+Bloquear um cart\u00C3\u00A3o.
 
 ### Example 
 ```php
@@ -37,7 +37,7 @@ br.com.conductor.sdc.api.v1.invoker\Configuration::getDefaultConfiguration()->se
 
 $api_instance = new br.com.conductor.sdc.api.v1.invoker\Api\CartaoApi();
 $id_conta = 789; // int | ID da Conta
-$id_cartao = 789; // int | Cart\u00EF\u00BF\u00BDo a ser bloqueado
+$id_cartao = 789; // int | Cart\u00C3\u00A3o a ser bloqueado
 
 try { 
     $result = $api_instance->bloquearUsingPUT($id_conta, $id_cartao);
@@ -53,11 +53,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **int**| ID da Conta | 
- **id_cartao** | **int**| Cart\u00EF\u00BF\u00BDo a ser bloqueado | 
+ **id_cartao** | **int**| Cart\u00C3\u00A3o a ser bloqueado | 
 
 ### Return type
 
-[**\br.com.conductor.sdc.api.v1.model\ResponseEntity**](ResponseEntity.md)
+[**\br.com.conductor.sdc.api.v1.model\Response**](Response.md)
 
 ### Authorization
 
@@ -71,11 +71,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancelarUsingDELETE**
-> \br.com.conductor.sdc.api.v1.model\ResponseEntity cancelarUsingDELETE($id_conta, $id_cartao)
+> \br.com.conductor.sdc.api.v1.model\Response cancelarUsingDELETE($id_conta, $id_cartao)
 
-Cancelar um cart\u00EF\u00BF\u00BDo
+Cancelar um cart\u00C3\u00A3o
 
-Cancelar um cart\u00EF\u00BF\u00BDo
+Cancelar um determinado cart\u00C3\u00A3o
 
 ### Example 
 ```php
@@ -89,7 +89,7 @@ br.com.conductor.sdc.api.v1.invoker\Configuration::getDefaultConfiguration()->se
 
 $api_instance = new br.com.conductor.sdc.api.v1.invoker\Api\CartaoApi();
 $id_conta = 789; // int | ID da Conta
-$id_cartao = 789; // int | Cart\u00EF\u00BF\u00BDo a ser cancelado
+$id_cartao = 789; // int | Cart\u00C3\u00A3o a ser cancelado
 
 try { 
     $result = $api_instance->cancelarUsingDELETE($id_conta, $id_cartao);
@@ -105,11 +105,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **int**| ID da Conta | 
- **id_cartao** | **int**| Cart\u00EF\u00BF\u00BDo a ser cancelado | 
+ **id_cartao** | **int**| Cart\u00C3\u00A3o a ser cancelado | 
 
 ### Return type
 
-[**\br.com.conductor.sdc.api.v1.model\ResponseEntity**](ResponseEntity.md)
+[**\br.com.conductor.sdc.api.v1.model\Response**](Response.md)
 
 ### Authorization
 
@@ -125,9 +125,9 @@ Name | Type | Description  | Notes
 # **createUsingPOST**
 > \br.com.conductor.sdc.api.v1.model\Cartao createUsingPOST($id_conta, $cartao)
 
-Cria um cart\u00EF\u00BF\u00BDo
+Cria um cart\u00C3\u00A3o
 
-Cria um cart\u00EF\u00BF\u00BDo
+Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
 
 ### Example 
 ```php
@@ -141,7 +141,7 @@ br.com.conductor.sdc.api.v1.invoker\Configuration::getDefaultConfiguration()->se
 
 $api_instance = new br.com.conductor.sdc.api.v1.invoker\Api\CartaoApi();
 $id_conta = 789; // int | ID da Conta
-$cartao = new \br.com.conductor.sdc.api.v1.model\Cartao(); // \br.com.conductor.sdc.api.v1.model\Cartao | Cart\u00EF\u00BF\u00BDo a ser criado
+$cartao = new \br.com.conductor.sdc.api.v1.model\Cartao(); // \br.com.conductor.sdc.api.v1.model\Cartao | Cart\u00C3\u00A3o a ser criado
 
 try { 
     $result = $api_instance->createUsingPOST($id_conta, $cartao);
@@ -157,7 +157,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **int**| ID da Conta | 
- **cartao** | [**\br.com.conductor.sdc.api.v1.model\Cartao**](\br.com.conductor.sdc.api.v1.model\Cartao.md)| Cart\u00EF\u00BF\u00BDo a ser criado | 
+ **cartao** | [**\br.com.conductor.sdc.api.v1.model\Cartao**](\br.com.conductor.sdc.api.v1.model\Cartao.md)| Cart\u00C3\u00A3o a ser criado | 
 
 ### Return type
 
@@ -175,11 +175,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **creditarUsingPUT**
-> \br.com.conductor.sdc.api.v1.model\ResponseEntity creditarUsingPUT($id_conta, $id_cartao, $valor)
+> \br.com.conductor.sdc.api.v1.model\Response creditarUsingPUT($id_conta, $id_cartao, $valor)
 
-Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+Creditar dinheiro em um cart\u00C3\u00A3o
 
-Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
 
 ### Example 
 ```php
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\br.com.conductor.sdc.api.v1.model\ResponseEntity**](ResponseEntity.md)
+[**\br.com.conductor.sdc.api.v1.model\Response**](Response.md)
 
 ### Authorization
 
@@ -229,11 +229,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **desbloquearUsingPUT**
-> \br.com.conductor.sdc.api.v1.model\ResponseEntity desbloquearUsingPUT($id_conta, $id_cartao)
+> \br.com.conductor.sdc.api.v1.model\Response desbloquearUsingPUT($id_conta, $id_cartao)
 
-Desbloquear um cart\u00EF\u00BF\u00BDo.
+Desbloquear um cart\u00C3\u00A3o.
 
-Desbloquear um cart\u00EF\u00BF\u00BDo.
+Desbloquear um determinado cart\u00C3\u00A3o.
 
 ### Example 
 ```php
@@ -247,7 +247,7 @@ br.com.conductor.sdc.api.v1.invoker\Configuration::getDefaultConfiguration()->se
 
 $api_instance = new br.com.conductor.sdc.api.v1.invoker\Api\CartaoApi();
 $id_conta = 789; // int | ID da Conta
-$id_cartao = 789; // int | Cart\u00EF\u00BF\u00BDo a ser desbloqueado
+$id_cartao = 789; // int | Cart\u00C3\u00A3o a ser desbloqueado
 
 try { 
     $result = $api_instance->desbloquearUsingPUT($id_conta, $id_cartao);
@@ -263,11 +263,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **int**| ID da Conta | 
- **id_cartao** | **int**| Cart\u00EF\u00BF\u00BDo a ser desbloqueado | 
+ **id_cartao** | **int**| Cart\u00C3\u00A3o a ser desbloqueado | 
 
 ### Return type
 
-[**\br.com.conductor.sdc.api.v1.model\ResponseEntity**](ResponseEntity.md)
+[**\br.com.conductor.sdc.api.v1.model\Response**](Response.md)
 
 ### Authorization
 
@@ -281,11 +281,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **extratosUsingPOST**
-> \br.com.conductor.sdc.api.v1.model\ResponseEntity extratosUsingPOST($id_conta, $id_cartao)
+> \br.com.conductor.sdc.api.v1.model\Response extratosUsingPOST($id_conta, $id_cartao)
 
-Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
 
-Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
 
 ### Example 
 ```php
@@ -299,7 +299,7 @@ br.com.conductor.sdc.api.v1.invoker\Configuration::getDefaultConfiguration()->se
 
 $api_instance = new br.com.conductor.sdc.api.v1.invoker\Api\CartaoApi();
 $id_conta = 789; // int | ID da Conta
-$id_cartao = 789; // int | ID do cart\u00EF\u00BF\u00BDo
+$id_cartao = 789; // int | ID do cart\u00C3\u00A3o
 
 try { 
     $result = $api_instance->extratosUsingPOST($id_conta, $id_cartao);
@@ -315,11 +315,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **int**| ID da Conta | 
- **id_cartao** | **int**| ID do cart\u00EF\u00BF\u00BDo | 
+ **id_cartao** | **int**| ID do cart\u00C3\u00A3o | 
 
 ### Return type
 
-[**\br.com.conductor.sdc.api.v1.model\ResponseEntity**](ResponseEntity.md)
+[**\br.com.conductor.sdc.api.v1.model\Response**](Response.md)
 
 ### Authorization
 
@@ -335,9 +335,9 @@ Name | Type | Description  | Notes
 # **getAllUsingGET**
 > \br.com.conductor.sdc.api.v1.model\Cartao[] getAllUsingGET($id_conta)
 
-Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+Retona todos os cart\u00C3\u00A3o de uma conta
 
-Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+Consulte todos os carteos de uma determinada conta.
 
 ### Example 
 ```php
@@ -385,9 +385,9 @@ Name | Type | Description  | Notes
 # **getOneUsingGET**
 > \br.com.conductor.sdc.api.v1.model\Cartao getOneUsingGET($id_conta, $id_cartao)
 
-Retorna um cart\u00EF\u00BF\u00BDo
+Retorna um cart\u00C3\u00A3o
 
-Retorna um cart\u00EF\u00BF\u00BDo
+Consulte um determinado cart\u00C3\u00A3o
 
 ### Example 
 ```php
@@ -401,7 +401,7 @@ br.com.conductor.sdc.api.v1.invoker\Configuration::getDefaultConfiguration()->se
 
 $api_instance = new br.com.conductor.sdc.api.v1.invoker\Api\CartaoApi();
 $id_conta = 789; // int | ID da Conta
-$id_cartao = 789; // int | ID do Cart\u00EF\u00BF\u00BDo
+$id_cartao = 789; // int | ID do Cart\u00C3\u00A3o
 
 try { 
     $result = $api_instance->getOneUsingGET($id_conta, $id_cartao);
@@ -417,7 +417,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **int**| ID da Conta | 
- **id_cartao** | **int**| ID do Cart\u00EF\u00BF\u00BDo | 
+ **id_cartao** | **int**| ID do Cart\u00C3\u00A3o | 
 
 ### Return type
 
@@ -435,11 +435,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **limiteUsingGET**
-> \br.com.conductor.sdc.api.v1.model\ResponseEntity limiteUsingGET($id_conta, $id_cartao)
+> \br.com.conductor.sdc.api.v1.model\Limite limiteUsingGET($id_conta, $id_cartao)
 
-Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+Retorna o limite do cart\u00C3\u00A3o
 
-Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+Consultar o limite de um determinado cart\u00C3\u00A3o
 
 ### Example 
 ```php
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\br.com.conductor.sdc.api.v1.model\ResponseEntity**](ResponseEntity.md)
+[**\br.com.conductor.sdc.api.v1.model\Limite**](Limite.md)
 
 ### Authorization
 
@@ -487,11 +487,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **transacionarUsingPUT**
-> \br.com.conductor.sdc.api.v1.model\ResponseEntity transacionarUsingPUT($id_conta, $id_cartao, $valor)
+> \br.com.conductor.sdc.api.v1.model\Response transacionarUsingPUT($id_conta, $id_cartao, $valor)
 
 Transacionar valores
 
-Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
 
 ### Example 
 ```php
@@ -506,7 +506,7 @@ br.com.conductor.sdc.api.v1.invoker\Configuration::getDefaultConfiguration()->se
 $api_instance = new br.com.conductor.sdc.api.v1.invoker\Api\CartaoApi();
 $id_conta = 789; // int | ID da Conta
 $id_cartao = 789; // int | ID do Cartao a ser creditado
-$valor = 1.2; // double | Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo
+$valor = 1.2; // double | Valor da transa\u00C3\u00A7\u00C3\u00A3o
 
 try { 
     $result = $api_instance->transacionarUsingPUT($id_conta, $id_cartao, $valor);
@@ -523,11 +523,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **int**| ID da Conta | 
  **id_cartao** | **int**| ID do Cartao a ser creditado | 
- **valor** | **double**| Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo | 
+ **valor** | **double**| Valor da transa\u00C3\u00A7\u00C3\u00A3o | 
 
 ### Return type
 
-[**\br.com.conductor.sdc.api.v1.model\ResponseEntity**](ResponseEntity.md)
+[**\br.com.conductor.sdc.api.v1.model\Response**](Response.md)
 
 ### Authorization
 
@@ -541,11 +541,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **transferirUsingPOST**
-> \br.com.conductor.sdc.api.v1.model\ResponseEntity transferirUsingPOST($id_conta, $id_cartao, $id_cartao_destino, $valor)
+> \br.com.conductor.sdc.api.v1.model\Response transferirUsingPOST($id_conta, $id_cartao, $id_cartao_destino, $valor)
 
-Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+Transferir valores entre dois cart\u00C3\u00B5es distintos
 
-Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
 
 ### Example 
 ```php
@@ -558,9 +558,9 @@ br.com.conductor.sdc.api.v1.invoker\Configuration::getDefaultConfiguration()->se
 // br.com.conductor.sdc.api.v1.invoker\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'BEARER');
 
 $api_instance = new br.com.conductor.sdc.api.v1.invoker\Api\CartaoApi();
-$id_conta = 789; // int | ID da Conta do cart\u00EF\u00BF\u00BDo de origem
-$id_cartao = 789; // int | ID do cart\u00EF\u00BF\u00BDo de origem
-$id_cartao_destino = 789; // int | ID do cart\u00EF\u00BF\u00BDo de destino
+$id_conta = 789; // int | ID da Conta do cart\u00C3\u00A3o de origem
+$id_cartao = 789; // int | ID do cart\u00C3\u00A3o de origem
+$id_cartao_destino = 789; // int | ID do cart\u00C3\u00A3o de destino
 $valor = 1.2; // double | Valor a ser transferido
 
 try { 
@@ -576,14 +576,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id_conta** | **int**| ID da Conta do cart\u00EF\u00BF\u00BDo de origem | 
- **id_cartao** | **int**| ID do cart\u00EF\u00BF\u00BDo de origem | 
- **id_cartao_destino** | **int**| ID do cart\u00EF\u00BF\u00BDo de destino | 
+ **id_conta** | **int**| ID da Conta do cart\u00C3\u00A3o de origem | 
+ **id_cartao** | **int**| ID do cart\u00C3\u00A3o de origem | 
+ **id_cartao_destino** | **int**| ID do cart\u00C3\u00A3o de destino | 
  **valor** | **double**| Valor a ser transferido | 
 
 ### Return type
 
-[**\br.com.conductor.sdc.api.v1.model\ResponseEntity**](ResponseEntity.md)
+[**\br.com.conductor.sdc.api.v1.model\Response**](Response.md)
 
 ### Authorization
 
@@ -599,9 +599,9 @@ Name | Type | Description  | Notes
 # **updateUsingPUT**
 > \br.com.conductor.sdc.api.v1.model\Cartao updateUsingPUT($id_conta, $cartao)
 
-Atualiza um cart\u00EF\u00BF\u00BDo
+Atualiza um cart\u00C3\u00A3o
 
-Atualiza um cart\u00EF\u00BF\u00BDo
+Atualiza um determinado cart\u00C3\u00A3o
 
 ### Example 
 ```php
@@ -615,7 +615,7 @@ br.com.conductor.sdc.api.v1.invoker\Configuration::getDefaultConfiguration()->se
 
 $api_instance = new br.com.conductor.sdc.api.v1.invoker\Api\CartaoApi();
 $id_conta = 789; // int | ID da Conta
-$cartao = new \br.com.conductor.sdc.api.v1.model\Cartao(); // \br.com.conductor.sdc.api.v1.model\Cartao | Cart\u00EF\u00BF\u00BDo a ser atualizado
+$cartao = new \br.com.conductor.sdc.api.v1.model\Cartao(); // \br.com.conductor.sdc.api.v1.model\Cartao | Cart\u00C3\u00A3o a ser atualizado
 
 try { 
     $result = $api_instance->updateUsingPUT($id_conta, $cartao);
@@ -631,7 +631,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **int**| ID da Conta | 
- **cartao** | [**\br.com.conductor.sdc.api.v1.model\Cartao**](\br.com.conductor.sdc.api.v1.model\Cartao.md)| Cart\u00EF\u00BF\u00BDo a ser atualizado | 
+ **cartao** | [**\br.com.conductor.sdc.api.v1.model\Cartao**](\br.com.conductor.sdc.api.v1.model\Cartao.md)| Cart\u00C3\u00A3o a ser atualizado | 
 
 ### Return type
 

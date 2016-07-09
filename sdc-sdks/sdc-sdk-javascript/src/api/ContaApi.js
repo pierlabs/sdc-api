@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/Conta', '../model/ResponseEntity'], factory);
+    define(['../ApiClient', '../model/Conta', '../model/Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Conta'), require('../model/ResponseEntity'));
+    module.exports = factory(require('../ApiClient'), require('../model/Conta'), require('../model/Response'));
   } else {
     // Browser globals (root is window)
     if (!root.SDC) {
       root.SDC = {};
     }
-    root.SDC.ContaApi = factory(root.SDC.ApiClient, root.SDC.Conta, root.SDC.ResponseEntity);
+    root.SDC.ContaApi = factory(root.SDC.ApiClient, root.SDC.Conta, root.SDC.Response);
   }
-}(this, function(ApiClient, Conta, ResponseEntity) {
+}(this, function(ApiClient, Conta, Response) {
   'use strict';
 
   /**
@@ -81,16 +81,16 @@
      * Callback function to receive the result of the deleteUsingDELETE operation.
      * @callback module:api/ContaApi~deleteUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Deleta uma conta
-     * Deleta um cart\u00EF\u00BF\u00BDo
+     * Deleta um cart\u00C3\u00A3o
      * @param {Integer} id id
      * @param {module:api/ContaApi~deleteUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/ResponseEntity}
+     * data is of type: {module:model/Response}
      */
     this.deleteUsingDELETE = function(id, callback) {
       var postBody = null;
@@ -114,7 +114,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = ResponseEntity;
+      var returnType = Response;
 
       return this.apiClient.callApi(
         '/v1/contas/{id}', 'DELETE',

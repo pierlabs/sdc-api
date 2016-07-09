@@ -66,11 +66,11 @@ Name | Type | Description  | Notes
 
 
 # **delete_using_delete**
-> ResponseEntity delete_using_delete(id)
+> Response delete_using_delete(id)
 
 Deleta uma conta
 
-Deleta um cart\u00EF\u00BF\u00BDo
+Deleta um cart\u00C3\u00A3o
 
 ### Example
 ```ruby
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 

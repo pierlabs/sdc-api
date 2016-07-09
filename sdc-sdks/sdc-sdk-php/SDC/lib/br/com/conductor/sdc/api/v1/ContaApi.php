@@ -195,7 +195,7 @@ class ContaApi
      * Deleta uma conta
      *
      * @param int $id id (required)
-     * @return \br.com.conductor.sdc.api.v1.model\ResponseEntity
+     * @return \br.com.conductor.sdc.api.v1.model\Response
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function deleteUsingDELETE($id)
@@ -211,7 +211,7 @@ class ContaApi
      * Deleta uma conta
      *
      * @param int $id id (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function deleteUsingDELETEWithHttpInfo($id)
@@ -270,19 +270,19 @@ class ContaApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'DELETE',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\ResponseEntity'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Response'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Response', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Response', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }

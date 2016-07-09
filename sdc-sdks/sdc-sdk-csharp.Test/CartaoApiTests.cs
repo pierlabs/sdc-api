@@ -64,7 +64,7 @@ namespace Conductor.SDC.Test
             long? idCartao = null; // TODO: replace null with proper value
             
             var response = instance.BloquearUsingPUT(idConta, idCartao);
-            Assert.IsInstanceOf<ResponseEntity> (response, "response is ResponseEntity"); 
+            Assert.IsInstanceOf<Response> (response, "response is Response"); 
         }
         
         /// <summary>
@@ -78,7 +78,7 @@ namespace Conductor.SDC.Test
             long? idCartao = null; // TODO: replace null with proper value
             
             var response = instance.CancelarUsingDELETE(idConta, idCartao);
-            Assert.IsInstanceOf<ResponseEntity> (response, "response is ResponseEntity"); 
+            Assert.IsInstanceOf<Response> (response, "response is Response"); 
         }
         
         /// <summary>
@@ -107,7 +107,7 @@ namespace Conductor.SDC.Test
             double? valor = null; // TODO: replace null with proper value
             
             var response = instance.CreditarUsingPUT(idConta, idCartao, valor);
-            Assert.IsInstanceOf<ResponseEntity> (response, "response is ResponseEntity"); 
+            Assert.IsInstanceOf<Response> (response, "response is Response"); 
         }
         
         /// <summary>
@@ -121,7 +121,7 @@ namespace Conductor.SDC.Test
             long? idCartao = null; // TODO: replace null with proper value
             
             var response = instance.DesbloquearUsingPUT(idConta, idCartao);
-            Assert.IsInstanceOf<ResponseEntity> (response, "response is ResponseEntity"); 
+            Assert.IsInstanceOf<Response> (response, "response is Response"); 
         }
         
         /// <summary>
@@ -135,7 +135,7 @@ namespace Conductor.SDC.Test
             long? idCartao = null; // TODO: replace null with proper value
             
             var response = instance.ExtratosUsingPOST(idConta, idCartao);
-            Assert.IsInstanceOf<ResponseEntity> (response, "response is ResponseEntity"); 
+            Assert.IsInstanceOf<Response> (response, "response is Response"); 
         }
         
         /// <summary>
@@ -176,7 +176,7 @@ namespace Conductor.SDC.Test
             long? idCartao = null; // TODO: replace null with proper value
             
             var response = instance.LimiteUsingGET(idConta, idCartao);
-            Assert.IsInstanceOf<ResponseEntity> (response, "response is ResponseEntity"); 
+            Assert.IsInstanceOf<Limite> (response, "response is Limite"); 
         }
         
         /// <summary>
@@ -191,7 +191,7 @@ namespace Conductor.SDC.Test
             double? valor = null; // TODO: replace null with proper value
             
             var response = instance.TransacionarUsingPUT(idConta, idCartao, valor);
-            Assert.IsInstanceOf<ResponseEntity> (response, "response is ResponseEntity"); 
+            Assert.IsInstanceOf<Response> (response, "response is Response"); 
         }
         
         /// <summary>
@@ -207,7 +207,7 @@ namespace Conductor.SDC.Test
             double? valor = null; // TODO: replace null with proper value
             
             var response = instance.TransferirUsingPOST(idConta, idCartao, idCartaoDestino, valor);
-            Assert.IsInstanceOf<ResponseEntity> (response, "response is ResponseEntity"); 
+            Assert.IsInstanceOf<Response> (response, "response is Response"); 
         }
         
         /// <summary>

@@ -1,16 +1,16 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['./ApiClient', './model/Cartao', './model/Conta', './model/ResponseEntity', './api/CartaoApi', './api/ContaApi'], factory);
+    define(['./ApiClient', './model/Cartao', './model/Conta', './model/Limite', './model/Response', './api/CartaoApi', './api/ContaApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Cartao'), require('./model/Conta'), require('./model/ResponseEntity'), require('./api/CartaoApi'), require('./api/ContaApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Cartao'), require('./model/Conta'), require('./model/Limite'), require('./model/Response'), require('./api/CartaoApi'), require('./api/ContaApi'));
   }
-}(function(ApiClient, Cartao, Conta, ResponseEntity, CartaoApi, ContaApi) {
+}(function(ApiClient, Cartao, Conta, Limite, Response, CartaoApi, ContaApi) {
   'use strict';
 
   /**
-   * PIER Labs - Primeiro Hach Day SBC UFPB.<br>
+   * API desenvolvida para a 15\u00C2\u00AA semanda da computa\u00C3\u00A7\u00C3\u00A3o da UFPB em 2016.<br>
    * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
@@ -57,10 +57,15 @@
      */
     Conta: Conta,
     /**
-     * The ResponseEntity model constructor.
-     * @property {module:model/ResponseEntity}
+     * The Limite model constructor.
+     * @property {module:model/Limite}
      */
-    ResponseEntity: ResponseEntity,
+    Limite: Limite,
+    /**
+     * The Response model constructor.
+     * @property {module:model/Response}
+     */
+    Response: Response,
     /**
      * The CartaoApi service constructor.
      * @property {module:api/CartaoApi}

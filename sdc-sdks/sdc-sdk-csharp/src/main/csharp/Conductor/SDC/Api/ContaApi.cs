@@ -43,23 +43,23 @@ namespace Conductor.SDC.Api
         /// Deleta uma conta
         /// </summary>
         /// <remarks>
-        /// Deleta um cart\u00EF\u00BF\u00BDo
+        /// Deleta um cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity DeleteUsingDELETE (long? id);
+        /// <returns>Response</returns>
+        Response DeleteUsingDELETE (long? id);
   
         /// <summary>
         /// Deleta uma conta
         /// </summary>
         /// <remarks>
-        /// Deleta um cart\u00EF\u00BF\u00BDo
+        /// Deleta um cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        ApiResponse<ResponseEntity> DeleteUsingDELETEWithHttpInfo (long? id);
+        /// <returns>ApiResponse of Response</returns>
+        ApiResponse<Response> DeleteUsingDELETEWithHttpInfo (long? id);
         
         /// <summary>
         /// Retorna todas as contas
@@ -155,23 +155,23 @@ namespace Conductor.SDC.Api
         /// Deleta uma conta
         /// </summary>
         /// <remarks>
-        /// Deleta um cart\u00EF\u00BF\u00BDo
+        /// Deleta um cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>Task of ResponseEntity</returns>
-        System.Threading.Tasks.Task<ResponseEntity> DeleteUsingDELETEAsync (long? id);
+        /// <returns>Task of Response</returns>
+        System.Threading.Tasks.Task<Response> DeleteUsingDELETEAsync (long? id);
 
         /// <summary>
         /// Deleta uma conta
         /// </summary>
         /// <remarks>
-        /// Deleta um cart\u00EF\u00BF\u00BDo
+        /// Deleta um cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> DeleteUsingDELETEAsyncWithHttpInfo (long? id);
+        /// <returns>Task of ApiResponse (Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Response>> DeleteUsingDELETEAsyncWithHttpInfo (long? id);
         
         /// <summary>
         /// Retorna todas as contas
@@ -513,24 +513,24 @@ namespace Conductor.SDC.Api
         }
         
         /// <summary>
-        /// Deleta uma conta Deleta um cart\u00EF\u00BF\u00BDo
+        /// Deleta uma conta Deleta um cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param> 
-        /// <returns>ResponseEntity</returns>
-        public ResponseEntity DeleteUsingDELETE (long? id)
+        /// <returns>Response</returns>
+        public Response DeleteUsingDELETE (long? id)
         {
-             ApiResponse<ResponseEntity> localVarResponse = DeleteUsingDELETEWithHttpInfo(id);
+             ApiResponse<Response> localVarResponse = DeleteUsingDELETEWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Deleta uma conta Deleta um cart\u00EF\u00BF\u00BDo
+        /// Deleta uma conta Deleta um cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param> 
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        public ApiResponse< ResponseEntity > DeleteUsingDELETEWithHttpInfo (long? id)
+        /// <returns>ApiResponse of Response</returns>
+        public ApiResponse< Response > DeleteUsingDELETEWithHttpInfo (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -591,33 +591,33 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUsingDELETE: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
     
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
 
         
         /// <summary>
-        /// Deleta uma conta Deleta um cart\u00EF\u00BF\u00BDo
+        /// Deleta uma conta Deleta um cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>Task of ResponseEntity</returns>
-        public async System.Threading.Tasks.Task<ResponseEntity> DeleteUsingDELETEAsync (long? id)
+        /// <returns>Task of Response</returns>
+        public async System.Threading.Tasks.Task<Response> DeleteUsingDELETEAsync (long? id)
         {
-             ApiResponse<ResponseEntity> localVarResponse = await DeleteUsingDELETEAsyncWithHttpInfo(id);
+             ApiResponse<Response> localVarResponse = await DeleteUsingDELETEAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Deleta uma conta Deleta um cart\u00EF\u00BF\u00BDo
+        /// Deleta uma conta Deleta um cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> DeleteUsingDELETEAsyncWithHttpInfo (long? id)
+        /// <returns>Task of ApiResponse (Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Response>> DeleteUsingDELETEAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling DeleteUsingDELETE");
@@ -677,9 +677,9 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUsingDELETE: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
         

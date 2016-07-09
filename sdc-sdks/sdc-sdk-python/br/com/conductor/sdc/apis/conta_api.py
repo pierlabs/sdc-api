@@ -125,7 +125,7 @@ class ContaApi(object):
     def delete_using_delete(self, id, **kwargs):
         """
         Deleta uma conta
-        Deleta um cart\u00EF\u00BF\u00BDo
+        Deleta um cart\u00C3\u00A3o
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -138,7 +138,7 @@ class ContaApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id: id (required)
-        :return: ResponseEntity
+        :return: Response
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -194,7 +194,7 @@ class ContaApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ResponseEntity',
+                                            response_type='Response',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

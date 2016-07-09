@@ -14,7 +14,8 @@
 
 #import "SDCCartao.h"
 #import "SDCConta.h"
-#import "SDCResponseEntity.h"
+#import "SDCLimite.h"
+#import "SDCResponse.h"
 
 
 @class SDCConfiguration;

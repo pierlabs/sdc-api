@@ -33,6 +33,7 @@ import br.com.conductor.sbc.util.Constantes;
 import br.com.conductor.sbc.util.CreditCardNumberGenerator;
 import br.com.conductor.sbc.util.Response;
 import br.com.conductor.sbc.util.Transacional;
+import br.com.conductor.sbc.util.dto.Limite;
 import br.com.twsoftware.alfred.object.Objeto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -267,7 +268,7 @@ public class CartaoResource extends GenericResource{
      
      @Timed
      @ResponseBody
-     @ApiOperation(value = "Retorna o limite do cartão", notes = "Consultar o limite de um determinado cartão", response = Response.class)
+     @ApiOperation(value = "Retorna o limite do cartão", notes = "Consultar o limite de um determinado cartão", response = Limite.class)
      @RequestMapping(value = "/{idCartao}/limite", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity limite(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -288,7 +289,7 @@ public class CartaoResource extends GenericResource{
                }else{
                     
                     BigDecimal limite = cartaoRepositorio.limite(idCartao);
-                    response = ResponseEntity.ok().body(limite);
+                    response = ResponseEntity.ok().body(new Limite(limite));
                     
                }
                

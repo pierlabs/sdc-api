@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "SDCResponseEntity.h"
+#import "SDCResponse.h"
 #import "SDCCartao.h"
+#import "SDCLimite.h"
 #import "SDCObject.h"
 #import "SDCApiClient.h"
 
@@ -22,41 +23,41 @@
 +(SDCCartaoApi*) sharedAPI;
 ///
 ///
-/// Bloquear um cart\u00EF\u00BF\u00BDo.
-/// Bloquear um cart\u00EF\u00BF\u00BDo.
+/// Bloquear um cart\u00C3\u00A3o.
+/// Bloquear um cart\u00C3\u00A3o.
 ///
 /// @param idConta ID da Conta
-/// @param idCartao Cart\u00EF\u00BF\u00BDo a ser bloqueado
+/// @param idCartao Cart\u00C3\u00A3o a ser bloqueado
 /// 
 ///
-/// @return SDCResponseEntity*
+/// @return SDCResponse*
 -(NSNumber*) bloquearUsingPUTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(SDCResponseEntity* output, NSError* error)) handler;
+    completionHandler: (void (^)(SDCResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Cancelar um cart\u00EF\u00BF\u00BDo
-/// Cancelar um cart\u00EF\u00BF\u00BDo
+/// Cancelar um cart\u00C3\u00A3o
+/// Cancelar um determinado cart\u00C3\u00A3o
 ///
 /// @param idConta ID da Conta
-/// @param idCartao Cart\u00EF\u00BF\u00BDo a ser cancelado
+/// @param idCartao Cart\u00C3\u00A3o a ser cancelado
 /// 
 ///
-/// @return SDCResponseEntity*
+/// @return SDCResponse*
 -(NSNumber*) cancelarUsingDELETEWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(SDCResponseEntity* output, NSError* error)) handler;
+    completionHandler: (void (^)(SDCResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Cria um cart\u00EF\u00BF\u00BDo
-/// Cria um cart\u00EF\u00BF\u00BDo
+/// Cria um cart\u00C3\u00A3o
+/// Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
 ///
 /// @param idConta ID da Conta
-/// @param cartao Cart\u00EF\u00BF\u00BDo a ser criado
+/// @param cartao Cart\u00C3\u00A3o a ser criado
 /// 
 ///
 /// @return SDCCartao*
@@ -67,55 +68,55 @@
 
 ///
 ///
-/// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
-/// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+/// Creditar dinheiro em um cart\u00C3\u00A3o
+/// Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
 ///
 /// @param idConta ID da Conta
 /// @param idCartao ID do Cartao a ser creditado
 /// @param valor Valor a ser creditado
 /// 
 ///
-/// @return SDCResponseEntity*
+/// @return SDCResponse*
 -(NSNumber*) creditarUsingPUTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     valor: (NSNumber*) valor
-    completionHandler: (void (^)(SDCResponseEntity* output, NSError* error)) handler;
+    completionHandler: (void (^)(SDCResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Desbloquear um cart\u00EF\u00BF\u00BDo.
-/// Desbloquear um cart\u00EF\u00BF\u00BDo.
+/// Desbloquear um cart\u00C3\u00A3o.
+/// Desbloquear um determinado cart\u00C3\u00A3o.
 ///
 /// @param idConta ID da Conta
-/// @param idCartao Cart\u00EF\u00BF\u00BDo a ser desbloqueado
+/// @param idCartao Cart\u00C3\u00A3o a ser desbloqueado
 /// 
 ///
-/// @return SDCResponseEntity*
+/// @return SDCResponse*
 -(NSNumber*) desbloquearUsingPUTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(SDCResponseEntity* output, NSError* error)) handler;
+    completionHandler: (void (^)(SDCResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
-/// Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+/// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+/// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
 ///
 /// @param idConta ID da Conta
-/// @param idCartao ID do cart\u00EF\u00BF\u00BDo
+/// @param idCartao ID do cart\u00C3\u00A3o
 /// 
 ///
-/// @return SDCResponseEntity*
+/// @return SDCResponse*
 -(NSNumber*) extratosUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(SDCResponseEntity* output, NSError* error)) handler;
+    completionHandler: (void (^)(SDCResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
-/// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+/// Retona todos os cart\u00C3\u00A3o de uma conta
+/// Consulte todos os carteos de uma determinada conta.
 ///
 /// @param idConta ID da Conta
 /// 
@@ -127,11 +128,11 @@
 
 ///
 ///
-/// Retorna um cart\u00EF\u00BF\u00BDo
-/// Retorna um cart\u00EF\u00BF\u00BDo
+/// Retorna um cart\u00C3\u00A3o
+/// Consulte um determinado cart\u00C3\u00A3o
 ///
 /// @param idConta ID da Conta
-/// @param idCartao ID do Cart\u00EF\u00BF\u00BDo
+/// @param idCartao ID do Cart\u00C3\u00A3o
 /// 
 ///
 /// @return SDCCartao*
@@ -142,62 +143,62 @@
 
 ///
 ///
-/// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
-/// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+/// Retorna o limite do cart\u00C3\u00A3o
+/// Consultar o limite de um determinado cart\u00C3\u00A3o
 ///
 /// @param idConta ID da Conta
 /// @param idCartao ID do Cartao a ser creditado
 /// 
 ///
-/// @return SDCResponseEntity*
+/// @return SDCLimite*
 -(NSNumber*) limiteUsingGETWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(SDCResponseEntity* output, NSError* error)) handler;
+    completionHandler: (void (^)(SDCLimite* output, NSError* error)) handler;
 
 
 ///
 ///
 /// Transacionar valores
-/// Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+/// Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
 ///
 /// @param idConta ID da Conta
 /// @param idCartao ID do Cartao a ser creditado
-/// @param valor Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo
+/// @param valor Valor da transa\u00C3\u00A7\u00C3\u00A3o
 /// 
 ///
-/// @return SDCResponseEntity*
+/// @return SDCResponse*
 -(NSNumber*) transacionarUsingPUTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     valor: (NSNumber*) valor
-    completionHandler: (void (^)(SDCResponseEntity* output, NSError* error)) handler;
+    completionHandler: (void (^)(SDCResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
-/// Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+/// Transferir valores entre dois cart\u00C3\u00B5es distintos
+/// Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
 ///
-/// @param idConta ID da Conta do cart\u00EF\u00BF\u00BDo de origem
-/// @param idCartao ID do cart\u00EF\u00BF\u00BDo de origem
-/// @param idCartaoDestino ID do cart\u00EF\u00BF\u00BDo de destino
+/// @param idConta ID da Conta do cart\u00C3\u00A3o de origem
+/// @param idCartao ID do cart\u00C3\u00A3o de origem
+/// @param idCartaoDestino ID do cart\u00C3\u00A3o de destino
 /// @param valor Valor a ser transferido
 /// 
 ///
-/// @return SDCResponseEntity*
+/// @return SDCResponse*
 -(NSNumber*) transferirUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     idCartaoDestino: (NSNumber*) idCartaoDestino
     valor: (NSNumber*) valor
-    completionHandler: (void (^)(SDCResponseEntity* output, NSError* error)) handler;
+    completionHandler: (void (^)(SDCResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Atualiza um cart\u00EF\u00BF\u00BDo
-/// Atualiza um cart\u00EF\u00BF\u00BDo
+/// Atualiza um cart\u00C3\u00A3o
+/// Atualiza um determinado cart\u00C3\u00A3o
 ///
 /// @param idConta ID da Conta
-/// @param cartao Cart\u00EF\u00BF\u00BDo a ser atualizado
+/// @param cartao Cart\u00C3\u00A3o a ser atualizado
 /// 
 ///
 /// @return SDCCartao*

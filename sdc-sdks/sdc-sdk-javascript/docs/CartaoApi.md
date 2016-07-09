@@ -4,27 +4,27 @@ All URIs are relative to *https://localhost/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bloquearUsingPUT**](CartaoApi.md#bloquearUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/bloquear | Bloquear um cart\u00EF\u00BF\u00BDo.
-[**cancelarUsingDELETE**](CartaoApi.md#cancelarUsingDELETE) | **DELETE** /v1/contas/{idConta}/cartoes/{idCartao}/cancelar | Cancelar um cart\u00EF\u00BF\u00BDo
-[**createUsingPOST**](CartaoApi.md#createUsingPOST) | **POST** /v1/contas/{idConta}/cartoes | Cria um cart\u00EF\u00BF\u00BDo
-[**creditarUsingPUT**](CartaoApi.md#creditarUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/creditar | Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
-[**desbloquearUsingPUT**](CartaoApi.md#desbloquearUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/desbloquear | Desbloquear um cart\u00EF\u00BF\u00BDo.
-[**extratosUsingPOST**](CartaoApi.md#extratosUsingPOST) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/extratos | Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
-[**getAllUsingGET**](CartaoApi.md#getAllUsingGET) | **GET** /v1/contas/{idConta}/cartoes | Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
-[**getOneUsingGET**](CartaoApi.md#getOneUsingGET) | **GET** /v1/contas/{idConta}/cartoes/{idCartao} | Retorna um cart\u00EF\u00BF\u00BDo
-[**limiteUsingGET**](CartaoApi.md#limiteUsingGET) | **GET** /v1/contas/{idConta}/cartoes/{idCartao}/limite | Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+[**bloquearUsingPUT**](CartaoApi.md#bloquearUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/bloquear | Bloquear um cart\u00C3\u00A3o.
+[**cancelarUsingDELETE**](CartaoApi.md#cancelarUsingDELETE) | **DELETE** /v1/contas/{idConta}/cartoes/{idCartao}/cancelar | Cancelar um cart\u00C3\u00A3o
+[**createUsingPOST**](CartaoApi.md#createUsingPOST) | **POST** /v1/contas/{idConta}/cartoes | Cria um cart\u00C3\u00A3o
+[**creditarUsingPUT**](CartaoApi.md#creditarUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/creditar | Creditar dinheiro em um cart\u00C3\u00A3o
+[**desbloquearUsingPUT**](CartaoApi.md#desbloquearUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/desbloquear | Desbloquear um cart\u00C3\u00A3o.
+[**extratosUsingPOST**](CartaoApi.md#extratosUsingPOST) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/extratos | Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+[**getAllUsingGET**](CartaoApi.md#getAllUsingGET) | **GET** /v1/contas/{idConta}/cartoes | Retona todos os cart\u00C3\u00A3o de uma conta
+[**getOneUsingGET**](CartaoApi.md#getOneUsingGET) | **GET** /v1/contas/{idConta}/cartoes/{idCartao} | Retorna um cart\u00C3\u00A3o
+[**limiteUsingGET**](CartaoApi.md#limiteUsingGET) | **GET** /v1/contas/{idConta}/cartoes/{idCartao}/limite | Retorna o limite do cart\u00C3\u00A3o
 [**transacionarUsingPUT**](CartaoApi.md#transacionarUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/transacionar | Transacionar valores
-[**transferirUsingPOST**](CartaoApi.md#transferirUsingPOST) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/transferir | Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
-[**updateUsingPUT**](CartaoApi.md#updateUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes | Atualiza um cart\u00EF\u00BF\u00BDo
+[**transferirUsingPOST**](CartaoApi.md#transferirUsingPOST) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/transferir | Transferir valores entre dois cart\u00C3\u00B5es distintos
+[**updateUsingPUT**](CartaoApi.md#updateUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes | Atualiza um cart\u00C3\u00A3o
 
 
 <a name="bloquearUsingPUT"></a>
 # **bloquearUsingPUT**
-> ResponseEntity bloquearUsingPUT(idConta, idCartao)
+> Response bloquearUsingPUT(idConta, idCartao)
 
-Bloquear um cart\u00EF\u00BF\u00BDo.
+Bloquear um cart\u00C3\u00A3o.
 
-Bloquear um cart\u00EF\u00BF\u00BDo.
+Bloquear um cart\u00C3\u00A3o.
 
 ### Example
 ```javascript
@@ -41,7 +41,7 @@ var apiInstance = new SDC.CartaoApi()
 
 var idConta = 789; // {Integer} ID da Conta
 
-var idCartao = 789; // {Integer} Cart\u00EF\u00BF\u00BDo a ser bloqueado
+var idCartao = 789; // {Integer} Cart\u00C3\u00A3o a ser bloqueado
 
 
 var callback = function(error, data, response) {
@@ -59,11 +59,11 @@ api.bloquearUsingPUT(idConta, idCartao, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **idConta** | **Integer**| ID da Conta | 
- **idCartao** | **Integer**| Cart\u00EF\u00BF\u00BDo a ser bloqueado | 
+ **idCartao** | **Integer**| Cart\u00C3\u00A3o a ser bloqueado | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -76,11 +76,11 @@ Name | Type | Description  | Notes
 
 <a name="cancelarUsingDELETE"></a>
 # **cancelarUsingDELETE**
-> ResponseEntity cancelarUsingDELETE(idConta, idCartao)
+> Response cancelarUsingDELETE(idConta, idCartao)
 
-Cancelar um cart\u00EF\u00BF\u00BDo
+Cancelar um cart\u00C3\u00A3o
 
-Cancelar um cart\u00EF\u00BF\u00BDo
+Cancelar um determinado cart\u00C3\u00A3o
 
 ### Example
 ```javascript
@@ -97,7 +97,7 @@ var apiInstance = new SDC.CartaoApi()
 
 var idConta = 789; // {Integer} ID da Conta
 
-var idCartao = 789; // {Integer} Cart\u00EF\u00BF\u00BDo a ser cancelado
+var idCartao = 789; // {Integer} Cart\u00C3\u00A3o a ser cancelado
 
 
 var callback = function(error, data, response) {
@@ -115,11 +115,11 @@ api.cancelarUsingDELETE(idConta, idCartao, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **idConta** | **Integer**| ID da Conta | 
- **idCartao** | **Integer**| Cart\u00EF\u00BF\u00BDo a ser cancelado | 
+ **idCartao** | **Integer**| Cart\u00C3\u00A3o a ser cancelado | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -134,9 +134,9 @@ Name | Type | Description  | Notes
 # **createUsingPOST**
 > Cartao createUsingPOST(idConta, cartao)
 
-Cria um cart\u00EF\u00BF\u00BDo
+Cria um cart\u00C3\u00A3o
 
-Cria um cart\u00EF\u00BF\u00BDo
+Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
 
 ### Example
 ```javascript
@@ -153,7 +153,7 @@ var apiInstance = new SDC.CartaoApi()
 
 var idConta = 789; // {Integer} ID da Conta
 
-var cartao = new SDC.Cartao(); // {Cartao} Cart\u00EF\u00BF\u00BDo a ser criado
+var cartao = new SDC.Cartao(); // {Cartao} Cart\u00C3\u00A3o a ser criado
 
 
 var callback = function(error, data, response) {
@@ -171,7 +171,7 @@ api.createUsingPOST(idConta, cartao, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **idConta** | **Integer**| ID da Conta | 
- **cartao** | [**Cartao**](Cartao.md)| Cart\u00EF\u00BF\u00BDo a ser criado | 
+ **cartao** | [**Cartao**](Cartao.md)| Cart\u00C3\u00A3o a ser criado | 
 
 ### Return type
 
@@ -188,11 +188,11 @@ Name | Type | Description  | Notes
 
 <a name="creditarUsingPUT"></a>
 # **creditarUsingPUT**
-> ResponseEntity creditarUsingPUT(idConta, idCartao, valor)
+> Response creditarUsingPUT(idConta, idCartao, valor)
 
-Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+Creditar dinheiro em um cart\u00C3\u00A3o
 
-Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
 
 ### Example
 ```javascript
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -247,11 +247,11 @@ Name | Type | Description  | Notes
 
 <a name="desbloquearUsingPUT"></a>
 # **desbloquearUsingPUT**
-> ResponseEntity desbloquearUsingPUT(idConta, idCartao)
+> Response desbloquearUsingPUT(idConta, idCartao)
 
-Desbloquear um cart\u00EF\u00BF\u00BDo.
+Desbloquear um cart\u00C3\u00A3o.
 
-Desbloquear um cart\u00EF\u00BF\u00BDo.
+Desbloquear um determinado cart\u00C3\u00A3o.
 
 ### Example
 ```javascript
@@ -268,7 +268,7 @@ var apiInstance = new SDC.CartaoApi()
 
 var idConta = 789; // {Integer} ID da Conta
 
-var idCartao = 789; // {Integer} Cart\u00EF\u00BF\u00BDo a ser desbloqueado
+var idCartao = 789; // {Integer} Cart\u00C3\u00A3o a ser desbloqueado
 
 
 var callback = function(error, data, response) {
@@ -286,11 +286,11 @@ api.desbloquearUsingPUT(idConta, idCartao, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **idConta** | **Integer**| ID da Conta | 
- **idCartao** | **Integer**| Cart\u00EF\u00BF\u00BDo a ser desbloqueado | 
+ **idCartao** | **Integer**| Cart\u00C3\u00A3o a ser desbloqueado | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -303,11 +303,11 @@ Name | Type | Description  | Notes
 
 <a name="extratosUsingPOST"></a>
 # **extratosUsingPOST**
-> ResponseEntity extratosUsingPOST(idConta, idCartao)
+> Response extratosUsingPOST(idConta, idCartao)
 
-Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
 
-Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
 
 ### Example
 ```javascript
@@ -324,7 +324,7 @@ var apiInstance = new SDC.CartaoApi()
 
 var idConta = 789; // {Integer} ID da Conta
 
-var idCartao = 789; // {Integer} ID do cart\u00EF\u00BF\u00BDo
+var idCartao = 789; // {Integer} ID do cart\u00C3\u00A3o
 
 
 var callback = function(error, data, response) {
@@ -342,11 +342,11 @@ api.extratosUsingPOST(idConta, idCartao, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **idConta** | **Integer**| ID da Conta | 
- **idCartao** | **Integer**| ID do cart\u00EF\u00BF\u00BDo | 
+ **idCartao** | **Integer**| ID do cart\u00C3\u00A3o | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -361,9 +361,9 @@ Name | Type | Description  | Notes
 # **getAllUsingGET**
 > [Cartao] getAllUsingGET(idConta)
 
-Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+Retona todos os cart\u00C3\u00A3o de uma conta
 
-Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+Consulte todos os carteos de uma determinada conta.
 
 ### Example
 ```javascript
@@ -414,9 +414,9 @@ Name | Type | Description  | Notes
 # **getOneUsingGET**
 > Cartao getOneUsingGET(idConta, idCartao)
 
-Retorna um cart\u00EF\u00BF\u00BDo
+Retorna um cart\u00C3\u00A3o
 
-Retorna um cart\u00EF\u00BF\u00BDo
+Consulte um determinado cart\u00C3\u00A3o
 
 ### Example
 ```javascript
@@ -433,7 +433,7 @@ var apiInstance = new SDC.CartaoApi()
 
 var idConta = 789; // {Integer} ID da Conta
 
-var idCartao = 789; // {Integer} ID do Cart\u00EF\u00BF\u00BDo
+var idCartao = 789; // {Integer} ID do Cart\u00C3\u00A3o
 
 
 var callback = function(error, data, response) {
@@ -451,7 +451,7 @@ api.getOneUsingGET(idConta, idCartao, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **idConta** | **Integer**| ID da Conta | 
- **idCartao** | **Integer**| ID do Cart\u00EF\u00BF\u00BDo | 
+ **idCartao** | **Integer**| ID do Cart\u00C3\u00A3o | 
 
 ### Return type
 
@@ -468,11 +468,11 @@ Name | Type | Description  | Notes
 
 <a name="limiteUsingGET"></a>
 # **limiteUsingGET**
-> ResponseEntity limiteUsingGET(idConta, idCartao)
+> Limite limiteUsingGET(idConta, idCartao)
 
-Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+Retorna o limite do cart\u00C3\u00A3o
 
-Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+Consultar o limite de um determinado cart\u00C3\u00A3o
 
 ### Example
 ```javascript
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Limite**](Limite.md)
 
 ### Authorization
 
@@ -524,11 +524,11 @@ Name | Type | Description  | Notes
 
 <a name="transacionarUsingPUT"></a>
 # **transacionarUsingPUT**
-> ResponseEntity transacionarUsingPUT(idConta, idCartao, valor)
+> Response transacionarUsingPUT(idConta, idCartao, valor)
 
 Transacionar valores
 
-Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
 
 ### Example
 ```javascript
@@ -547,7 +547,7 @@ var idConta = 789; // {Integer} ID da Conta
 
 var idCartao = 789; // {Integer} ID do Cartao a ser creditado
 
-var valor = 1.2; // {Number} Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo
+var valor = 1.2; // {Number} Valor da transa\u00C3\u00A7\u00C3\u00A3o
 
 
 var callback = function(error, data, response) {
@@ -566,11 +566,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **idConta** | **Integer**| ID da Conta | 
  **idCartao** | **Integer**| ID do Cartao a ser creditado | 
- **valor** | **Number**| Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo | 
+ **valor** | **Number**| Valor da transa\u00C3\u00A7\u00C3\u00A3o | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -583,11 +583,11 @@ Name | Type | Description  | Notes
 
 <a name="transferirUsingPOST"></a>
 # **transferirUsingPOST**
-> ResponseEntity transferirUsingPOST(idConta, idCartao, idCartaoDestino, valor)
+> Response transferirUsingPOST(idConta, idCartao, idCartaoDestino, valor)
 
-Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+Transferir valores entre dois cart\u00C3\u00B5es distintos
 
-Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
 
 ### Example
 ```javascript
@@ -602,11 +602,11 @@ access_token.apiKey = "YOUR API KEY"
 
 var apiInstance = new SDC.CartaoApi()
 
-var idConta = 789; // {Integer} ID da Conta do cart\u00EF\u00BF\u00BDo de origem
+var idConta = 789; // {Integer} ID da Conta do cart\u00C3\u00A3o de origem
 
-var idCartao = 789; // {Integer} ID do cart\u00EF\u00BF\u00BDo de origem
+var idCartao = 789; // {Integer} ID do cart\u00C3\u00A3o de origem
 
-var idCartaoDestino = 789; // {Integer} ID do cart\u00EF\u00BF\u00BDo de destino
+var idCartaoDestino = 789; // {Integer} ID do cart\u00C3\u00A3o de destino
 
 var valor = 1.2; // {Number} Valor a ser transferido
 
@@ -625,14 +625,14 @@ api.transferirUsingPOST(idConta, idCartao, idCartaoDestino, valor, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **idConta** | **Integer**| ID da Conta do cart\u00EF\u00BF\u00BDo de origem | 
- **idCartao** | **Integer**| ID do cart\u00EF\u00BF\u00BDo de origem | 
- **idCartaoDestino** | **Integer**| ID do cart\u00EF\u00BF\u00BDo de destino | 
+ **idConta** | **Integer**| ID da Conta do cart\u00C3\u00A3o de origem | 
+ **idCartao** | **Integer**| ID do cart\u00C3\u00A3o de origem | 
+ **idCartaoDestino** | **Integer**| ID do cart\u00C3\u00A3o de destino | 
  **valor** | **Number**| Valor a ser transferido | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -647,9 +647,9 @@ Name | Type | Description  | Notes
 # **updateUsingPUT**
 > Cartao updateUsingPUT(idConta, cartao)
 
-Atualiza um cart\u00EF\u00BF\u00BDo
+Atualiza um cart\u00C3\u00A3o
 
-Atualiza um cart\u00EF\u00BF\u00BDo
+Atualiza um determinado cart\u00C3\u00A3o
 
 ### Example
 ```javascript
@@ -666,7 +666,7 @@ var apiInstance = new SDC.CartaoApi()
 
 var idConta = 789; // {Integer} ID da Conta
 
-var cartao = new SDC.Cartao(); // {Cartao} Cart\u00EF\u00BF\u00BDo a ser atualizado
+var cartao = new SDC.Cartao(); // {Cartao} Cart\u00C3\u00A3o a ser atualizado
 
 
 var callback = function(error, data, response) {
@@ -684,7 +684,7 @@ api.updateUsingPUT(idConta, cartao, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **idConta** | **Integer**| ID da Conta | 
- **cartao** | [**Cartao**](Cartao.md)| Cart\u00EF\u00BF\u00BDo a ser atualizado | 
+ **cartao** | [**Cartao**](Cartao.md)| Cart\u00C3\u00A3o a ser atualizado | 
 
 ### Return type
 

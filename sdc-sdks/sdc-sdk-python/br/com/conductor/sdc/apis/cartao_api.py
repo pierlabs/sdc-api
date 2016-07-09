@@ -47,8 +47,8 @@ class CartaoApi(object):
 
     def bloquear_using_put(self, id_conta, id_cartao, **kwargs):
         """
-        Bloquear um cart\u00EF\u00BF\u00BDo.
-        Bloquear um cart\u00EF\u00BF\u00BDo.
+        Bloquear um cart\u00C3\u00A3o.
+        Bloquear um cart\u00C3\u00A3o.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -61,8 +61,8 @@ class CartaoApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
-        :param int id_cartao: Cart\u00EF\u00BF\u00BDo a ser bloqueado (required)
-        :return: ResponseEntity
+        :param int id_cartao: Cart\u00C3\u00A3o a ser bloqueado (required)
+        :return: Response
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -123,15 +123,15 @@ class CartaoApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ResponseEntity',
+                                            response_type='Response',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def cancelar_using_delete(self, id_conta, id_cartao, **kwargs):
         """
-        Cancelar um cart\u00EF\u00BF\u00BDo
-        Cancelar um cart\u00EF\u00BF\u00BDo
+        Cancelar um cart\u00C3\u00A3o
+        Cancelar um determinado cart\u00C3\u00A3o
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -144,8 +144,8 @@ class CartaoApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
-        :param int id_cartao: Cart\u00EF\u00BF\u00BDo a ser cancelado (required)
-        :return: ResponseEntity
+        :param int id_cartao: Cart\u00C3\u00A3o a ser cancelado (required)
+        :return: Response
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -206,15 +206,15 @@ class CartaoApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ResponseEntity',
+                                            response_type='Response',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def create_using_post(self, id_conta, cartao, **kwargs):
         """
-        Cria um cart\u00EF\u00BF\u00BDo
-        Cria um cart\u00EF\u00BF\u00BDo
+        Cria um cart\u00C3\u00A3o
+        Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -227,7 +227,7 @@ class CartaoApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
-        :param Cartao cartao: Cart\u00EF\u00BF\u00BDo a ser criado (required)
+        :param Cartao cartao: Cart\u00C3\u00A3o a ser criado (required)
         :return: Cartao
                  If the method is called asynchronously,
                  returns the request thread.
@@ -296,8 +296,8 @@ class CartaoApi(object):
 
     def creditar_using_put(self, id_conta, id_cartao, valor, **kwargs):
         """
-        Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
-        Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        Creditar dinheiro em um cart\u00C3\u00A3o
+        Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -312,7 +312,7 @@ class CartaoApi(object):
         :param int id_conta: ID da Conta (required)
         :param int id_cartao: ID do Cartao a ser creditado (required)
         :param float valor: Valor a ser creditado (required)
-        :return: ResponseEntity
+        :return: Response
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -378,15 +378,15 @@ class CartaoApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ResponseEntity',
+                                            response_type='Response',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def desbloquear_using_put(self, id_conta, id_cartao, **kwargs):
         """
-        Desbloquear um cart\u00EF\u00BF\u00BDo.
-        Desbloquear um cart\u00EF\u00BF\u00BDo.
+        Desbloquear um cart\u00C3\u00A3o.
+        Desbloquear um determinado cart\u00C3\u00A3o.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -399,8 +399,8 @@ class CartaoApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
-        :param int id_cartao: Cart\u00EF\u00BF\u00BDo a ser desbloqueado (required)
-        :return: ResponseEntity
+        :param int id_cartao: Cart\u00C3\u00A3o a ser desbloqueado (required)
+        :return: Response
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -461,15 +461,15 @@ class CartaoApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ResponseEntity',
+                                            response_type='Response',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def extratos_using_post(self, id_conta, id_cartao, **kwargs):
         """
-        Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
-        Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+        Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+        Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -482,8 +482,8 @@ class CartaoApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
-        :param int id_cartao: ID do cart\u00EF\u00BF\u00BDo (required)
-        :return: ResponseEntity
+        :param int id_cartao: ID do cart\u00C3\u00A3o (required)
+        :return: Response
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -544,15 +544,15 @@ class CartaoApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ResponseEntity',
+                                            response_type='Response',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def get_all_using_get(self, id_conta, **kwargs):
         """
-        Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
-        Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        Retona todos os cart\u00C3\u00A3o de uma conta
+        Consulte todos os carteos de uma determinada conta.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -628,8 +628,8 @@ class CartaoApi(object):
 
     def get_one_using_get(self, id_conta, id_cartao, **kwargs):
         """
-        Retorna um cart\u00EF\u00BF\u00BDo
-        Retorna um cart\u00EF\u00BF\u00BDo
+        Retorna um cart\u00C3\u00A3o
+        Consulte um determinado cart\u00C3\u00A3o
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -642,7 +642,7 @@ class CartaoApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
-        :param int id_cartao: ID do Cart\u00EF\u00BF\u00BDo (required)
+        :param int id_cartao: ID do Cart\u00C3\u00A3o (required)
         :return: Cartao
                  If the method is called asynchronously,
                  returns the request thread.
@@ -711,8 +711,8 @@ class CartaoApi(object):
 
     def limite_using_get(self, id_conta, id_cartao, **kwargs):
         """
-        Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
-        Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        Retorna o limite do cart\u00C3\u00A3o
+        Consultar o limite de um determinado cart\u00C3\u00A3o
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -726,7 +726,7 @@ class CartaoApi(object):
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
         :param int id_cartao: ID do Cartao a ser creditado (required)
-        :return: ResponseEntity
+        :return: Limite
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -787,7 +787,7 @@ class CartaoApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ResponseEntity',
+                                            response_type='Limite',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -795,7 +795,7 @@ class CartaoApi(object):
     def transacionar_using_put(self, id_conta, id_cartao, valor, **kwargs):
         """
         Transacionar valores
-        Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+        Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -809,8 +809,8 @@ class CartaoApi(object):
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
         :param int id_cartao: ID do Cartao a ser creditado (required)
-        :param float valor: Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo (required)
-        :return: ResponseEntity
+        :param float valor: Valor da transa\u00C3\u00A7\u00C3\u00A3o (required)
+        :return: Response
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -876,15 +876,15 @@ class CartaoApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ResponseEntity',
+                                            response_type='Response',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def transferir_using_post(self, id_conta, id_cartao, id_cartao_destino, valor, **kwargs):
         """
-        Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
-        Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+        Transferir valores entre dois cart\u00C3\u00B5es distintos
+        Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -896,11 +896,11 @@ class CartaoApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int id_conta: ID da Conta do cart\u00EF\u00BF\u00BDo de origem (required)
-        :param int id_cartao: ID do cart\u00EF\u00BF\u00BDo de origem (required)
-        :param int id_cartao_destino: ID do cart\u00EF\u00BF\u00BDo de destino (required)
+        :param int id_conta: ID da Conta do cart\u00C3\u00A3o de origem (required)
+        :param int id_cartao: ID do cart\u00C3\u00A3o de origem (required)
+        :param int id_cartao_destino: ID do cart\u00C3\u00A3o de destino (required)
         :param float valor: Valor a ser transferido (required)
-        :return: ResponseEntity
+        :return: Response
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -971,15 +971,15 @@ class CartaoApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ResponseEntity',
+                                            response_type='Response',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     def update_using_put(self, id_conta, cartao, **kwargs):
         """
-        Atualiza um cart\u00EF\u00BF\u00BDo
-        Atualiza um cart\u00EF\u00BF\u00BDo
+        Atualiza um cart\u00C3\u00A3o
+        Atualiza um determinado cart\u00C3\u00A3o
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -992,7 +992,7 @@ class CartaoApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
-        :param Cartao cartao: Cart\u00EF\u00BF\u00BDo a ser atualizado (required)
+        :param Cartao cartao: Cart\u00C3\u00A3o a ser atualizado (required)
         :return: Cartao
                  If the method is called asynchronously,
                  returns the request thread.

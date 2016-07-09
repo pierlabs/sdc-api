@@ -1,10 +1,8 @@
 package br.com.conductor.sdc.api.v1.model;
 
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
-
 
 
 @ApiModel(description = "")
@@ -50,5 +48,3 @@ public class Conta  {
     return sb.toString();
   }
 }
-
-

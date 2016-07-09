@@ -84,7 +84,7 @@ public class {{classname}} {
     };
     final String {{localVariablePrefix}}contentType = {{localVariablePrefix}}apiClient.selectHeaderContentType({{localVariablePrefix}}contentTypes);
 
-    String[] {{localVariablePrefix}}authNames = new String[] { {{#authMethods}}"{{name}}"{{#hasMore}}, {{/hasMore}}{{/authMethods}} };
+    String[] {{localVariablePrefix}}authNames = new String[] {"client_id", {{#authMethods}}"{{name}}"{{#hasMore}}, {{/hasMore}}{{/authMethods}} };
 
     {{#returnType}}
     GenericType<{{{returnType}}}> {{localVariablePrefix}}returnType = new GenericType<{{{returnType}}}>() {};

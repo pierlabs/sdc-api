@@ -94,11 +94,11 @@ class CartaoApi
     /**
      * bloquearUsingPUT
      *
-     * Bloquear um cart\u00EF\u00BF\u00BDo.
+     * Bloquear um cart\u00C3\u00A3o.
      *
      * @param int $id_conta ID da Conta (required)
-     * @param int $id_cartao Cart\u00EF\u00BF\u00BDo a ser bloqueado (required)
-     * @return \br.com.conductor.sdc.api.v1.model\ResponseEntity
+     * @param int $id_cartao Cart\u00C3\u00A3o a ser bloqueado (required)
+     * @return \br.com.conductor.sdc.api.v1.model\Response
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function bloquearUsingPUT($id_conta, $id_cartao)
@@ -111,11 +111,11 @@ class CartaoApi
     /**
      * bloquearUsingPUTWithHttpInfo
      *
-     * Bloquear um cart\u00EF\u00BF\u00BDo.
+     * Bloquear um cart\u00C3\u00A3o.
      *
      * @param int $id_conta ID da Conta (required)
-     * @param int $id_cartao Cart\u00EF\u00BF\u00BDo a ser bloqueado (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @param int $id_cartao Cart\u00C3\u00A3o a ser bloqueado (required)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function bloquearUsingPUTWithHttpInfo($id_conta, $id_cartao)
@@ -186,19 +186,19 @@ class CartaoApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'PUT',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\ResponseEntity'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Response'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Response', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Response', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -210,11 +210,11 @@ class CartaoApi
     /**
      * cancelarUsingDELETE
      *
-     * Cancelar um cart\u00EF\u00BF\u00BDo
+     * Cancelar um cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
-     * @param int $id_cartao Cart\u00EF\u00BF\u00BDo a ser cancelado (required)
-     * @return \br.com.conductor.sdc.api.v1.model\ResponseEntity
+     * @param int $id_cartao Cart\u00C3\u00A3o a ser cancelado (required)
+     * @return \br.com.conductor.sdc.api.v1.model\Response
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function cancelarUsingDELETE($id_conta, $id_cartao)
@@ -227,11 +227,11 @@ class CartaoApi
     /**
      * cancelarUsingDELETEWithHttpInfo
      *
-     * Cancelar um cart\u00EF\u00BF\u00BDo
+     * Cancelar um cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
-     * @param int $id_cartao Cart\u00EF\u00BF\u00BDo a ser cancelado (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @param int $id_cartao Cart\u00C3\u00A3o a ser cancelado (required)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function cancelarUsingDELETEWithHttpInfo($id_conta, $id_cartao)
@@ -302,19 +302,19 @@ class CartaoApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'DELETE',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\ResponseEntity'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Response'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Response', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Response', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -326,10 +326,10 @@ class CartaoApi
     /**
      * createUsingPOST
      *
-     * Cria um cart\u00EF\u00BF\u00BDo
+     * Cria um cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
-     * @param \br.com.conductor.sdc.api.v1.model\Cartao $cartao Cart\u00EF\u00BF\u00BDo a ser criado (required)
+     * @param \br.com.conductor.sdc.api.v1.model\Cartao $cartao Cart\u00C3\u00A3o a ser criado (required)
      * @return \br.com.conductor.sdc.api.v1.model\Cartao
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
@@ -343,10 +343,10 @@ class CartaoApi
     /**
      * createUsingPOSTWithHttpInfo
      *
-     * Cria um cart\u00EF\u00BF\u00BDo
+     * Cria um cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
-     * @param \br.com.conductor.sdc.api.v1.model\Cartao $cartao Cart\u00EF\u00BF\u00BDo a ser criado (required)
+     * @param \br.com.conductor.sdc.api.v1.model\Cartao $cartao Cart\u00C3\u00A3o a ser criado (required)
      * @return Array of \br.com.conductor.sdc.api.v1.model\Cartao, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
@@ -438,12 +438,12 @@ class CartaoApi
     /**
      * creditarUsingPUT
      *
-     * Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+     * Creditar dinheiro em um cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
      * @param int $id_cartao ID do Cartao a ser creditado (required)
      * @param double $valor Valor a ser creditado (required)
-     * @return \br.com.conductor.sdc.api.v1.model\ResponseEntity
+     * @return \br.com.conductor.sdc.api.v1.model\Response
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function creditarUsingPUT($id_conta, $id_cartao, $valor)
@@ -456,12 +456,12 @@ class CartaoApi
     /**
      * creditarUsingPUTWithHttpInfo
      *
-     * Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+     * Creditar dinheiro em um cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
      * @param int $id_cartao ID do Cartao a ser creditado (required)
      * @param double $valor Valor a ser creditado (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function creditarUsingPUTWithHttpInfo($id_conta, $id_cartao, $valor)
@@ -540,19 +540,19 @@ class CartaoApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'PUT',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\ResponseEntity'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Response'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Response', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Response', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -564,11 +564,11 @@ class CartaoApi
     /**
      * desbloquearUsingPUT
      *
-     * Desbloquear um cart\u00EF\u00BF\u00BDo.
+     * Desbloquear um cart\u00C3\u00A3o.
      *
      * @param int $id_conta ID da Conta (required)
-     * @param int $id_cartao Cart\u00EF\u00BF\u00BDo a ser desbloqueado (required)
-     * @return \br.com.conductor.sdc.api.v1.model\ResponseEntity
+     * @param int $id_cartao Cart\u00C3\u00A3o a ser desbloqueado (required)
+     * @return \br.com.conductor.sdc.api.v1.model\Response
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function desbloquearUsingPUT($id_conta, $id_cartao)
@@ -581,11 +581,11 @@ class CartaoApi
     /**
      * desbloquearUsingPUTWithHttpInfo
      *
-     * Desbloquear um cart\u00EF\u00BF\u00BDo.
+     * Desbloquear um cart\u00C3\u00A3o.
      *
      * @param int $id_conta ID da Conta (required)
-     * @param int $id_cartao Cart\u00EF\u00BF\u00BDo a ser desbloqueado (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @param int $id_cartao Cart\u00C3\u00A3o a ser desbloqueado (required)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function desbloquearUsingPUTWithHttpInfo($id_conta, $id_cartao)
@@ -656,19 +656,19 @@ class CartaoApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'PUT',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\ResponseEntity'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Response'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Response', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Response', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -680,11 +680,11 @@ class CartaoApi
     /**
      * extratosUsingPOST
      *
-     * Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+     * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
-     * @param int $id_cartao ID do cart\u00EF\u00BF\u00BDo (required)
-     * @return \br.com.conductor.sdc.api.v1.model\ResponseEntity
+     * @param int $id_cartao ID do cart\u00C3\u00A3o (required)
+     * @return \br.com.conductor.sdc.api.v1.model\Response
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function extratosUsingPOST($id_conta, $id_cartao)
@@ -697,11 +697,11 @@ class CartaoApi
     /**
      * extratosUsingPOSTWithHttpInfo
      *
-     * Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+     * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
-     * @param int $id_cartao ID do cart\u00EF\u00BF\u00BDo (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @param int $id_cartao ID do cart\u00C3\u00A3o (required)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function extratosUsingPOSTWithHttpInfo($id_conta, $id_cartao)
@@ -772,19 +772,19 @@ class CartaoApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\ResponseEntity'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Response'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Response', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Response', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -796,7 +796,7 @@ class CartaoApi
     /**
      * getAllUsingGET
      *
-     * Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+     * Retona todos os cart\u00C3\u00A3o de uma conta
      *
      * @param int $id_conta ID da Conta (required)
      * @return \br.com.conductor.sdc.api.v1.model\Cartao[]
@@ -812,7 +812,7 @@ class CartaoApi
     /**
      * getAllUsingGETWithHttpInfo
      *
-     * Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+     * Retona todos os cart\u00C3\u00A3o de uma conta
      *
      * @param int $id_conta ID da Conta (required)
      * @return Array of \br.com.conductor.sdc.api.v1.model\Cartao[], HTTP status code, HTTP response headers (array of strings)
@@ -898,10 +898,10 @@ class CartaoApi
     /**
      * getOneUsingGET
      *
-     * Retorna um cart\u00EF\u00BF\u00BDo
+     * Retorna um cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
-     * @param int $id_cartao ID do Cart\u00EF\u00BF\u00BDo (required)
+     * @param int $id_cartao ID do Cart\u00C3\u00A3o (required)
      * @return \br.com.conductor.sdc.api.v1.model\Cartao
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
@@ -915,10 +915,10 @@ class CartaoApi
     /**
      * getOneUsingGETWithHttpInfo
      *
-     * Retorna um cart\u00EF\u00BF\u00BDo
+     * Retorna um cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
-     * @param int $id_cartao ID do Cart\u00EF\u00BF\u00BDo (required)
+     * @param int $id_cartao ID do Cart\u00C3\u00A3o (required)
      * @return Array of \br.com.conductor.sdc.api.v1.model\Cartao, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
@@ -1014,11 +1014,11 @@ class CartaoApi
     /**
      * limiteUsingGET
      *
-     * Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+     * Retorna o limite do cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
      * @param int $id_cartao ID do Cartao a ser creditado (required)
-     * @return \br.com.conductor.sdc.api.v1.model\ResponseEntity
+     * @return \br.com.conductor.sdc.api.v1.model\Limite
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function limiteUsingGET($id_conta, $id_cartao)
@@ -1031,11 +1031,11 @@ class CartaoApi
     /**
      * limiteUsingGETWithHttpInfo
      *
-     * Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+     * Retorna o limite do cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
      * @param int $id_cartao ID do Cartao a ser creditado (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Limite, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function limiteUsingGETWithHttpInfo($id_conta, $id_cartao)
@@ -1106,19 +1106,19 @@ class CartaoApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'GET',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\ResponseEntity'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Limite'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Limite', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Limite', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -1134,8 +1134,8 @@ class CartaoApi
      *
      * @param int $id_conta ID da Conta (required)
      * @param int $id_cartao ID do Cartao a ser creditado (required)
-     * @param double $valor Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo (required)
-     * @return \br.com.conductor.sdc.api.v1.model\ResponseEntity
+     * @param double $valor Valor da transa\u00C3\u00A7\u00C3\u00A3o (required)
+     * @return \br.com.conductor.sdc.api.v1.model\Response
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function transacionarUsingPUT($id_conta, $id_cartao, $valor)
@@ -1152,8 +1152,8 @@ class CartaoApi
      *
      * @param int $id_conta ID da Conta (required)
      * @param int $id_cartao ID do Cartao a ser creditado (required)
-     * @param double $valor Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @param double $valor Valor da transa\u00C3\u00A7\u00C3\u00A3o (required)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function transacionarUsingPUTWithHttpInfo($id_conta, $id_cartao, $valor)
@@ -1232,19 +1232,19 @@ class CartaoApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'PUT',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\ResponseEntity'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Response'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Response', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Response', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -1256,13 +1256,13 @@ class CartaoApi
     /**
      * transferirUsingPOST
      *
-     * Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+     * Transferir valores entre dois cart\u00C3\u00B5es distintos
      *
-     * @param int $id_conta ID da Conta do cart\u00EF\u00BF\u00BDo de origem (required)
-     * @param int $id_cartao ID do cart\u00EF\u00BF\u00BDo de origem (required)
-     * @param int $id_cartao_destino ID do cart\u00EF\u00BF\u00BDo de destino (required)
+     * @param int $id_conta ID da Conta do cart\u00C3\u00A3o de origem (required)
+     * @param int $id_cartao ID do cart\u00C3\u00A3o de origem (required)
+     * @param int $id_cartao_destino ID do cart\u00C3\u00A3o de destino (required)
      * @param double $valor Valor a ser transferido (required)
-     * @return \br.com.conductor.sdc.api.v1.model\ResponseEntity
+     * @return \br.com.conductor.sdc.api.v1.model\Response
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function transferirUsingPOST($id_conta, $id_cartao, $id_cartao_destino, $valor)
@@ -1275,13 +1275,13 @@ class CartaoApi
     /**
      * transferirUsingPOSTWithHttpInfo
      *
-     * Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+     * Transferir valores entre dois cart\u00C3\u00B5es distintos
      *
-     * @param int $id_conta ID da Conta do cart\u00EF\u00BF\u00BDo de origem (required)
-     * @param int $id_cartao ID do cart\u00EF\u00BF\u00BDo de origem (required)
-     * @param int $id_cartao_destino ID do cart\u00EF\u00BF\u00BDo de destino (required)
+     * @param int $id_conta ID da Conta do cart\u00C3\u00A3o de origem (required)
+     * @param int $id_cartao ID do cart\u00C3\u00A3o de origem (required)
+     * @param int $id_cartao_destino ID do cart\u00C3\u00A3o de destino (required)
      * @param double $valor Valor a ser transferido (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\ResponseEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function transferirUsingPOSTWithHttpInfo($id_conta, $id_cartao, $id_cartao_destino, $valor)
@@ -1368,19 +1368,19 @@ class CartaoApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\ResponseEntity'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Response'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Response', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\ResponseEntity', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Response', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -1392,10 +1392,10 @@ class CartaoApi
     /**
      * updateUsingPUT
      *
-     * Atualiza um cart\u00EF\u00BF\u00BDo
+     * Atualiza um cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
-     * @param \br.com.conductor.sdc.api.v1.model\Cartao $cartao Cart\u00EF\u00BF\u00BDo a ser atualizado (required)
+     * @param \br.com.conductor.sdc.api.v1.model\Cartao $cartao Cart\u00C3\u00A3o a ser atualizado (required)
      * @return \br.com.conductor.sdc.api.v1.model\Cartao
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
@@ -1409,10 +1409,10 @@ class CartaoApi
     /**
      * updateUsingPUTWithHttpInfo
      *
-     * Atualiza um cart\u00EF\u00BF\u00BDo
+     * Atualiza um cart\u00C3\u00A3o
      *
      * @param int $id_conta ID da Conta (required)
-     * @param \br.com.conductor.sdc.api.v1.model\Cartao $cartao Cart\u00EF\u00BF\u00BDo a ser atualizado (required)
+     * @param \br.com.conductor.sdc.api.v1.model\Cartao $cartao Cart\u00C3\u00A3o a ser atualizado (required)
      * @return Array of \br.com.conductor.sdc.api.v1.model\Cartao, HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */

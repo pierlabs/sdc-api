@@ -8,18 +8,14 @@ import br.com.conductor.sdc.api.v1.invoker.Configuration;
 import br.com.conductor.sdc.api.v1.invoker.Pair;
 
 import br.com.conductor.sdc.api.v1.model.Conta;
-import br.com.conductor.sdc.api.v1.model.ResponseEntity;
-
-
+import br.com.conductor.sdc.api.v1.model.Response;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class ContaApi {
   private ApiClient apiClient;
 
@@ -78,7 +74,7 @@ public class ContaApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
     GenericType<Conta> returnType = new GenericType<Conta>() {};
@@ -88,11 +84,11 @@ public class ContaApi {
   
   /**
    * Deleta uma conta
-   * Deleta um cart\u00EF\u00BF\u00BDo
+   * Deleta um cart\u00C3\u00A3o
    * @param id id
-   * @return ResponseEntity
+   * @return Response
    */
-  public ResponseEntity deleteUsingDELETE(Long id) throws ApiException {
+  public Response deleteUsingDELETE(Long id) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
@@ -125,10 +121,10 @@ public class ContaApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<ResponseEntity> returnType = new GenericType<ResponseEntity>() {};
+    GenericType<Response> returnType = new GenericType<Response>() {};
     return apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
@@ -165,7 +161,7 @@ public class ContaApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
     GenericType<List<Conta>> returnType = new GenericType<List<Conta>>() {};
@@ -212,7 +208,7 @@ public class ContaApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
     GenericType<Conta> returnType = new GenericType<Conta>() {};
@@ -258,7 +254,7 @@ public class ContaApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "access_token" };
+    String[] authNames = new String[] {"client_id", "access_token" };
 
     
     GenericType<Conta> returnType = new GenericType<Conta>() {};
@@ -267,4 +263,3 @@ public class ContaApi {
   }
   
 }
-

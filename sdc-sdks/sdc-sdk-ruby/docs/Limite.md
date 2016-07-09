@@ -1,9 +1,9 @@
-# SDC.ResponseEntity
+# SDC::Limite
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**body** | **Object** |  | [optional] 
-**statusCode** | **String** |  | [optional] 
+**msg** | **String** |  | [optional] 
+**valor** | **Float** |  | [optional] 
 
 

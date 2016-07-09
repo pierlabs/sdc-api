@@ -8,9 +8,9 @@ import br.com.conductor.sdc.api.v1.model.*;
 
 import java.util.*;
 
-import br.com.conductor.sdc.api.v1.model.ResponseEntity;
+import br.com.conductor.sdc.api.v1.model.Response;
 import br.com.conductor.sdc.api.v1.model.Cartao;
-
+import br.com.conductor.sdc.api.v1.model.Limite;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -18,7 +18,6 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.File;
-
 
 public class CartaoApi {
   String basePath = "https://localhost/";
@@ -42,13 +41,13 @@ public class CartaoApi {
 
   
   /**
-   * Bloquear um cart\u00EF\u00BF\u00BDo.
-   * Bloquear um cart\u00EF\u00BF\u00BDo.
+   * Bloquear um cart\u00C3\u00A3o.
+   * Bloquear um cart\u00C3\u00A3o.
    * @param idConta ID da Conta
-   * @param idCartao Cart\u00EF\u00BF\u00BDo a ser bloqueado
-   * @return ResponseEntity
+   * @param idCartao Cart\u00C3\u00A3o a ser bloqueado
+   * @return Response
    */
-  public ResponseEntity  bloquearUsingPUT (Long idConta, Long idCartao) throws ApiException {
+  public Response  bloquearUsingPUT (Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'idConta' is set
@@ -96,7 +95,7 @@ public class CartaoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ResponseEntity) ApiInvoker.deserialize(response, "", ResponseEntity.class);
+        return (Response) ApiInvoker.deserialize(response, "", Response.class);
       }
       else {
         return null;
@@ -107,13 +106,13 @@ public class CartaoApi {
   }
   
   /**
-   * Cancelar um cart\u00EF\u00BF\u00BDo
-   * Cancelar um cart\u00EF\u00BF\u00BDo
+   * Cancelar um cart\u00C3\u00A3o
+   * Cancelar um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
-   * @param idCartao Cart\u00EF\u00BF\u00BDo a ser cancelado
-   * @return ResponseEntity
+   * @param idCartao Cart\u00C3\u00A3o a ser cancelado
+   * @return Response
    */
-  public ResponseEntity  cancelarUsingDELETE (Long idConta, Long idCartao) throws ApiException {
+  public Response  cancelarUsingDELETE (Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'idConta' is set
@@ -161,7 +160,7 @@ public class CartaoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ResponseEntity) ApiInvoker.deserialize(response, "", ResponseEntity.class);
+        return (Response) ApiInvoker.deserialize(response, "", Response.class);
       }
       else {
         return null;
@@ -172,10 +171,10 @@ public class CartaoApi {
   }
   
   /**
-   * Cria um cart\u00EF\u00BF\u00BDo
-   * Cria um cart\u00EF\u00BF\u00BDo
+   * Cria um cart\u00C3\u00A3o
+   * Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
    * @param idConta ID da Conta
-   * @param cartao Cart\u00EF\u00BF\u00BDo a ser criado
+   * @param cartao Cart\u00C3\u00A3o a ser criado
    * @return Cartao
    */
   public Cartao  createUsingPOST (Long idConta, Cartao cartao) throws ApiException {
@@ -237,14 +236,14 @@ public class CartaoApi {
   }
   
   /**
-   * Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
-   * Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+   * Creditar dinheiro em um cart\u00C3\u00A3o
+   * Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
    * @param idConta ID da Conta
    * @param idCartao ID do Cartao a ser creditado
    * @param valor Valor a ser creditado
-   * @return ResponseEntity
+   * @return Response
    */
-  public ResponseEntity  creditarUsingPUT (Long idConta, Long idCartao, Double valor) throws ApiException {
+  public Response  creditarUsingPUT (Long idConta, Long idCartao, Double valor) throws ApiException {
     Object postBody = valor;
     
     // verify the required parameter 'idConta' is set
@@ -297,7 +296,7 @@ public class CartaoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ResponseEntity) ApiInvoker.deserialize(response, "", ResponseEntity.class);
+        return (Response) ApiInvoker.deserialize(response, "", Response.class);
       }
       else {
         return null;
@@ -308,13 +307,13 @@ public class CartaoApi {
   }
   
   /**
-   * Desbloquear um cart\u00EF\u00BF\u00BDo.
-   * Desbloquear um cart\u00EF\u00BF\u00BDo.
+   * Desbloquear um cart\u00C3\u00A3o.
+   * Desbloquear um determinado cart\u00C3\u00A3o.
    * @param idConta ID da Conta
-   * @param idCartao Cart\u00EF\u00BF\u00BDo a ser desbloqueado
-   * @return ResponseEntity
+   * @param idCartao Cart\u00C3\u00A3o a ser desbloqueado
+   * @return Response
    */
-  public ResponseEntity  desbloquearUsingPUT (Long idConta, Long idCartao) throws ApiException {
+  public Response  desbloquearUsingPUT (Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'idConta' is set
@@ -362,7 +361,7 @@ public class CartaoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ResponseEntity) ApiInvoker.deserialize(response, "", ResponseEntity.class);
+        return (Response) ApiInvoker.deserialize(response, "", Response.class);
       }
       else {
         return null;
@@ -373,13 +372,13 @@ public class CartaoApi {
   }
   
   /**
-   * Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
-   * Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+   * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+   * Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
-   * @param idCartao ID do cart\u00EF\u00BF\u00BDo
-   * @return ResponseEntity
+   * @param idCartao ID do cart\u00C3\u00A3o
+   * @return Response
    */
-  public ResponseEntity  extratosUsingPOST (Long idConta, Long idCartao) throws ApiException {
+  public Response  extratosUsingPOST (Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'idConta' is set
@@ -427,7 +426,7 @@ public class CartaoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ResponseEntity) ApiInvoker.deserialize(response, "", ResponseEntity.class);
+        return (Response) ApiInvoker.deserialize(response, "", Response.class);
       }
       else {
         return null;
@@ -438,8 +437,8 @@ public class CartaoApi {
   }
   
   /**
-   * Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
-   * Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+   * Retona todos os cart\u00C3\u00A3o de uma conta
+   * Consulte todos os carteos de uma determinada conta.
    * @param idConta ID da Conta
    * @return List<Cartao>
    */
@@ -497,10 +496,10 @@ public class CartaoApi {
   }
   
   /**
-   * Retorna um cart\u00EF\u00BF\u00BDo
-   * Retorna um cart\u00EF\u00BF\u00BDo
+   * Retorna um cart\u00C3\u00A3o
+   * Consulte um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
-   * @param idCartao ID do Cart\u00EF\u00BF\u00BDo
+   * @param idCartao ID do Cart\u00C3\u00A3o
    * @return Cartao
    */
   public Cartao  getOneUsingGET (Long idConta, Long idCartao) throws ApiException {
@@ -562,13 +561,13 @@ public class CartaoApi {
   }
   
   /**
-   * Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
-   * Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+   * Retorna o limite do cart\u00C3\u00A3o
+   * Consultar o limite de um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
    * @param idCartao ID do Cartao a ser creditado
-   * @return ResponseEntity
+   * @return Limite
    */
-  public ResponseEntity  limiteUsingGET (Long idConta, Long idCartao) throws ApiException {
+  public Limite  limiteUsingGET (Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'idConta' is set
@@ -616,7 +615,7 @@ public class CartaoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ResponseEntity) ApiInvoker.deserialize(response, "", ResponseEntity.class);
+        return (Limite) ApiInvoker.deserialize(response, "", Limite.class);
       }
       else {
         return null;
@@ -628,13 +627,13 @@ public class CartaoApi {
   
   /**
    * Transacionar valores
-   * Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+   * Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
    * @param idCartao ID do Cartao a ser creditado
-   * @param valor Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo
-   * @return ResponseEntity
+   * @param valor Valor da transa\u00C3\u00A7\u00C3\u00A3o
+   * @return Response
    */
-  public ResponseEntity  transacionarUsingPUT (Long idConta, Long idCartao, Double valor) throws ApiException {
+  public Response  transacionarUsingPUT (Long idConta, Long idCartao, Double valor) throws ApiException {
     Object postBody = valor;
     
     // verify the required parameter 'idConta' is set
@@ -687,7 +686,7 @@ public class CartaoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ResponseEntity) ApiInvoker.deserialize(response, "", ResponseEntity.class);
+        return (Response) ApiInvoker.deserialize(response, "", Response.class);
       }
       else {
         return null;
@@ -698,15 +697,15 @@ public class CartaoApi {
   }
   
   /**
-   * Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
-   * Transferir valores entre dois cart\u00EF\u00BF\u00BDes
-   * @param idConta ID da Conta do cart\u00EF\u00BF\u00BDo de origem
-   * @param idCartao ID do cart\u00EF\u00BF\u00BDo de origem
-   * @param idCartaoDestino ID do cart\u00EF\u00BF\u00BDo de destino
+   * Transferir valores entre dois cart\u00C3\u00B5es distintos
+   * Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
+   * @param idConta ID da Conta do cart\u00C3\u00A3o de origem
+   * @param idCartao ID do cart\u00C3\u00A3o de origem
+   * @param idCartaoDestino ID do cart\u00C3\u00A3o de destino
    * @param valor Valor a ser transferido
-   * @return ResponseEntity
+   * @return Response
    */
-  public ResponseEntity  transferirUsingPOST (Long idConta, Long idCartao, Long idCartaoDestino, Double valor) throws ApiException {
+  public Response  transferirUsingPOST (Long idConta, Long idCartao, Long idCartaoDestino, Double valor) throws ApiException {
     Object postBody = valor;
     
     // verify the required parameter 'idConta' is set
@@ -766,7 +765,7 @@ public class CartaoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ResponseEntity) ApiInvoker.deserialize(response, "", ResponseEntity.class);
+        return (Response) ApiInvoker.deserialize(response, "", Response.class);
       }
       else {
         return null;
@@ -777,10 +776,10 @@ public class CartaoApi {
   }
   
   /**
-   * Atualiza um cart\u00EF\u00BF\u00BDo
-   * Atualiza um cart\u00EF\u00BF\u00BDo
+   * Atualiza um cart\u00C3\u00A3o
+   * Atualiza um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
-   * @param cartao Cart\u00EF\u00BF\u00BDo a ser atualizado
+   * @param cartao Cart\u00C3\u00A3o a ser atualizado
    * @return Cartao
    */
   public Cartao  updateUsingPUT (Long idConta, Cartao cartao) throws ApiException {
@@ -842,4 +841,3 @@ public class CartaoApi {
   }
   
 }
-

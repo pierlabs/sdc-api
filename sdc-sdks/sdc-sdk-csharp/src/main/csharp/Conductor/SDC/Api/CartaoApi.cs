@@ -18,156 +18,156 @@ namespace Conductor.SDC.Api
         #region Synchronous Operations
         
         /// <summary>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <remarks>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser bloqueado</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity BloquearUsingPUT (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser bloqueado</param>
+        /// <returns>Response</returns>
+        Response BloquearUsingPUT (long? idConta, long? idCartao);
   
         /// <summary>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <remarks>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser bloqueado</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        ApiResponse<ResponseEntity> BloquearUsingPUTWithHttpInfo (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser bloqueado</param>
+        /// <returns>ApiResponse of Response</returns>
+        ApiResponse<Response> BloquearUsingPUTWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser cancelado</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity CancelarUsingDELETE (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser cancelado</param>
+        /// <returns>Response</returns>
+        Response CancelarUsingDELETE (long? idConta, long? idCartao);
   
         /// <summary>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser cancelado</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        ApiResponse<ResponseEntity> CancelarUsingDELETEWithHttpInfo (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser cancelado</param>
+        /// <returns>ApiResponse of Response</returns>
+        ApiResponse<Response> CancelarUsingDELETEWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Cria um cart\u00EF\u00BF\u00BDo
+        /// Cria um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Cria um cart\u00EF\u00BF\u00BDo
+        /// Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser criado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser criado</param>
         /// <returns>Cartao</returns>
         Cartao CreateUsingPOST (long? idConta, Cartao cartao);
   
         /// <summary>
-        /// Cria um cart\u00EF\u00BF\u00BDo
+        /// Cria um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Cria um cart\u00EF\u00BF\u00BDo
+        /// Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser criado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser criado</param>
         /// <returns>ApiResponse of Cartao</returns>
         ApiResponse<Cartao> CreateUsingPOSTWithHttpInfo (long? idConta, Cartao cartao);
         
         /// <summary>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Creditar dinheiro em um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
         /// <param name="valor">Valor a ser creditado</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity CreditarUsingPUT (long? idConta, long? idCartao, double? valor);
+        /// <returns>Response</returns>
+        Response CreditarUsingPUT (long? idConta, long? idCartao, double? valor);
   
         /// <summary>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Creditar dinheiro em um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
         /// <param name="valor">Valor a ser creditado</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        ApiResponse<ResponseEntity> CreditarUsingPUTWithHttpInfo (long? idConta, long? idCartao, double? valor);
+        /// <returns>ApiResponse of Response</returns>
+        ApiResponse<Response> CreditarUsingPUTWithHttpInfo (long? idConta, long? idCartao, double? valor);
         
         /// <summary>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <remarks>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um determinado cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser desbloqueado</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity DesbloquearUsingPUT (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser desbloqueado</param>
+        /// <returns>Response</returns>
+        Response DesbloquearUsingPUT (long? idConta, long? idCartao);
   
         /// <summary>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <remarks>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um determinado cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser desbloqueado</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        ApiResponse<ResponseEntity> DesbloquearUsingPUTWithHttpInfo (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser desbloqueado</param>
+        /// <returns>ApiResponse of Response</returns>
+        ApiResponse<Response> DesbloquearUsingPUTWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity ExtratosUsingPOST (long? idConta, long? idCartao);
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
+        /// <returns>Response</returns>
+        Response ExtratosUsingPOST (long? idConta, long? idCartao);
   
         /// <summary>
-        /// Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        ApiResponse<ResponseEntity> ExtratosUsingPOSTWithHttpInfo (long? idConta, long? idCartao);
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
+        /// <returns>ApiResponse of Response</returns>
+        ApiResponse<Response> ExtratosUsingPOSTWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Retona todos os cart\u00C3\u00A3o de uma conta
         /// </summary>
         /// <remarks>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Consulte todos os carteos de uma determinada conta.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
@@ -175,10 +175,10 @@ namespace Conductor.SDC.Api
         List<Cartao> GetAllUsingGET (long? idConta);
   
         /// <summary>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Retona todos os cart\u00C3\u00A3o de uma conta
         /// </summary>
         /// <remarks>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Consulte todos os carteos de uma determinada conta.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
@@ -186,128 +186,128 @@ namespace Conductor.SDC.Api
         ApiResponse<List<Cartao>> GetAllUsingGETWithHttpInfo (long? idConta);
         
         /// <summary>
-        /// Retorna um cart\u00EF\u00BF\u00BDo
+        /// Retorna um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Retorna um cart\u00EF\u00BF\u00BDo
+        /// Consulte um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do Cart\u00EF\u00BF\u00BDo</param>
+        /// <param name="idCartao">ID do Cart\u00C3\u00A3o</param>
         /// <returns>Cartao</returns>
         Cartao GetOneUsingGET (long? idConta, long? idCartao);
   
         /// <summary>
-        /// Retorna um cart\u00EF\u00BF\u00BDo
+        /// Retorna um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Retorna um cart\u00EF\u00BF\u00BDo
+        /// Consulte um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do Cart\u00EF\u00BF\u00BDo</param>
+        /// <param name="idCartao">ID do Cart\u00C3\u00A3o</param>
         /// <returns>ApiResponse of Cartao</returns>
         ApiResponse<Cartao> GetOneUsingGETWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna o limite do cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Consultar o limite de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity LimiteUsingGET (long? idConta, long? idCartao);
+        /// <returns>Limite</returns>
+        Limite LimiteUsingGET (long? idConta, long? idCartao);
   
         /// <summary>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna o limite do cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Consultar o limite de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        ApiResponse<ResponseEntity> LimiteUsingGETWithHttpInfo (long? idConta, long? idCartao);
+        /// <returns>ApiResponse of Limite</returns>
+        ApiResponse<Limite> LimiteUsingGETWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
         /// Transacionar valores
         /// </summary>
         /// <remarks>
-        /// Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+        /// Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <param name="valor">Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity TransacionarUsingPUT (long? idConta, long? idCartao, double? valor);
+        /// <param name="valor">Valor da transa\u00C3\u00A7\u00C3\u00A3o</param>
+        /// <returns>Response</returns>
+        Response TransacionarUsingPUT (long? idConta, long? idCartao, double? valor);
   
         /// <summary>
         /// Transacionar valores
         /// </summary>
         /// <remarks>
-        /// Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+        /// Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <param name="valor">Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        ApiResponse<ResponseEntity> TransacionarUsingPUTWithHttpInfo (long? idConta, long? idCartao, double? valor);
+        /// <param name="valor">Valor da transa\u00C3\u00A7\u00C3\u00A3o</param>
+        /// <returns>ApiResponse of Response</returns>
+        ApiResponse<Response> TransacionarUsingPUTWithHttpInfo (long? idConta, long? idCartao, double? valor);
         
         /// <summary>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+        /// Transferir valores entre dois cart\u00C3\u00B5es distintos
         /// </summary>
         /// <remarks>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+        /// Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="idConta">ID da Conta do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartaoDestino">ID do cart\u00EF\u00BF\u00BDo de destino</param>
+        /// <param name="idConta">ID da Conta do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartaoDestino">ID do cart\u00C3\u00A3o de destino</param>
         /// <param name="valor">Valor a ser transferido</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity TransferirUsingPOST (long? idConta, long? idCartao, long? idCartaoDestino, double? valor);
+        /// <returns>Response</returns>
+        Response TransferirUsingPOST (long? idConta, long? idCartao, long? idCartaoDestino, double? valor);
   
         /// <summary>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+        /// Transferir valores entre dois cart\u00C3\u00B5es distintos
         /// </summary>
         /// <remarks>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+        /// Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="idConta">ID da Conta do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartaoDestino">ID do cart\u00EF\u00BF\u00BDo de destino</param>
+        /// <param name="idConta">ID da Conta do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartaoDestino">ID do cart\u00C3\u00A3o de destino</param>
         /// <param name="valor">Valor a ser transferido</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        ApiResponse<ResponseEntity> TransferirUsingPOSTWithHttpInfo (long? idConta, long? idCartao, long? idCartaoDestino, double? valor);
+        /// <returns>ApiResponse of Response</returns>
+        ApiResponse<Response> TransferirUsingPOSTWithHttpInfo (long? idConta, long? idCartao, long? idCartaoDestino, double? valor);
         
         /// <summary>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser atualizado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser atualizado</param>
         /// <returns>Cartao</returns>
         Cartao UpdateUsingPUT (long? idConta, Cartao cartao);
   
         /// <summary>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser atualizado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser atualizado</param>
         /// <returns>ApiResponse of Cartao</returns>
         ApiResponse<Cartao> UpdateUsingPUTWithHttpInfo (long? idConta, Cartao cartao);
         
@@ -316,156 +316,156 @@ namespace Conductor.SDC.Api
         #region Asynchronous Operations
         
         /// <summary>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <remarks>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser bloqueado</param>
-        /// <returns>Task of ResponseEntity</returns>
-        System.Threading.Tasks.Task<ResponseEntity> BloquearUsingPUTAsync (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser bloqueado</param>
+        /// <returns>Task of Response</returns>
+        System.Threading.Tasks.Task<Response> BloquearUsingPUTAsync (long? idConta, long? idCartao);
 
         /// <summary>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <remarks>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser bloqueado</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> BloquearUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser bloqueado</param>
+        /// <returns>Task of ApiResponse (Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Response>> BloquearUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser cancelado</param>
-        /// <returns>Task of ResponseEntity</returns>
-        System.Threading.Tasks.Task<ResponseEntity> CancelarUsingDELETEAsync (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser cancelado</param>
+        /// <returns>Task of Response</returns>
+        System.Threading.Tasks.Task<Response> CancelarUsingDELETEAsync (long? idConta, long? idCartao);
 
         /// <summary>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser cancelado</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> CancelarUsingDELETEAsyncWithHttpInfo (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser cancelado</param>
+        /// <returns>Task of ApiResponse (Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Response>> CancelarUsingDELETEAsyncWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Cria um cart\u00EF\u00BF\u00BDo
+        /// Cria um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Cria um cart\u00EF\u00BF\u00BDo
+        /// Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser criado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser criado</param>
         /// <returns>Task of Cartao</returns>
         System.Threading.Tasks.Task<Cartao> CreateUsingPOSTAsync (long? idConta, Cartao cartao);
 
         /// <summary>
-        /// Cria um cart\u00EF\u00BF\u00BDo
+        /// Cria um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Cria um cart\u00EF\u00BF\u00BDo
+        /// Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser criado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser criado</param>
         /// <returns>Task of ApiResponse (Cartao)</returns>
         System.Threading.Tasks.Task<ApiResponse<Cartao>> CreateUsingPOSTAsyncWithHttpInfo (long? idConta, Cartao cartao);
         
         /// <summary>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Creditar dinheiro em um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
         /// <param name="valor">Valor a ser creditado</param>
-        /// <returns>Task of ResponseEntity</returns>
-        System.Threading.Tasks.Task<ResponseEntity> CreditarUsingPUTAsync (long? idConta, long? idCartao, double? valor);
+        /// <returns>Task of Response</returns>
+        System.Threading.Tasks.Task<Response> CreditarUsingPUTAsync (long? idConta, long? idCartao, double? valor);
 
         /// <summary>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Creditar dinheiro em um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
         /// <param name="valor">Valor a ser creditado</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> CreditarUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao, double? valor);
+        /// <returns>Task of ApiResponse (Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Response>> CreditarUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao, double? valor);
         
         /// <summary>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <remarks>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um determinado cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser desbloqueado</param>
-        /// <returns>Task of ResponseEntity</returns>
-        System.Threading.Tasks.Task<ResponseEntity> DesbloquearUsingPUTAsync (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser desbloqueado</param>
+        /// <returns>Task of Response</returns>
+        System.Threading.Tasks.Task<Response> DesbloquearUsingPUTAsync (long? idConta, long? idCartao);
 
         /// <summary>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <remarks>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um determinado cart\u00C3\u00A3o.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser desbloqueado</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> DesbloquearUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao);
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser desbloqueado</param>
+        /// <returns>Task of ApiResponse (Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Response>> DesbloquearUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo</param>
-        /// <returns>Task of ResponseEntity</returns>
-        System.Threading.Tasks.Task<ResponseEntity> ExtratosUsingPOSTAsync (long? idConta, long? idCartao);
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
+        /// <returns>Task of Response</returns>
+        System.Threading.Tasks.Task<Response> ExtratosUsingPOSTAsync (long? idConta, long? idCartao);
 
         /// <summary>
-        /// Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> ExtratosUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao);
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
+        /// <returns>Task of ApiResponse (Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Response>> ExtratosUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Retona todos os cart\u00C3\u00A3o de uma conta
         /// </summary>
         /// <remarks>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Consulte todos os carteos de uma determinada conta.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
@@ -473,10 +473,10 @@ namespace Conductor.SDC.Api
         System.Threading.Tasks.Task<List<Cartao>> GetAllUsingGETAsync (long? idConta);
 
         /// <summary>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Retona todos os cart\u00C3\u00A3o de uma conta
         /// </summary>
         /// <remarks>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Consulte todos os carteos de uma determinada conta.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
@@ -484,128 +484,128 @@ namespace Conductor.SDC.Api
         System.Threading.Tasks.Task<ApiResponse<List<Cartao>>> GetAllUsingGETAsyncWithHttpInfo (long? idConta);
         
         /// <summary>
-        /// Retorna um cart\u00EF\u00BF\u00BDo
+        /// Retorna um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Retorna um cart\u00EF\u00BF\u00BDo
+        /// Consulte um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do Cart\u00EF\u00BF\u00BDo</param>
+        /// <param name="idCartao">ID do Cart\u00C3\u00A3o</param>
         /// <returns>Task of Cartao</returns>
         System.Threading.Tasks.Task<Cartao> GetOneUsingGETAsync (long? idConta, long? idCartao);
 
         /// <summary>
-        /// Retorna um cart\u00EF\u00BF\u00BDo
+        /// Retorna um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Retorna um cart\u00EF\u00BF\u00BDo
+        /// Consulte um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do Cart\u00EF\u00BF\u00BDo</param>
+        /// <param name="idCartao">ID do Cart\u00C3\u00A3o</param>
         /// <returns>Task of ApiResponse (Cartao)</returns>
         System.Threading.Tasks.Task<ApiResponse<Cartao>> GetOneUsingGETAsyncWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna o limite do cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Consultar o limite de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <returns>Task of ResponseEntity</returns>
-        System.Threading.Tasks.Task<ResponseEntity> LimiteUsingGETAsync (long? idConta, long? idCartao);
+        /// <returns>Task of Limite</returns>
+        System.Threading.Tasks.Task<Limite> LimiteUsingGETAsync (long? idConta, long? idCartao);
 
         /// <summary>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna o limite do cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Consultar o limite de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> LimiteUsingGETAsyncWithHttpInfo (long? idConta, long? idCartao);
+        /// <returns>Task of ApiResponse (Limite)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Limite>> LimiteUsingGETAsyncWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
         /// Transacionar valores
         /// </summary>
         /// <remarks>
-        /// Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+        /// Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <param name="valor">Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo</param>
-        /// <returns>Task of ResponseEntity</returns>
-        System.Threading.Tasks.Task<ResponseEntity> TransacionarUsingPUTAsync (long? idConta, long? idCartao, double? valor);
+        /// <param name="valor">Valor da transa\u00C3\u00A7\u00C3\u00A3o</param>
+        /// <returns>Task of Response</returns>
+        System.Threading.Tasks.Task<Response> TransacionarUsingPUTAsync (long? idConta, long? idCartao, double? valor);
 
         /// <summary>
         /// Transacionar valores
         /// </summary>
         /// <remarks>
-        /// Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+        /// Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <param name="valor">Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> TransacionarUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao, double? valor);
+        /// <param name="valor">Valor da transa\u00C3\u00A7\u00C3\u00A3o</param>
+        /// <returns>Task of ApiResponse (Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Response>> TransacionarUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao, double? valor);
         
         /// <summary>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+        /// Transferir valores entre dois cart\u00C3\u00B5es distintos
         /// </summary>
         /// <remarks>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+        /// Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="idConta">ID da Conta do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartaoDestino">ID do cart\u00EF\u00BF\u00BDo de destino</param>
+        /// <param name="idConta">ID da Conta do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartaoDestino">ID do cart\u00C3\u00A3o de destino</param>
         /// <param name="valor">Valor a ser transferido</param>
-        /// <returns>Task of ResponseEntity</returns>
-        System.Threading.Tasks.Task<ResponseEntity> TransferirUsingPOSTAsync (long? idConta, long? idCartao, long? idCartaoDestino, double? valor);
+        /// <returns>Task of Response</returns>
+        System.Threading.Tasks.Task<Response> TransferirUsingPOSTAsync (long? idConta, long? idCartao, long? idCartaoDestino, double? valor);
 
         /// <summary>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+        /// Transferir valores entre dois cart\u00C3\u00B5es distintos
         /// </summary>
         /// <remarks>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+        /// Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="idConta">ID da Conta do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartaoDestino">ID do cart\u00EF\u00BF\u00BDo de destino</param>
+        /// <param name="idConta">ID da Conta do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartaoDestino">ID do cart\u00C3\u00A3o de destino</param>
         /// <param name="valor">Valor a ser transferido</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> TransferirUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao, long? idCartaoDestino, double? valor);
+        /// <returns>Task of ApiResponse (Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Response>> TransferirUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao, long? idCartaoDestino, double? valor);
         
         /// <summary>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser atualizado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser atualizado</param>
         /// <returns>Task of Cartao</returns>
         System.Threading.Tasks.Task<Cartao> UpdateUsingPUTAsync (long? idConta, Cartao cartao);
 
         /// <summary>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um cart\u00C3\u00A3o
         /// </summary>
         /// <remarks>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser atualizado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser atualizado</param>
         /// <returns>Task of ApiResponse (Cartao)</returns>
         System.Threading.Tasks.Task<ApiResponse<Cartao>> UpdateUsingPUTAsyncWithHttpInfo (long? idConta, Cartao cartao);
         
@@ -702,26 +702,26 @@ namespace Conductor.SDC.Api
    
         
         /// <summary>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo. Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o. Bloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser bloqueado</param> 
-        /// <returns>ResponseEntity</returns>
-        public ResponseEntity BloquearUsingPUT (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser bloqueado</param> 
+        /// <returns>Response</returns>
+        public Response BloquearUsingPUT (long? idConta, long? idCartao)
         {
-             ApiResponse<ResponseEntity> localVarResponse = BloquearUsingPUTWithHttpInfo(idConta, idCartao);
+             ApiResponse<Response> localVarResponse = BloquearUsingPUTWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo. Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o. Bloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser bloqueado</param> 
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        public ApiResponse< ResponseEntity > BloquearUsingPUTWithHttpInfo (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser bloqueado</param> 
+        /// <returns>ApiResponse of Response</returns>
+        public ApiResponse< Response > BloquearUsingPUTWithHttpInfo (long? idConta, long? idCartao)
         {
             
             // verify the required parameter 'idConta' is set
@@ -787,35 +787,35 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling BloquearUsingPUT: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
     
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
 
         
         /// <summary>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo. Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o. Bloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser bloqueado</param>
-        /// <returns>Task of ResponseEntity</returns>
-        public async System.Threading.Tasks.Task<ResponseEntity> BloquearUsingPUTAsync (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser bloqueado</param>
+        /// <returns>Task of Response</returns>
+        public async System.Threading.Tasks.Task<Response> BloquearUsingPUTAsync (long? idConta, long? idCartao)
         {
-             ApiResponse<ResponseEntity> localVarResponse = await BloquearUsingPUTAsyncWithHttpInfo(idConta, idCartao);
+             ApiResponse<Response> localVarResponse = await BloquearUsingPUTAsyncWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Bloquear um cart\u00EF\u00BF\u00BDo. Bloquear um cart\u00EF\u00BF\u00BDo.
+        /// Bloquear um cart\u00C3\u00A3o. Bloquear um cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser bloqueado</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> BloquearUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser bloqueado</param>
+        /// <returns>Task of ApiResponse (Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Response>> BloquearUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao)
         {
             // verify the required parameter 'idConta' is set
             if (idConta == null) throw new ApiException(400, "Missing required parameter 'idConta' when calling BloquearUsingPUT");
@@ -878,33 +878,33 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling BloquearUsingPUT: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
         
         /// <summary>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um cart\u00C3\u00A3o Cancelar um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser cancelado</param> 
-        /// <returns>ResponseEntity</returns>
-        public ResponseEntity CancelarUsingDELETE (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser cancelado</param> 
+        /// <returns>Response</returns>
+        public Response CancelarUsingDELETE (long? idConta, long? idCartao)
         {
-             ApiResponse<ResponseEntity> localVarResponse = CancelarUsingDELETEWithHttpInfo(idConta, idCartao);
+             ApiResponse<Response> localVarResponse = CancelarUsingDELETEWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um cart\u00C3\u00A3o Cancelar um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser cancelado</param> 
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        public ApiResponse< ResponseEntity > CancelarUsingDELETEWithHttpInfo (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser cancelado</param> 
+        /// <returns>ApiResponse of Response</returns>
+        public ApiResponse< Response > CancelarUsingDELETEWithHttpInfo (long? idConta, long? idCartao)
         {
             
             // verify the required parameter 'idConta' is set
@@ -970,35 +970,35 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling CancelarUsingDELETE: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
     
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
 
         
         /// <summary>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um cart\u00C3\u00A3o Cancelar um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser cancelado</param>
-        /// <returns>Task of ResponseEntity</returns>
-        public async System.Threading.Tasks.Task<ResponseEntity> CancelarUsingDELETEAsync (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser cancelado</param>
+        /// <returns>Task of Response</returns>
+        public async System.Threading.Tasks.Task<Response> CancelarUsingDELETEAsync (long? idConta, long? idCartao)
         {
-             ApiResponse<ResponseEntity> localVarResponse = await CancelarUsingDELETEAsyncWithHttpInfo(idConta, idCartao);
+             ApiResponse<Response> localVarResponse = await CancelarUsingDELETEAsyncWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Cancelar um cart\u00EF\u00BF\u00BDo Cancelar um cart\u00EF\u00BF\u00BDo
+        /// Cancelar um cart\u00C3\u00A3o Cancelar um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser cancelado</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> CancelarUsingDELETEAsyncWithHttpInfo (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser cancelado</param>
+        /// <returns>Task of ApiResponse (Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Response>> CancelarUsingDELETEAsyncWithHttpInfo (long? idConta, long? idCartao)
         {
             // verify the required parameter 'idConta' is set
             if (idConta == null) throw new ApiException(400, "Missing required parameter 'idConta' when calling CancelarUsingDELETE");
@@ -1061,18 +1061,18 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling CancelarUsingDELETE: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
         
         /// <summary>
-        /// Cria um cart\u00EF\u00BF\u00BDo Cria um cart\u00EF\u00BF\u00BDo
+        /// Cria um cart\u00C3\u00A3o Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser criado</param> 
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser criado</param> 
         /// <returns>Cartao</returns>
         public Cartao CreateUsingPOST (long? idConta, Cartao cartao)
         {
@@ -1081,11 +1081,11 @@ namespace Conductor.SDC.Api
         }
 
         /// <summary>
-        /// Cria um cart\u00EF\u00BF\u00BDo Cria um cart\u00EF\u00BF\u00BDo
+        /// Cria um cart\u00C3\u00A3o Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser criado</param> 
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser criado</param> 
         /// <returns>ApiResponse of Cartao</returns>
         public ApiResponse< Cartao > CreateUsingPOSTWithHttpInfo (long? idConta, Cartao cartao)
         {
@@ -1167,11 +1167,11 @@ namespace Conductor.SDC.Api
 
         
         /// <summary>
-        /// Cria um cart\u00EF\u00BF\u00BDo Cria um cart\u00EF\u00BF\u00BDo
+        /// Cria um cart\u00C3\u00A3o Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser criado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser criado</param>
         /// <returns>Task of Cartao</returns>
         public async System.Threading.Tasks.Task<Cartao> CreateUsingPOSTAsync (long? idConta, Cartao cartao)
         {
@@ -1181,11 +1181,11 @@ namespace Conductor.SDC.Api
         }
 
         /// <summary>
-        /// Cria um cart\u00EF\u00BF\u00BDo Cria um cart\u00EF\u00BF\u00BDo
+        /// Cria um cart\u00C3\u00A3o Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser criado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser criado</param>
         /// <returns>Task of ApiResponse (Cartao)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Cartao>> CreateUsingPOSTAsyncWithHttpInfo (long? idConta, Cartao cartao)
         {
@@ -1263,28 +1263,28 @@ namespace Conductor.SDC.Api
         }
         
         /// <summary>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Creditar dinheiro em um cart\u00C3\u00A3o Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
         /// <param name="idCartao">ID do Cartao a ser creditado</param> 
         /// <param name="valor">Valor a ser creditado</param> 
-        /// <returns>ResponseEntity</returns>
-        public ResponseEntity CreditarUsingPUT (long? idConta, long? idCartao, double? valor)
+        /// <returns>Response</returns>
+        public Response CreditarUsingPUT (long? idConta, long? idCartao, double? valor)
         {
-             ApiResponse<ResponseEntity> localVarResponse = CreditarUsingPUTWithHttpInfo(idConta, idCartao, valor);
+             ApiResponse<Response> localVarResponse = CreditarUsingPUTWithHttpInfo(idConta, idCartao, valor);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Creditar dinheiro em um cart\u00C3\u00A3o Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
         /// <param name="idCartao">ID do Cartao a ser creditado</param> 
         /// <param name="valor">Valor a ser creditado</param> 
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        public ApiResponse< ResponseEntity > CreditarUsingPUTWithHttpInfo (long? idConta, long? idCartao, double? valor)
+        /// <returns>ApiResponse of Response</returns>
+        public ApiResponse< Response > CreditarUsingPUTWithHttpInfo (long? idConta, long? idCartao, double? valor)
         {
             
             // verify the required parameter 'idConta' is set
@@ -1361,37 +1361,37 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling CreditarUsingPUT: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
     
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
 
         
         /// <summary>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Creditar dinheiro em um cart\u00C3\u00A3o Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
         /// <param name="valor">Valor a ser creditado</param>
-        /// <returns>Task of ResponseEntity</returns>
-        public async System.Threading.Tasks.Task<ResponseEntity> CreditarUsingPUTAsync (long? idConta, long? idCartao, double? valor)
+        /// <returns>Task of Response</returns>
+        public async System.Threading.Tasks.Task<Response> CreditarUsingPUTAsync (long? idConta, long? idCartao, double? valor)
         {
-             ApiResponse<ResponseEntity> localVarResponse = await CreditarUsingPUTAsyncWithHttpInfo(idConta, idCartao, valor);
+             ApiResponse<Response> localVarResponse = await CreditarUsingPUTAsyncWithHttpInfo(idConta, idCartao, valor);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Creditar dinheiro em um cart\u00EF\u00BF\u00BDo Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+        /// Creditar dinheiro em um cart\u00C3\u00A3o Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
         /// <param name="valor">Valor a ser creditado</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> CreditarUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao, double? valor)
+        /// <returns>Task of ApiResponse (Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Response>> CreditarUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao, double? valor)
         {
             // verify the required parameter 'idConta' is set
             if (idConta == null) throw new ApiException(400, "Missing required parameter 'idConta' when calling CreditarUsingPUT");
@@ -1463,33 +1463,33 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling CreditarUsingPUT: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
         
         /// <summary>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo. Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um cart\u00C3\u00A3o. Desbloquear um determinado cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser desbloqueado</param> 
-        /// <returns>ResponseEntity</returns>
-        public ResponseEntity DesbloquearUsingPUT (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser desbloqueado</param> 
+        /// <returns>Response</returns>
+        public Response DesbloquearUsingPUT (long? idConta, long? idCartao)
         {
-             ApiResponse<ResponseEntity> localVarResponse = DesbloquearUsingPUTWithHttpInfo(idConta, idCartao);
+             ApiResponse<Response> localVarResponse = DesbloquearUsingPUTWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo. Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um cart\u00C3\u00A3o. Desbloquear um determinado cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser desbloqueado</param> 
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        public ApiResponse< ResponseEntity > DesbloquearUsingPUTWithHttpInfo (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser desbloqueado</param> 
+        /// <returns>ApiResponse of Response</returns>
+        public ApiResponse< Response > DesbloquearUsingPUTWithHttpInfo (long? idConta, long? idCartao)
         {
             
             // verify the required parameter 'idConta' is set
@@ -1555,35 +1555,35 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DesbloquearUsingPUT: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
     
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
 
         
         /// <summary>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo. Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um cart\u00C3\u00A3o. Desbloquear um determinado cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser desbloqueado</param>
-        /// <returns>Task of ResponseEntity</returns>
-        public async System.Threading.Tasks.Task<ResponseEntity> DesbloquearUsingPUTAsync (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser desbloqueado</param>
+        /// <returns>Task of Response</returns>
+        public async System.Threading.Tasks.Task<Response> DesbloquearUsingPUTAsync (long? idConta, long? idCartao)
         {
-             ApiResponse<ResponseEntity> localVarResponse = await DesbloquearUsingPUTAsyncWithHttpInfo(idConta, idCartao);
+             ApiResponse<Response> localVarResponse = await DesbloquearUsingPUTAsyncWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Desbloquear um cart\u00EF\u00BF\u00BDo. Desbloquear um cart\u00EF\u00BF\u00BDo.
+        /// Desbloquear um cart\u00C3\u00A3o. Desbloquear um determinado cart\u00C3\u00A3o.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">Cart\u00EF\u00BF\u00BDo a ser desbloqueado</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> DesbloquearUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao)
+        /// <param name="idCartao">Cart\u00C3\u00A3o a ser desbloqueado</param>
+        /// <returns>Task of ApiResponse (Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Response>> DesbloquearUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao)
         {
             // verify the required parameter 'idConta' is set
             if (idConta == null) throw new ApiException(400, "Missing required parameter 'idConta' when calling DesbloquearUsingPUT");
@@ -1646,33 +1646,33 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DesbloquearUsingPUT: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
         
         /// <summary>
-        /// Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo</param> 
-        /// <returns>ResponseEntity</returns>
-        public ResponseEntity ExtratosUsingPOST (long? idConta, long? idCartao)
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o</param> 
+        /// <returns>Response</returns>
+        public Response ExtratosUsingPOST (long? idConta, long? idCartao)
         {
-             ApiResponse<ResponseEntity> localVarResponse = ExtratosUsingPOSTWithHttpInfo(idConta, idCartao);
+             ApiResponse<Response> localVarResponse = ExtratosUsingPOSTWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo</param> 
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        public ApiResponse< ResponseEntity > ExtratosUsingPOSTWithHttpInfo (long? idConta, long? idCartao)
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o</param> 
+        /// <returns>ApiResponse of Response</returns>
+        public ApiResponse< Response > ExtratosUsingPOSTWithHttpInfo (long? idConta, long? idCartao)
         {
             
             // verify the required parameter 'idConta' is set
@@ -1738,35 +1738,35 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling ExtratosUsingPOST: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
     
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
 
         
         /// <summary>
-        /// Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo</param>
-        /// <returns>Task of ResponseEntity</returns>
-        public async System.Threading.Tasks.Task<ResponseEntity> ExtratosUsingPOSTAsync (long? idConta, long? idCartao)
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
+        /// <returns>Task of Response</returns>
+        public async System.Threading.Tasks.Task<Response> ExtratosUsingPOSTAsync (long? idConta, long? idCartao)
         {
-             ApiResponse<ResponseEntity> localVarResponse = await ExtratosUsingPOSTAsyncWithHttpInfo(idConta, idCartao);
+             ApiResponse<Response> localVarResponse = await ExtratosUsingPOSTAsyncWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> ExtratosUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao)
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
+        /// <returns>Task of ApiResponse (Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Response>> ExtratosUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao)
         {
             // verify the required parameter 'idConta' is set
             if (idConta == null) throw new ApiException(400, "Missing required parameter 'idConta' when calling ExtratosUsingPOST");
@@ -1829,14 +1829,14 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling ExtratosUsingPOST: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
         
         /// <summary>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Retona todos os cart\u00C3\u00A3o de uma conta Consulte todos os carteos de uma determinada conta.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
@@ -1848,7 +1848,7 @@ namespace Conductor.SDC.Api
         }
 
         /// <summary>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Retona todos os cart\u00C3\u00A3o de uma conta Consulte todos os carteos de uma determinada conta.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
@@ -1922,7 +1922,7 @@ namespace Conductor.SDC.Api
 
         
         /// <summary>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Retona todos os cart\u00C3\u00A3o de uma conta Consulte todos os carteos de uma determinada conta.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
@@ -1935,7 +1935,7 @@ namespace Conductor.SDC.Api
         }
 
         /// <summary>
-        /// Retona todos os cart\u00EF\u00BF\u00BDo de uma conta Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+        /// Retona todos os cart\u00C3\u00A3o de uma conta Consulte todos os carteos de uma determinada conta.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
@@ -2007,11 +2007,11 @@ namespace Conductor.SDC.Api
         }
         
         /// <summary>
-        /// Retorna um cart\u00EF\u00BF\u00BDo Retorna um cart\u00EF\u00BF\u00BDo
+        /// Retorna um cart\u00C3\u00A3o Consulte um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="idCartao">ID do Cart\u00EF\u00BF\u00BDo</param> 
+        /// <param name="idCartao">ID do Cart\u00C3\u00A3o</param> 
         /// <returns>Cartao</returns>
         public Cartao GetOneUsingGET (long? idConta, long? idCartao)
         {
@@ -2020,11 +2020,11 @@ namespace Conductor.SDC.Api
         }
 
         /// <summary>
-        /// Retorna um cart\u00EF\u00BF\u00BDo Retorna um cart\u00EF\u00BF\u00BDo
+        /// Retorna um cart\u00C3\u00A3o Consulte um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="idCartao">ID do Cart\u00EF\u00BF\u00BDo</param> 
+        /// <param name="idCartao">ID do Cart\u00C3\u00A3o</param> 
         /// <returns>ApiResponse of Cartao</returns>
         public ApiResponse< Cartao > GetOneUsingGETWithHttpInfo (long? idConta, long? idCartao)
         {
@@ -2100,11 +2100,11 @@ namespace Conductor.SDC.Api
 
         
         /// <summary>
-        /// Retorna um cart\u00EF\u00BF\u00BDo Retorna um cart\u00EF\u00BF\u00BDo
+        /// Retorna um cart\u00C3\u00A3o Consulte um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do Cart\u00EF\u00BF\u00BDo</param>
+        /// <param name="idCartao">ID do Cart\u00C3\u00A3o</param>
         /// <returns>Task of Cartao</returns>
         public async System.Threading.Tasks.Task<Cartao> GetOneUsingGETAsync (long? idConta, long? idCartao)
         {
@@ -2114,11 +2114,11 @@ namespace Conductor.SDC.Api
         }
 
         /// <summary>
-        /// Retorna um cart\u00EF\u00BF\u00BDo Retorna um cart\u00EF\u00BF\u00BDo
+        /// Retorna um cart\u00C3\u00A3o Consulte um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="idCartao">ID do Cart\u00EF\u00BF\u00BDo</param>
+        /// <param name="idCartao">ID do Cart\u00C3\u00A3o</param>
         /// <returns>Task of ApiResponse (Cartao)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Cartao>> GetOneUsingGETAsyncWithHttpInfo (long? idConta, long? idCartao)
         {
@@ -2190,26 +2190,26 @@ namespace Conductor.SDC.Api
         }
         
         /// <summary>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna o limite do cart\u00C3\u00A3o Consultar o limite de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
         /// <param name="idCartao">ID do Cartao a ser creditado</param> 
-        /// <returns>ResponseEntity</returns>
-        public ResponseEntity LimiteUsingGET (long? idConta, long? idCartao)
+        /// <returns>Limite</returns>
+        public Limite LimiteUsingGET (long? idConta, long? idCartao)
         {
-             ApiResponse<ResponseEntity> localVarResponse = LimiteUsingGETWithHttpInfo(idConta, idCartao);
+             ApiResponse<Limite> localVarResponse = LimiteUsingGETWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna o limite do cart\u00C3\u00A3o Consultar o limite de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
         /// <param name="idCartao">ID do Cartao a ser creditado</param> 
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        public ApiResponse< ResponseEntity > LimiteUsingGETWithHttpInfo (long? idConta, long? idCartao)
+        /// <returns>ApiResponse of Limite</returns>
+        public ApiResponse< Limite > LimiteUsingGETWithHttpInfo (long? idConta, long? idCartao)
         {
             
             // verify the required parameter 'idConta' is set
@@ -2275,35 +2275,35 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling LimiteUsingGET: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
     
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Limite>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Limite) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Limite)));
             
         }
 
         
         /// <summary>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna o limite do cart\u00C3\u00A3o Consultar o limite de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <returns>Task of ResponseEntity</returns>
-        public async System.Threading.Tasks.Task<ResponseEntity> LimiteUsingGETAsync (long? idConta, long? idCartao)
+        /// <returns>Task of Limite</returns>
+        public async System.Threading.Tasks.Task<Limite> LimiteUsingGETAsync (long? idConta, long? idCartao)
         {
-             ApiResponse<ResponseEntity> localVarResponse = await LimiteUsingGETAsyncWithHttpInfo(idConta, idCartao);
+             ApiResponse<Limite> localVarResponse = await LimiteUsingGETAsyncWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+        /// Retorna o limite do cart\u00C3\u00A3o Consultar o limite de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> LimiteUsingGETAsyncWithHttpInfo (long? idConta, long? idCartao)
+        /// <returns>Task of ApiResponse (Limite)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Limite>> LimiteUsingGETAsyncWithHttpInfo (long? idConta, long? idCartao)
         {
             // verify the required parameter 'idConta' is set
             if (idConta == null) throw new ApiException(400, "Missing required parameter 'idConta' when calling LimiteUsingGET");
@@ -2366,35 +2366,35 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling LimiteUsingGET: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Limite>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Limite) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Limite)));
             
         }
         
         /// <summary>
-        /// Transacionar valores Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+        /// Transacionar valores Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
         /// <param name="idCartao">ID do Cartao a ser creditado</param> 
-        /// <param name="valor">Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo</param> 
-        /// <returns>ResponseEntity</returns>
-        public ResponseEntity TransacionarUsingPUT (long? idConta, long? idCartao, double? valor)
+        /// <param name="valor">Valor da transa\u00C3\u00A7\u00C3\u00A3o</param> 
+        /// <returns>Response</returns>
+        public Response TransacionarUsingPUT (long? idConta, long? idCartao, double? valor)
         {
-             ApiResponse<ResponseEntity> localVarResponse = TransacionarUsingPUTWithHttpInfo(idConta, idCartao, valor);
+             ApiResponse<Response> localVarResponse = TransacionarUsingPUTWithHttpInfo(idConta, idCartao, valor);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Transacionar valores Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+        /// Transacionar valores Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
         /// <param name="idCartao">ID do Cartao a ser creditado</param> 
-        /// <param name="valor">Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo</param> 
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        public ApiResponse< ResponseEntity > TransacionarUsingPUTWithHttpInfo (long? idConta, long? idCartao, double? valor)
+        /// <param name="valor">Valor da transa\u00C3\u00A7\u00C3\u00A3o</param> 
+        /// <returns>ApiResponse of Response</returns>
+        public ApiResponse< Response > TransacionarUsingPUTWithHttpInfo (long? idConta, long? idCartao, double? valor)
         {
             
             // verify the required parameter 'idConta' is set
@@ -2471,37 +2471,37 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling TransacionarUsingPUT: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
     
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
 
         
         /// <summary>
-        /// Transacionar valores Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+        /// Transacionar valores Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <param name="valor">Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo</param>
-        /// <returns>Task of ResponseEntity</returns>
-        public async System.Threading.Tasks.Task<ResponseEntity> TransacionarUsingPUTAsync (long? idConta, long? idCartao, double? valor)
+        /// <param name="valor">Valor da transa\u00C3\u00A7\u00C3\u00A3o</param>
+        /// <returns>Task of Response</returns>
+        public async System.Threading.Tasks.Task<Response> TransacionarUsingPUTAsync (long? idConta, long? idCartao, double? valor)
         {
-             ApiResponse<ResponseEntity> localVarResponse = await TransacionarUsingPUTAsyncWithHttpInfo(idConta, idCartao, valor);
+             ApiResponse<Response> localVarResponse = await TransacionarUsingPUTAsyncWithHttpInfo(idConta, idCartao, valor);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Transacionar valores Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+        /// Transacionar valores Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do Cartao a ser creditado</param>
-        /// <param name="valor">Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> TransacionarUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao, double? valor)
+        /// <param name="valor">Valor da transa\u00C3\u00A7\u00C3\u00A3o</param>
+        /// <returns>Task of ApiResponse (Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Response>> TransacionarUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao, double? valor)
         {
             // verify the required parameter 'idConta' is set
             if (idConta == null) throw new ApiException(400, "Missing required parameter 'idConta' when calling TransacionarUsingPUT");
@@ -2573,37 +2573,37 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling TransacionarUsingPUT: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
         
         /// <summary>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+        /// Transferir valores entre dois cart\u00C3\u00B5es distintos Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="idConta">ID da Conta do cart\u00EF\u00BF\u00BDo de origem</param> 
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo de origem</param> 
-        /// <param name="idCartaoDestino">ID do cart\u00EF\u00BF\u00BDo de destino</param> 
+        /// <param name="idConta">ID da Conta do cart\u00C3\u00A3o de origem</param> 
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o de origem</param> 
+        /// <param name="idCartaoDestino">ID do cart\u00C3\u00A3o de destino</param> 
         /// <param name="valor">Valor a ser transferido</param> 
-        /// <returns>ResponseEntity</returns>
-        public ResponseEntity TransferirUsingPOST (long? idConta, long? idCartao, long? idCartaoDestino, double? valor)
+        /// <returns>Response</returns>
+        public Response TransferirUsingPOST (long? idConta, long? idCartao, long? idCartaoDestino, double? valor)
         {
-             ApiResponse<ResponseEntity> localVarResponse = TransferirUsingPOSTWithHttpInfo(idConta, idCartao, idCartaoDestino, valor);
+             ApiResponse<Response> localVarResponse = TransferirUsingPOSTWithHttpInfo(idConta, idCartao, idCartaoDestino, valor);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+        /// Transferir valores entre dois cart\u00C3\u00B5es distintos Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="idConta">ID da Conta do cart\u00EF\u00BF\u00BDo de origem</param> 
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo de origem</param> 
-        /// <param name="idCartaoDestino">ID do cart\u00EF\u00BF\u00BDo de destino</param> 
+        /// <param name="idConta">ID da Conta do cart\u00C3\u00A3o de origem</param> 
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o de origem</param> 
+        /// <param name="idCartaoDestino">ID do cart\u00C3\u00A3o de destino</param> 
         /// <param name="valor">Valor a ser transferido</param> 
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        public ApiResponse< ResponseEntity > TransferirUsingPOSTWithHttpInfo (long? idConta, long? idCartao, long? idCartaoDestino, double? valor)
+        /// <returns>ApiResponse of Response</returns>
+        public ApiResponse< Response > TransferirUsingPOSTWithHttpInfo (long? idConta, long? idCartao, long? idCartaoDestino, double? valor)
         {
             
             // verify the required parameter 'idConta' is set
@@ -2685,39 +2685,39 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling TransferirUsingPOST: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
     
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
 
         
         /// <summary>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+        /// Transferir valores entre dois cart\u00C3\u00B5es distintos Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="idConta">ID da Conta do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartaoDestino">ID do cart\u00EF\u00BF\u00BDo de destino</param>
+        /// <param name="idConta">ID da Conta do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartaoDestino">ID do cart\u00C3\u00A3o de destino</param>
         /// <param name="valor">Valor a ser transferido</param>
-        /// <returns>Task of ResponseEntity</returns>
-        public async System.Threading.Tasks.Task<ResponseEntity> TransferirUsingPOSTAsync (long? idConta, long? idCartao, long? idCartaoDestino, double? valor)
+        /// <returns>Task of Response</returns>
+        public async System.Threading.Tasks.Task<Response> TransferirUsingPOSTAsync (long? idConta, long? idCartao, long? idCartaoDestino, double? valor)
         {
-             ApiResponse<ResponseEntity> localVarResponse = await TransferirUsingPOSTAsyncWithHttpInfo(idConta, idCartao, idCartaoDestino, valor);
+             ApiResponse<Response> localVarResponse = await TransferirUsingPOSTAsyncWithHttpInfo(idConta, idCartao, idCartaoDestino, valor);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+        /// Transferir valores entre dois cart\u00C3\u00B5es distintos Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="idConta">ID da Conta do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartao">ID do cart\u00EF\u00BF\u00BDo de origem</param>
-        /// <param name="idCartaoDestino">ID do cart\u00EF\u00BF\u00BDo de destino</param>
+        /// <param name="idConta">ID da Conta do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartao">ID do cart\u00C3\u00A3o de origem</param>
+        /// <param name="idCartaoDestino">ID do cart\u00C3\u00A3o de destino</param>
         /// <param name="valor">Valor a ser transferido</param>
-        /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> TransferirUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao, long? idCartaoDestino, double? valor)
+        /// <returns>Task of ApiResponse (Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Response>> TransferirUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao, long? idCartaoDestino, double? valor)
         {
             // verify the required parameter 'idConta' is set
             if (idConta == null) throw new ApiException(400, "Missing required parameter 'idConta' when calling TransferirUsingPOST");
@@ -2792,18 +2792,18 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling TransferirUsingPOST: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ResponseEntity>(localVarStatusCode,
+            return new ApiResponse<Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                (Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
             
         }
         
         /// <summary>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um cart\u00C3\u00A3o Atualiza um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser atualizado</param> 
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser atualizado</param> 
         /// <returns>Cartao</returns>
         public Cartao UpdateUsingPUT (long? idConta, Cartao cartao)
         {
@@ -2812,11 +2812,11 @@ namespace Conductor.SDC.Api
         }
 
         /// <summary>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um cart\u00C3\u00A3o Atualiza um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser atualizado</param> 
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser atualizado</param> 
         /// <returns>ApiResponse of Cartao</returns>
         public ApiResponse< Cartao > UpdateUsingPUTWithHttpInfo (long? idConta, Cartao cartao)
         {
@@ -2898,11 +2898,11 @@ namespace Conductor.SDC.Api
 
         
         /// <summary>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um cart\u00C3\u00A3o Atualiza um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser atualizado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser atualizado</param>
         /// <returns>Task of Cartao</returns>
         public async System.Threading.Tasks.Task<Cartao> UpdateUsingPUTAsync (long? idConta, Cartao cartao)
         {
@@ -2912,11 +2912,11 @@ namespace Conductor.SDC.Api
         }
 
         /// <summary>
-        /// Atualiza um cart\u00EF\u00BF\u00BDo Atualiza um cart\u00EF\u00BF\u00BDo
+        /// Atualiza um cart\u00C3\u00A3o Atualiza um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
-        /// <param name="cartao">Cart\u00EF\u00BF\u00BDo a ser atualizado</param>
+        /// <param name="cartao">Cart\u00C3\u00A3o a ser atualizado</param>
         /// <returns>Task of ApiResponse (Cartao)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Cartao>> UpdateUsingPUTAsyncWithHttpInfo (long? idConta, Cartao cartao)
         {

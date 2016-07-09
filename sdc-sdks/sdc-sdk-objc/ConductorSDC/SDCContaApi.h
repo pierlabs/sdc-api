@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SDCConta.h"
-#import "SDCResponseEntity.h"
+#import "SDCResponse.h"
 #import "SDCObject.h"
 #import "SDCApiClient.h"
 
@@ -36,14 +36,14 @@
 ///
 ///
 /// Deleta uma conta
-/// Deleta um cart\u00EF\u00BF\u00BDo
+/// Deleta um cart\u00C3\u00A3o
 ///
 /// @param _id id
 /// 
 ///
-/// @return SDCResponseEntity*
+/// @return SDCResponse*
 -(NSNumber*) deleteUsingDELETEWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SDCResponseEntity* output, NSError* error)) handler;
+    completionHandler: (void (^)(SDCResponse* output, NSError* error)) handler;
 
 
 ///

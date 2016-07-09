@@ -1,7 +1,7 @@
 #import "SDCContaApi.h"
 #import "SDCQueryParamCollection.h"
 #import "SDCConta.h"
-#import "SDCResponseEntity.h"
+#import "SDCResponse.h"
 
 
 @interface SDCContaApi ()
@@ -152,13 +152,13 @@ static SDCContaApi* singletonAPI = nil;
 
 ///
 /// Deleta uma conta
-/// Deleta um cart\u00EF\u00BF\u00BDo
+/// Deleta um cart\u00C3\u00A3o
 ///  @param _id id 
 ///
-///  @returns SDCResponseEntity*
+///  @returns SDCResponse*
 ///
 -(NSNumber*) deleteUsingDELETEWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SDCResponseEntity* output, NSError* error)) handler {
+    completionHandler: (void (^)(SDCResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -226,9 +226,9 @@ static SDCContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SDCResponseEntity*"
+                              responseType: @"SDCResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((SDCResponseEntity*)data, error);
+                               handler((SDCResponse*)data, error);
                            }
           ];
 }

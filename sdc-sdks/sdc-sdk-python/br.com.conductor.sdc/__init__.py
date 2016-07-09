@@ -3,7 +3,8 @@ from __future__ import absolute_import
 # import models into sdk package
 from .models.cartao import Cartao
 from .models.conta import Conta
-from .models.response_entity import ResponseEntity
+from .models.limite import Limite
+from .models.response import Response
 
 # import apis into sdk package
 from .apis.cartao_api import CartaoApi

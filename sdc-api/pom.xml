@@ -8,11 +8,11 @@
 		<version>1.0.0</version>
 	</parent>
 
-	<artifactId>sdcufpb-api</artifactId>
-	<version>0.0.1</version>
+	<artifactId>sdc-api</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>SDC SDKS Parent Project</name>
+	<name>SDC API Project</name>
 
 	<properties>
 		<assertj-core.version>3.1.0</assertj-core.version>

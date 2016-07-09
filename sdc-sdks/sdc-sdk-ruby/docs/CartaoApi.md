@@ -4,26 +4,26 @@ All URIs are relative to *https://localhost/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bloquear_using_put**](CartaoApi.md#bloquear_using_put) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/bloquear | Bloquear um cart\u00EF\u00BF\u00BDo.
-[**cancelar_using_delete**](CartaoApi.md#cancelar_using_delete) | **DELETE** /v1/contas/{idConta}/cartoes/{idCartao}/cancelar | Cancelar um cart\u00EF\u00BF\u00BDo
-[**create_using_post**](CartaoApi.md#create_using_post) | **POST** /v1/contas/{idConta}/cartoes | Cria um cart\u00EF\u00BF\u00BDo
-[**creditar_using_put**](CartaoApi.md#creditar_using_put) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/creditar | Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
-[**desbloquear_using_put**](CartaoApi.md#desbloquear_using_put) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/desbloquear | Desbloquear um cart\u00EF\u00BF\u00BDo.
-[**extratos_using_post**](CartaoApi.md#extratos_using_post) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/extratos | Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
-[**get_all_using_get**](CartaoApi.md#get_all_using_get) | **GET** /v1/contas/{idConta}/cartoes | Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
-[**get_one_using_get**](CartaoApi.md#get_one_using_get) | **GET** /v1/contas/{idConta}/cartoes/{idCartao} | Retorna um cart\u00EF\u00BF\u00BDo
-[**limite_using_get**](CartaoApi.md#limite_using_get) | **GET** /v1/contas/{idConta}/cartoes/{idCartao}/limite | Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+[**bloquear_using_put**](CartaoApi.md#bloquear_using_put) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/bloquear | Bloquear um cart\u00C3\u00A3o.
+[**cancelar_using_delete**](CartaoApi.md#cancelar_using_delete) | **DELETE** /v1/contas/{idConta}/cartoes/{idCartao}/cancelar | Cancelar um cart\u00C3\u00A3o
+[**create_using_post**](CartaoApi.md#create_using_post) | **POST** /v1/contas/{idConta}/cartoes | Cria um cart\u00C3\u00A3o
+[**creditar_using_put**](CartaoApi.md#creditar_using_put) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/creditar | Creditar dinheiro em um cart\u00C3\u00A3o
+[**desbloquear_using_put**](CartaoApi.md#desbloquear_using_put) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/desbloquear | Desbloquear um cart\u00C3\u00A3o.
+[**extratos_using_post**](CartaoApi.md#extratos_using_post) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/extratos | Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+[**get_all_using_get**](CartaoApi.md#get_all_using_get) | **GET** /v1/contas/{idConta}/cartoes | Retona todos os cart\u00C3\u00A3o de uma conta
+[**get_one_using_get**](CartaoApi.md#get_one_using_get) | **GET** /v1/contas/{idConta}/cartoes/{idCartao} | Retorna um cart\u00C3\u00A3o
+[**limite_using_get**](CartaoApi.md#limite_using_get) | **GET** /v1/contas/{idConta}/cartoes/{idCartao}/limite | Retorna o limite do cart\u00C3\u00A3o
 [**transacionar_using_put**](CartaoApi.md#transacionar_using_put) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/transacionar | Transacionar valores
-[**transferir_using_post**](CartaoApi.md#transferir_using_post) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/transferir | Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
-[**update_using_put**](CartaoApi.md#update_using_put) | **PUT** /v1/contas/{idConta}/cartoes | Atualiza um cart\u00EF\u00BF\u00BDo
+[**transferir_using_post**](CartaoApi.md#transferir_using_post) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/transferir | Transferir valores entre dois cart\u00C3\u00B5es distintos
+[**update_using_put**](CartaoApi.md#update_using_put) | **PUT** /v1/contas/{idConta}/cartoes | Atualiza um cart\u00C3\u00A3o
 
 
 # **bloquear_using_put**
-> ResponseEntity bloquear_using_put(id_conta, id_cartao)
+> Response bloquear_using_put(id_conta, id_cartao)
 
-Bloquear um cart\u00EF\u00BF\u00BDo.
+Bloquear um cart\u00C3\u00A3o.
 
-Bloquear um cart\u00EF\u00BF\u00BDo.
+Bloquear um cart\u00C3\u00A3o.
 
 ### Example
 ```ruby
@@ -41,11 +41,11 @@ api_instance = SDC::CartaoApi.new
 
 id_conta = 789 # Integer | ID da Conta
 
-id_cartao = 789 # Integer | Cart\u00EF\u00BF\u00BDo a ser bloqueado
+id_cartao = 789 # Integer | Cart\u00C3\u00A3o a ser bloqueado
 
 
 begin
-  #Bloquear um cart\u00EF\u00BF\u00BDo.
+  #Bloquear um cart\u00C3\u00A3o.
   result = api_instance.bloquear_using_put(id_conta, id_cartao)
   p result
 rescue SDC::ApiError => e
@@ -58,11 +58,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **Integer**| ID da Conta | 
- **id_cartao** | **Integer**| Cart\u00EF\u00BF\u00BDo a ser bloqueado | 
+ **id_cartao** | **Integer**| Cart\u00C3\u00A3o a ser bloqueado | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -76,11 +76,11 @@ Name | Type | Description  | Notes
 
 
 # **cancelar_using_delete**
-> ResponseEntity cancelar_using_delete(id_conta, id_cartao)
+> Response cancelar_using_delete(id_conta, id_cartao)
 
-Cancelar um cart\u00EF\u00BF\u00BDo
+Cancelar um cart\u00C3\u00A3o
 
-Cancelar um cart\u00EF\u00BF\u00BDo
+Cancelar um determinado cart\u00C3\u00A3o
 
 ### Example
 ```ruby
@@ -98,11 +98,11 @@ api_instance = SDC::CartaoApi.new
 
 id_conta = 789 # Integer | ID da Conta
 
-id_cartao = 789 # Integer | Cart\u00EF\u00BF\u00BDo a ser cancelado
+id_cartao = 789 # Integer | Cart\u00C3\u00A3o a ser cancelado
 
 
 begin
-  #Cancelar um cart\u00EF\u00BF\u00BDo
+  #Cancelar um cart\u00C3\u00A3o
   result = api_instance.cancelar_using_delete(id_conta, id_cartao)
   p result
 rescue SDC::ApiError => e
@@ -115,11 +115,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **Integer**| ID da Conta | 
- **id_cartao** | **Integer**| Cart\u00EF\u00BF\u00BDo a ser cancelado | 
+ **id_cartao** | **Integer**| Cart\u00C3\u00A3o a ser cancelado | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -135,9 +135,9 @@ Name | Type | Description  | Notes
 # **create_using_post**
 > Cartao create_using_post(id_conta, cartao)
 
-Cria um cart\u00EF\u00BF\u00BDo
+Cria um cart\u00C3\u00A3o
 
-Cria um cart\u00EF\u00BF\u00BDo
+Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
 
 ### Example
 ```ruby
@@ -155,11 +155,11 @@ api_instance = SDC::CartaoApi.new
 
 id_conta = 789 # Integer | ID da Conta
 
-cartao = SDC::Cartao.new # Cartao | Cart\u00EF\u00BF\u00BDo a ser criado
+cartao = SDC::Cartao.new # Cartao | Cart\u00C3\u00A3o a ser criado
 
 
 begin
-  #Cria um cart\u00EF\u00BF\u00BDo
+  #Cria um cart\u00C3\u00A3o
   result = api_instance.create_using_post(id_conta, cartao)
   p result
 rescue SDC::ApiError => e
@@ -172,7 +172,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **Integer**| ID da Conta | 
- **cartao** | [**Cartao**](Cartao.md)| Cart\u00EF\u00BF\u00BDo a ser criado | 
+ **cartao** | [**Cartao**](Cartao.md)| Cart\u00C3\u00A3o a ser criado | 
 
 ### Return type
 
@@ -190,11 +190,11 @@ Name | Type | Description  | Notes
 
 
 # **creditar_using_put**
-> ResponseEntity creditar_using_put(id_conta, id_cartao, valor)
+> Response creditar_using_put(id_conta, id_cartao, valor)
 
-Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+Creditar dinheiro em um cart\u00C3\u00A3o
 
-Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
 
 ### Example
 ```ruby
@@ -218,7 +218,7 @@ valor = 1.2 # Float | Valor a ser creditado
 
 
 begin
-  #Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+  #Creditar dinheiro em um cart\u00C3\u00A3o
   result = api_instance.creditar_using_put(id_conta, id_cartao, valor)
   p result
 rescue SDC::ApiError => e
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -250,11 +250,11 @@ Name | Type | Description  | Notes
 
 
 # **desbloquear_using_put**
-> ResponseEntity desbloquear_using_put(id_conta, id_cartao)
+> Response desbloquear_using_put(id_conta, id_cartao)
 
-Desbloquear um cart\u00EF\u00BF\u00BDo.
+Desbloquear um cart\u00C3\u00A3o.
 
-Desbloquear um cart\u00EF\u00BF\u00BDo.
+Desbloquear um determinado cart\u00C3\u00A3o.
 
 ### Example
 ```ruby
@@ -272,11 +272,11 @@ api_instance = SDC::CartaoApi.new
 
 id_conta = 789 # Integer | ID da Conta
 
-id_cartao = 789 # Integer | Cart\u00EF\u00BF\u00BDo a ser desbloqueado
+id_cartao = 789 # Integer | Cart\u00C3\u00A3o a ser desbloqueado
 
 
 begin
-  #Desbloquear um cart\u00EF\u00BF\u00BDo.
+  #Desbloquear um cart\u00C3\u00A3o.
   result = api_instance.desbloquear_using_put(id_conta, id_cartao)
   p result
 rescue SDC::ApiError => e
@@ -289,11 +289,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **Integer**| ID da Conta | 
- **id_cartao** | **Integer**| Cart\u00EF\u00BF\u00BDo a ser desbloqueado | 
+ **id_cartao** | **Integer**| Cart\u00C3\u00A3o a ser desbloqueado | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -307,11 +307,11 @@ Name | Type | Description  | Notes
 
 
 # **extratos_using_post**
-> ResponseEntity extratos_using_post(id_conta, id_cartao)
+> Response extratos_using_post(id_conta, id_cartao)
 
-Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
 
-Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
 
 ### Example
 ```ruby
@@ -329,11 +329,11 @@ api_instance = SDC::CartaoApi.new
 
 id_conta = 789 # Integer | ID da Conta
 
-id_cartao = 789 # Integer | ID do cart\u00EF\u00BF\u00BDo
+id_cartao = 789 # Integer | ID do cart\u00C3\u00A3o
 
 
 begin
-  #Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+  #Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
   result = api_instance.extratos_using_post(id_conta, id_cartao)
   p result
 rescue SDC::ApiError => e
@@ -346,11 +346,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **Integer**| ID da Conta | 
- **id_cartao** | **Integer**| ID do cart\u00EF\u00BF\u00BDo | 
+ **id_cartao** | **Integer**| ID do cart\u00C3\u00A3o | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -366,9 +366,9 @@ Name | Type | Description  | Notes
 # **get_all_using_get**
 > Array&lt;Cartao&gt; get_all_using_get(id_conta)
 
-Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+Retona todos os cart\u00C3\u00A3o de uma conta
 
-Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+Consulte todos os carteos de uma determinada conta.
 
 ### Example
 ```ruby
@@ -388,7 +388,7 @@ id_conta = 789 # Integer | ID da Conta
 
 
 begin
-  #Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+  #Retona todos os cart\u00C3\u00A3o de uma conta
   result = api_instance.get_all_using_get(id_conta)
   p result
 rescue SDC::ApiError => e
@@ -420,9 +420,9 @@ Name | Type | Description  | Notes
 # **get_one_using_get**
 > Cartao get_one_using_get(id_conta, id_cartao)
 
-Retorna um cart\u00EF\u00BF\u00BDo
+Retorna um cart\u00C3\u00A3o
 
-Retorna um cart\u00EF\u00BF\u00BDo
+Consulte um determinado cart\u00C3\u00A3o
 
 ### Example
 ```ruby
@@ -440,11 +440,11 @@ api_instance = SDC::CartaoApi.new
 
 id_conta = 789 # Integer | ID da Conta
 
-id_cartao = 789 # Integer | ID do Cart\u00EF\u00BF\u00BDo
+id_cartao = 789 # Integer | ID do Cart\u00C3\u00A3o
 
 
 begin
-  #Retorna um cart\u00EF\u00BF\u00BDo
+  #Retorna um cart\u00C3\u00A3o
   result = api_instance.get_one_using_get(id_conta, id_cartao)
   p result
 rescue SDC::ApiError => e
@@ -457,7 +457,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **Integer**| ID da Conta | 
- **id_cartao** | **Integer**| ID do Cart\u00EF\u00BF\u00BDo | 
+ **id_cartao** | **Integer**| ID do Cart\u00C3\u00A3o | 
 
 ### Return type
 
@@ -475,11 +475,11 @@ Name | Type | Description  | Notes
 
 
 # **limite_using_get**
-> ResponseEntity limite_using_get(id_conta, id_cartao)
+> Limite limite_using_get(id_conta, id_cartao)
 
-Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+Retorna o limite do cart\u00C3\u00A3o
 
-Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+Consultar o limite de um determinado cart\u00C3\u00A3o
 
 ### Example
 ```ruby
@@ -501,7 +501,7 @@ id_cartao = 789 # Integer | ID do Cartao a ser creditado
 
 
 begin
-  #Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+  #Retorna o limite do cart\u00C3\u00A3o
   result = api_instance.limite_using_get(id_conta, id_cartao)
   p result
 rescue SDC::ApiError => e
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Limite**](Limite.md)
 
 ### Authorization
 
@@ -532,11 +532,11 @@ Name | Type | Description  | Notes
 
 
 # **transacionar_using_put**
-> ResponseEntity transacionar_using_put(id_conta, id_cartao, valor)
+> Response transacionar_using_put(id_conta, id_cartao, valor)
 
 Transacionar valores
 
-Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
 
 ### Example
 ```ruby
@@ -556,7 +556,7 @@ id_conta = 789 # Integer | ID da Conta
 
 id_cartao = 789 # Integer | ID do Cartao a ser creditado
 
-valor = 1.2 # Float | Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo
+valor = 1.2 # Float | Valor da transa\u00C3\u00A7\u00C3\u00A3o
 
 
 begin
@@ -574,11 +574,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **Integer**| ID da Conta | 
  **id_cartao** | **Integer**| ID do Cartao a ser creditado | 
- **valor** | **Float**| Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo | 
+ **valor** | **Float**| Valor da transa\u00C3\u00A7\u00C3\u00A3o | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -592,11 +592,11 @@ Name | Type | Description  | Notes
 
 
 # **transferir_using_post**
-> ResponseEntity transferir_using_post(id_conta, id_cartao, id_cartao_destino, valor)
+> Response transferir_using_post(id_conta, id_cartao, id_cartao_destino, valor)
 
-Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+Transferir valores entre dois cart\u00C3\u00B5es distintos
 
-Transferir valores entre dois cart\u00EF\u00BF\u00BDes
+Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
 
 ### Example
 ```ruby
@@ -612,17 +612,17 @@ end
 
 api_instance = SDC::CartaoApi.new
 
-id_conta = 789 # Integer | ID da Conta do cart\u00EF\u00BF\u00BDo de origem
+id_conta = 789 # Integer | ID da Conta do cart\u00C3\u00A3o de origem
 
-id_cartao = 789 # Integer | ID do cart\u00EF\u00BF\u00BDo de origem
+id_cartao = 789 # Integer | ID do cart\u00C3\u00A3o de origem
 
-id_cartao_destino = 789 # Integer | ID do cart\u00EF\u00BF\u00BDo de destino
+id_cartao_destino = 789 # Integer | ID do cart\u00C3\u00A3o de destino
 
 valor = 1.2 # Float | Valor a ser transferido
 
 
 begin
-  #Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+  #Transferir valores entre dois cart\u00C3\u00B5es distintos
   result = api_instance.transferir_using_post(id_conta, id_cartao, id_cartao_destino, valor)
   p result
 rescue SDC::ApiError => e
@@ -634,14 +634,14 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id_conta** | **Integer**| ID da Conta do cart\u00EF\u00BF\u00BDo de origem | 
- **id_cartao** | **Integer**| ID do cart\u00EF\u00BF\u00BDo de origem | 
- **id_cartao_destino** | **Integer**| ID do cart\u00EF\u00BF\u00BDo de destino | 
+ **id_conta** | **Integer**| ID da Conta do cart\u00C3\u00A3o de origem | 
+ **id_cartao** | **Integer**| ID do cart\u00C3\u00A3o de origem | 
+ **id_cartao_destino** | **Integer**| ID do cart\u00C3\u00A3o de destino | 
  **valor** | **Float**| Valor a ser transferido | 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -657,9 +657,9 @@ Name | Type | Description  | Notes
 # **update_using_put**
 > Cartao update_using_put(id_conta, cartao)
 
-Atualiza um cart\u00EF\u00BF\u00BDo
+Atualiza um cart\u00C3\u00A3o
 
-Atualiza um cart\u00EF\u00BF\u00BDo
+Atualiza um determinado cart\u00C3\u00A3o
 
 ### Example
 ```ruby
@@ -677,11 +677,11 @@ api_instance = SDC::CartaoApi.new
 
 id_conta = 789 # Integer | ID da Conta
 
-cartao = SDC::Cartao.new # Cartao | Cart\u00EF\u00BF\u00BDo a ser atualizado
+cartao = SDC::Cartao.new # Cartao | Cart\u00C3\u00A3o a ser atualizado
 
 
 begin
-  #Atualiza um cart\u00EF\u00BF\u00BDo
+  #Atualiza um cart\u00C3\u00A3o
   result = api_instance.update_using_put(id_conta, cartao)
   p result
 rescue SDC::ApiError => e
@@ -694,7 +694,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_conta** | **Integer**| ID da Conta | 
- **cartao** | [**Cartao**](Cartao.md)| Cart\u00EF\u00BF\u00BDo a ser atualizado | 
+ **cartao** | [**Cartao**](Cartao.md)| Cart\u00C3\u00A3o a ser atualizado | 
 
 ### Return type
 

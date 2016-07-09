@@ -9,8 +9,7 @@ import br.com.conductor.sdc.api.v1.model.*;
 import java.util.*;
 
 import br.com.conductor.sdc.api.v1.model.Conta;
-import br.com.conductor.sdc.api.v1.model.ResponseEntity;
-
+import br.com.conductor.sdc.api.v1.model.Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -18,7 +17,6 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.File;
-
 
 public class ContaApi {
   String basePath = "https://localhost/";
@@ -102,11 +100,11 @@ public class ContaApi {
   
   /**
    * Deleta uma conta
-   * Deleta um cart\u00EF\u00BF\u00BDo
+   * Deleta um cart\u00C3\u00A3o
    * @param id id
-   * @return ResponseEntity
+   * @return Response
    */
-  public ResponseEntity  deleteUsingDELETE (Long id) throws ApiException {
+  public Response  deleteUsingDELETE (Long id) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'id' is set
@@ -149,7 +147,7 @@ public class ContaApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ResponseEntity) ApiInvoker.deserialize(response, "", ResponseEntity.class);
+        return (Response) ApiInvoker.deserialize(response, "", Response.class);
       }
       else {
         return null;
@@ -331,4 +329,3 @@ public class ContaApi {
   }
   
 }
-

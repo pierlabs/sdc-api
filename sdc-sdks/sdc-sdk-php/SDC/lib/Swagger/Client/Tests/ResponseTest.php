@@ -1,6 +1,6 @@
 <?php
 /**
- * ResponseEntityTest
+ * ResponseTest
  *
  * PHP version 5
  *
@@ -34,7 +34,7 @@
 namespace br.com.conductor.sdc.api.v1.model;
 
 /**
- * ResponseEntityTest Class Doc Comment
+ * ResponseTest Class Doc Comment
  *
  * @category    Class
  * @description 
@@ -43,7 +43,7 @@ namespace br.com.conductor.sdc.api.v1.model;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ResponseEntityTest extends \PHPUnit_Framework_TestCase
+class ResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -61,9 +61,9 @@ class ResponseEntityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test ResponseEntity
+     * Test Response
      */
-    public function testResponseEntity() {
+    public function testResponse() {
 
     }
 

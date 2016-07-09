@@ -1,6 +1,6 @@
-#import "SDCResponseEntity.h"
+#import "SDCLimite.h"
 
-@implementation SDCResponseEntity
+@implementation SDCLimite
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"body": @"body", @"statusCode": @"statusCode" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"msg": @"msg", @"valor": @"valor" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"body", @"statusCode"];
+  NSArray *optionalProperties = @[@"msg", @"valor"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -11,9 +11,9 @@ Pod::Spec.new do |s|
     s.name             = "ConductorSDC"
     s.version          = "1.0.0"
 
-    s.summary          = "PIER Labs"
+    s.summary          = "API SDC 2016"
     s.description      = <<-DESC
-                         PIER Labs - Primeiro Hach Day SBC UFPB
+                         API desenvolvida para a 15\u00C2\u00AA semanda da computa\u00C3\u00A7\u00C3\u00A3o da UFPB em 2016
                          DESC
 
     s.platform     = :ios, '7.0'

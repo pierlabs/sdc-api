@@ -9,14 +9,12 @@
 
 
 
-@protocol SDCResponseEntity
+@protocol SDCResponse
 @end
 
-@interface SDCResponseEntity : SDCObject
+@interface SDCResponse : SDCObject
 
 
-@property(nonatomic) NSObject* body;
-
-@property(nonatomic) NSString* statusCode;
+@property(nonatomic) NSString* msg;
 
 @end

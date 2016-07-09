@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ResponseEntity', '../model/Cartao'], factory);
+    define(['../ApiClient', '../model/Response', '../model/Cartao', '../model/Limite'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ResponseEntity'), require('../model/Cartao'));
+    module.exports = factory(require('../ApiClient'), require('../model/Response'), require('../model/Cartao'), require('../model/Limite'));
   } else {
     // Browser globals (root is window)
     if (!root.SDC) {
       root.SDC = {};
     }
-    root.SDC.CartaoApi = factory(root.SDC.ApiClient, root.SDC.ResponseEntity, root.SDC.Cartao);
+    root.SDC.CartaoApi = factory(root.SDC.ApiClient, root.SDC.Response, root.SDC.Cartao, root.SDC.Limite);
   }
-}(this, function(ApiClient, ResponseEntity, Cartao) {
+}(this, function(ApiClient, Response, Cartao, Limite) {
   'use strict';
 
   /**
@@ -36,17 +36,17 @@
      * Callback function to receive the result of the bloquearUsingPUT operation.
      * @callback module:api/CartaoApi~bloquearUsingPUTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Bloquear um cart\u00EF\u00BF\u00BDo.
-     * Bloquear um cart\u00EF\u00BF\u00BDo.
+     * Bloquear um cart\u00C3\u00A3o.
+     * Bloquear um cart\u00C3\u00A3o.
      * @param {Integer} idConta ID da Conta
-     * @param {Integer} idCartao Cart\u00EF\u00BF\u00BDo a ser bloqueado
+     * @param {Integer} idCartao Cart\u00C3\u00A3o a ser bloqueado
      * @param {module:api/CartaoApi~bloquearUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/ResponseEntity}
+     * data is of type: {module:model/Response}
      */
     this.bloquearUsingPUT = function(idConta, idCartao, callback) {
       var postBody = null;
@@ -76,7 +76,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = ResponseEntity;
+      var returnType = Response;
 
       return this.apiClient.callApi(
         '/v1/contas/{idConta}/cartoes/{idCartao}/bloquear', 'PUT',
@@ -89,17 +89,17 @@
      * Callback function to receive the result of the cancelarUsingDELETE operation.
      * @callback module:api/CartaoApi~cancelarUsingDELETECallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Cancelar um cart\u00EF\u00BF\u00BDo
-     * Cancelar um cart\u00EF\u00BF\u00BDo
+     * Cancelar um cart\u00C3\u00A3o
+     * Cancelar um determinado cart\u00C3\u00A3o
      * @param {Integer} idConta ID da Conta
-     * @param {Integer} idCartao Cart\u00EF\u00BF\u00BDo a ser cancelado
+     * @param {Integer} idCartao Cart\u00C3\u00A3o a ser cancelado
      * @param {module:api/CartaoApi~cancelarUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/ResponseEntity}
+     * data is of type: {module:model/Response}
      */
     this.cancelarUsingDELETE = function(idConta, idCartao, callback) {
       var postBody = null;
@@ -129,7 +129,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = ResponseEntity;
+      var returnType = Response;
 
       return this.apiClient.callApi(
         '/v1/contas/{idConta}/cartoes/{idCartao}/cancelar', 'DELETE',
@@ -147,10 +147,10 @@
      */
 
     /**
-     * Cria um cart\u00EF\u00BF\u00BDo
-     * Cria um cart\u00EF\u00BF\u00BDo
+     * Cria um cart\u00C3\u00A3o
+     * Voc\u00C3\u00AA pode criar um cart\u00C3\u00A3o ligado h\u00C3\u00A1 uma determinada conta.
      * @param {Integer} idConta ID da Conta
-     * @param {module:model/Cartao} cartao Cart\u00EF\u00BF\u00BDo a ser criado
+     * @param {module:model/Cartao} cartao Cart\u00C3\u00A3o a ser criado
      * @param {module:api/CartaoApi~createUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Cartao}
      */
@@ -194,18 +194,18 @@
      * Callback function to receive the result of the creditarUsingPUT operation.
      * @callback module:api/CartaoApi~creditarUsingPUTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
-     * Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+     * Creditar dinheiro em um cart\u00C3\u00A3o
+     * Com esse m\u00C3\u00A9todo \u00C3\u00A9 possivel creditar qualquer valor em um cart\u00C3\u00A3o.
      * @param {Integer} idConta ID da Conta
      * @param {Integer} idCartao ID do Cartao a ser creditado
      * @param {Number} valor Valor a ser creditado
      * @param {module:api/CartaoApi~creditarUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/ResponseEntity}
+     * data is of type: {module:model/Response}
      */
     this.creditarUsingPUT = function(idConta, idCartao, valor, callback) {
       var postBody = valor;
@@ -240,7 +240,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = ResponseEntity;
+      var returnType = Response;
 
       return this.apiClient.callApi(
         '/v1/contas/{idConta}/cartoes/{idCartao}/creditar', 'PUT',
@@ -253,17 +253,17 @@
      * Callback function to receive the result of the desbloquearUsingPUT operation.
      * @callback module:api/CartaoApi~desbloquearUsingPUTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Desbloquear um cart\u00EF\u00BF\u00BDo.
-     * Desbloquear um cart\u00EF\u00BF\u00BDo.
+     * Desbloquear um cart\u00C3\u00A3o.
+     * Desbloquear um determinado cart\u00C3\u00A3o.
      * @param {Integer} idConta ID da Conta
-     * @param {Integer} idCartao Cart\u00EF\u00BF\u00BDo a ser desbloqueado
+     * @param {Integer} idCartao Cart\u00C3\u00A3o a ser desbloqueado
      * @param {module:api/CartaoApi~desbloquearUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/ResponseEntity}
+     * data is of type: {module:model/Response}
      */
     this.desbloquearUsingPUT = function(idConta, idCartao, callback) {
       var postBody = null;
@@ -293,7 +293,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = ResponseEntity;
+      var returnType = Response;
 
       return this.apiClient.callApi(
         '/v1/contas/{idConta}/cartoes/{idCartao}/desbloquear', 'PUT',
@@ -306,17 +306,17 @@
      * Callback function to receive the result of the extratosUsingPOST operation.
      * @callback module:api/CartaoApi~extratosUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
-     * Retorna os extratos de todas as transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes de um determinado cart\u00EF\u00BF\u00BDo
+     * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+     * Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
      * @param {Integer} idConta ID da Conta
-     * @param {Integer} idCartao ID do cart\u00EF\u00BF\u00BDo
+     * @param {Integer} idCartao ID do cart\u00C3\u00A3o
      * @param {module:api/CartaoApi~extratosUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/ResponseEntity}
+     * data is of type: {module:model/Response}
      */
     this.extratosUsingPOST = function(idConta, idCartao, callback) {
       var postBody = null;
@@ -346,7 +346,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = ResponseEntity;
+      var returnType = Response;
 
       return this.apiClient.callApi(
         '/v1/contas/{idConta}/cartoes/{idCartao}/extratos', 'POST',
@@ -364,8 +364,8 @@
      */
 
     /**
-     * Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
-     * Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+     * Retona todos os cart\u00C3\u00A3o de uma conta
+     * Consulte todos os carteos de uma determinada conta.
      * @param {Integer} idConta ID da Conta
      * @param {module:api/CartaoApi~getAllUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {Array.<module:model/Cartao>}
@@ -410,10 +410,10 @@
      */
 
     /**
-     * Retorna um cart\u00EF\u00BF\u00BDo
-     * Retorna um cart\u00EF\u00BF\u00BDo
+     * Retorna um cart\u00C3\u00A3o
+     * Consulte um determinado cart\u00C3\u00A3o
      * @param {Integer} idConta ID da Conta
-     * @param {Integer} idCartao ID do Cart\u00EF\u00BF\u00BDo
+     * @param {Integer} idCartao ID do Cart\u00C3\u00A3o
      * @param {module:api/CartaoApi~getOneUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Cartao}
      */
@@ -458,17 +458,17 @@
      * Callback function to receive the result of the limiteUsingGET operation.
      * @callback module:api/CartaoApi~limiteUsingGETCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/Limite} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
-     * Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+     * Retorna o limite do cart\u00C3\u00A3o
+     * Consultar o limite de um determinado cart\u00C3\u00A3o
      * @param {Integer} idConta ID da Conta
      * @param {Integer} idCartao ID do Cartao a ser creditado
      * @param {module:api/CartaoApi~limiteUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/ResponseEntity}
+     * data is of type: {module:model/Limite}
      */
     this.limiteUsingGET = function(idConta, idCartao, callback) {
       var postBody = null;
@@ -498,7 +498,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = ResponseEntity;
+      var returnType = Limite;
 
       return this.apiClient.callApi(
         '/v1/contas/{idConta}/cartoes/{idCartao}/limite', 'GET',
@@ -511,18 +511,18 @@
      * Callback function to receive the result of the transacionarUsingPUT operation.
      * @callback module:api/CartaoApi~transacionarUsingPUTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Transacionar valores
-     * Transacionar algum valor utilizando um determinado cart\u00EF\u00BF\u00BDo
+     * Transacionar algum valor utilizando um determinado cart\u00C3\u00A3o
      * @param {Integer} idConta ID da Conta
      * @param {Integer} idCartao ID do Cartao a ser creditado
-     * @param {Number} valor Valor da transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDo
+     * @param {Number} valor Valor da transa\u00C3\u00A7\u00C3\u00A3o
      * @param {module:api/CartaoApi~transacionarUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/ResponseEntity}
+     * data is of type: {module:model/Response}
      */
     this.transacionarUsingPUT = function(idConta, idCartao, valor, callback) {
       var postBody = valor;
@@ -557,7 +557,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = ResponseEntity;
+      var returnType = Response;
 
       return this.apiClient.callApi(
         '/v1/contas/{idConta}/cartoes/{idCartao}/transacionar', 'PUT',
@@ -570,19 +570,19 @@
      * Callback function to receive the result of the transferirUsingPOST operation.
      * @callback module:api/CartaoApi~transferirUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ResponseEntity} data The data returned by the service call.
+     * @param {module:model/Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
-     * Transferir valores entre dois cart\u00EF\u00BF\u00BDes
-     * @param {Integer} idConta ID da Conta do cart\u00EF\u00BF\u00BDo de origem
-     * @param {Integer} idCartao ID do cart\u00EF\u00BF\u00BDo de origem
-     * @param {Integer} idCartaoDestino ID do cart\u00EF\u00BF\u00BDo de destino
+     * Transferir valores entre dois cart\u00C3\u00B5es distintos
+     * Com esse m\u00C3\u00A9todo \u00C3\u00A9 permitido transferir qualquer valores entre dois cart\u00C3\u00B5es. Basta o cart\u00C3\u00A3o possuir limite e estar desbloqueado.
+     * @param {Integer} idConta ID da Conta do cart\u00C3\u00A3o de origem
+     * @param {Integer} idCartao ID do cart\u00C3\u00A3o de origem
+     * @param {Integer} idCartaoDestino ID do cart\u00C3\u00A3o de destino
      * @param {Number} valor Valor a ser transferido
      * @param {module:api/CartaoApi~transferirUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/ResponseEntity}
+     * data is of type: {module:model/Response}
      */
     this.transferirUsingPOST = function(idConta, idCartao, idCartaoDestino, valor, callback) {
       var postBody = valor;
@@ -623,7 +623,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = ResponseEntity;
+      var returnType = Response;
 
       return this.apiClient.callApi(
         '/v1/contas/{idConta}/cartoes/{idCartao}/transferir', 'POST',
@@ -641,10 +641,10 @@
      */
 
     /**
-     * Atualiza um cart\u00EF\u00BF\u00BDo
-     * Atualiza um cart\u00EF\u00BF\u00BDo
+     * Atualiza um cart\u00C3\u00A3o
+     * Atualiza um determinado cart\u00C3\u00A3o
      * @param {Integer} idConta ID da Conta
-     * @param {module:model/Cartao} cartao Cart\u00EF\u00BF\u00BDo a ser atualizado
+     * @param {module:model/Cartao} cartao Cart\u00C3\u00A3o a ser atualizado
      * @param {module:api/CartaoApi~updateUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Cartao}
      */

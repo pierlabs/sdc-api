@@ -68,7 +68,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for bloquearUsingPUT
      *
-     * Bloquear um cart\u00EF\u00BF\u00BDo.
+     * Bloquear um cart\u00C3\u00A3o.
      *
      */
     public function test_bloquearUsingPUT() {
@@ -78,7 +78,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for cancelarUsingDELETE
      *
-     * Cancelar um cart\u00EF\u00BF\u00BDo
+     * Cancelar um cart\u00C3\u00A3o
      *
      */
     public function test_cancelarUsingDELETE() {
@@ -88,7 +88,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createUsingPOST
      *
-     * Cria um cart\u00EF\u00BF\u00BDo
+     * Cria um cart\u00C3\u00A3o
      *
      */
     public function test_createUsingPOST() {
@@ -98,7 +98,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for creditarUsingPUT
      *
-     * Creditar dinheiro em um cart\u00EF\u00BF\u00BDo
+     * Creditar dinheiro em um cart\u00C3\u00A3o
      *
      */
     public function test_creditarUsingPUT() {
@@ -108,7 +108,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for desbloquearUsingPUT
      *
-     * Desbloquear um cart\u00EF\u00BF\u00BDo.
+     * Desbloquear um cart\u00C3\u00A3o.
      *
      */
     public function test_desbloquearUsingPUT() {
@@ -118,7 +118,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for extratosUsingPOST
      *
-     * Retonar os extratos de transa\u00EF\u00BF\u00BD\u00EF\u00BF\u00BDes do cart\u00EF\u00BF\u00BDo
+     * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
      *
      */
     public function test_extratosUsingPOST() {
@@ -128,7 +128,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getAllUsingGET
      *
-     * Retona todos os cart\u00EF\u00BF\u00BDo de uma conta
+     * Retona todos os cart\u00C3\u00A3o de uma conta
      *
      */
     public function test_getAllUsingGET() {
@@ -138,7 +138,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getOneUsingGET
      *
-     * Retorna um cart\u00EF\u00BF\u00BDo
+     * Retorna um cart\u00C3\u00A3o
      *
      */
     public function test_getOneUsingGET() {
@@ -148,7 +148,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for limiteUsingGET
      *
-     * Consultar o limite de um determinado cart\u00EF\u00BF\u00BDo
+     * Retorna o limite do cart\u00C3\u00A3o
      *
      */
     public function test_limiteUsingGET() {
@@ -168,7 +168,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for transferirUsingPOST
      *
-     * Transferir valores entre dois cart\u00EF\u00BF\u00BDes distintos
+     * Transferir valores entre dois cart\u00C3\u00B5es distintos
      *
      */
     public function test_transferirUsingPOST() {
@@ -178,7 +178,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateUsingPUT
      *
-     * Atualiza um cart\u00EF\u00BF\u00BDo
+     * Atualiza um cart\u00C3\u00A3o
      *
      */
     public function test_updateUsingPUT() {
