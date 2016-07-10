@@ -9,15 +9,19 @@ import br.com.conductor.sdc.api.v1.invoker.Pair;
 
 import br.com.conductor.sdc.api.v1.model.Response;
 import br.com.conductor.sdc.api.v1.model.Cartao;
-import br.com.conductor.sdc.api.v1.model.Transacao;
+import br.com.conductor.sdc.api.v1.model.Extrato;
 import br.com.conductor.sdc.api.v1.model.Limite;
+
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
+
 public class CartaoApi {
   private ApiClient apiClient;
 
@@ -314,13 +318,13 @@ public class CartaoApi {
   }
   
   /**
-   * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
-   * Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+   * Extratos de transa\u00C3\u00A7oes
+   * Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
    * @param idCartao ID do cart\u00C3\u00A3o
-   * @return List<Transacao>
+   * @return List<Extrato>
    */
-  public List<Transacao> extratosUsingPOST(Long idConta, Long idCartao) throws ApiException {
+  public List<Extrato> extratosUsingPOST(Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
@@ -362,7 +366,7 @@ public class CartaoApi {
     String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<List<Transacao>> returnType = new GenericType<List<Transacao>>() {};
+    GenericType<List<Extrato>> returnType = new GenericType<List<Extrato>>() {};
     return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
@@ -704,3 +708,4 @@ public class CartaoApi {
   }
   
 }
+

@@ -18,13 +18,9 @@ require 'date'
 
 module SDC
   class Response
-    attr_accessor :msg
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        
-        :'msg' => :'msg'
         
       }
     end
@@ -32,8 +28,6 @@ module SDC
     # Attribute type mapping.
     def self.swagger_types
       {
-        
-        :'msg' => :'String'
         
       }
     end
@@ -45,15 +39,6 @@ module SDC
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
-
-      
-      if attributes[:'msg']
-        
-        
-        self.msg = attributes[:'msg']
-        
-      
-      end
 
       
     end
@@ -71,24 +56,14 @@ module SDC
     # @return true if the model is valid
     def valid?
       
-      
-      
-      
-      
     end
 
-    
-    
-    
-    
-    
     
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared 
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          msg == o.msg
+      self.class == o.class
     end
 
     # @see the `==` method
@@ -100,7 +75,7 @@ module SDC
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [msg].hash
+      [].hash
     end
 
     # Builds the object from hash

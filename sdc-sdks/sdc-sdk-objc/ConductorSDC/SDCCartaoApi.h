@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SDCResponse.h"
 #import "SDCCartao.h"
-#import "SDCTransacao.h"
+#import "SDCExtrato.h"
 #import "SDCLimite.h"
 #import "SDCObject.h"
 #import "SDCApiClient.h"
@@ -101,17 +101,17 @@
 
 ///
 ///
-/// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
-/// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+/// Extratos de transa\u00C3\u00A7oes
+/// Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
 ///
 /// @param idConta ID da Conta
 /// @param idCartao ID do cart\u00C3\u00A3o
 /// 
 ///
-/// @return NSArray<SDCTransacao>*
+/// @return NSArray<SDCExtrato>*
 -(NSNumber*) extratosUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(NSArray<SDCTransacao>* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<SDCExtrato>* output, NSError* error)) handler;
 
 
 ///

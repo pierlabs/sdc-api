@@ -9,17 +9,15 @@
 
 
 
-@protocol SDCTransacao
+@protocol SDCExtrato
 @end
 
-@interface SDCTransacao : SDCObject
+@interface SDCExtrato : SDCObject
 
 
-@property(nonatomic) NSDate* dataTransacao;
+@property(nonatomic) NSDate* data;
 
-@property(nonatomic) NSNumber* _id;
-
-@property(nonatomic) NSString* msg;
+@property(nonatomic) NSString* tipo;
 
 @property(nonatomic) NSNumber* valor;
 

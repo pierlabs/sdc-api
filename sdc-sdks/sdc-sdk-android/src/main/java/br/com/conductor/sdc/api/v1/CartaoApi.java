@@ -10,8 +10,9 @@ import java.util.*;
 
 import br.com.conductor.sdc.api.v1.model.Response;
 import br.com.conductor.sdc.api.v1.model.Cartao;
-import br.com.conductor.sdc.api.v1.model.Transacao;
+import br.com.conductor.sdc.api.v1.model.Extrato;
 import br.com.conductor.sdc.api.v1.model.Limite;
+
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -19,6 +20,7 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.File;
+
 
 public class CartaoApi {
   String basePath = "https://localhost/";
@@ -373,13 +375,13 @@ public class CartaoApi {
   }
   
   /**
-   * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
-   * Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+   * Extratos de transa\u00C3\u00A7oes
+   * Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
    * @param idCartao ID do cart\u00C3\u00A3o
-   * @return List<Transacao>
+   * @return List<Extrato>
    */
-  public List<Transacao>  extratosUsingPOST (Long idConta, Long idCartao) throws ApiException {
+  public List<Extrato>  extratosUsingPOST (Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'idConta' is set
@@ -427,7 +429,7 @@ public class CartaoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (List<Transacao>) ApiInvoker.deserialize(response, "array", Transacao.class);
+        return (List<Extrato>) ApiInvoker.deserialize(response, "array", Extrato.class);
       }
       else {
         return null;
@@ -842,3 +844,4 @@ public class CartaoApi {
   }
   
 }
+

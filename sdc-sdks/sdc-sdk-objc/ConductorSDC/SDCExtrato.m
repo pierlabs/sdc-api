@@ -1,6 +1,6 @@
-#import "SDCTransacao.h"
+#import "SDCExtrato.h"
 
-@implementation SDCTransacao
+@implementation SDCExtrato
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataTransacao": @"dataTransacao", @"id": @"_id", @"msg": @"msg", @"valor": @"valor" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"data": @"data", @"tipo": @"tipo", @"valor": @"valor" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"dataTransacao", @"_id", @"msg", @"valor"];
+  NSArray *optionalProperties = @[@"data", @"tipo", @"valor"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

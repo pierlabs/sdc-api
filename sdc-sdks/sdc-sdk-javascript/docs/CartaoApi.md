@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**createUsingPOST**](CartaoApi.md#createUsingPOST) | **POST** /v1/contas/{idConta}/cartoes | Cria um cart\u00C3\u00A3o
 [**creditarUsingPUT**](CartaoApi.md#creditarUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/creditar | Creditar dinheiro em um cart\u00C3\u00A3o
 [**desbloquearUsingPUT**](CartaoApi.md#desbloquearUsingPUT) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/desbloquear | Desbloquear um cart\u00C3\u00A3o.
-[**extratosUsingPOST**](CartaoApi.md#extratosUsingPOST) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/extratos | Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+[**extratosUsingPOST**](CartaoApi.md#extratosUsingPOST) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/extratos | Extratos de transa\u00C3\u00A7oes
 [**getAllUsingGET**](CartaoApi.md#getAllUsingGET) | **GET** /v1/contas/{idConta}/cartoes | Retona todos os cart\u00C3\u00A3o de uma conta
 [**getOneUsingGET**](CartaoApi.md#getOneUsingGET) | **GET** /v1/contas/{idConta}/cartoes/{idCartao} | Retorna um cart\u00C3\u00A3o
 [**limiteUsingGET**](CartaoApi.md#limiteUsingGET) | **GET** /v1/contas/{idConta}/cartoes/{idCartao}/limite | Retorna o limite do cart\u00C3\u00A3o
@@ -303,11 +303,11 @@ Name | Type | Description  | Notes
 
 <a name="extratosUsingPOST"></a>
 # **extratosUsingPOST**
-> [Transacao] extratosUsingPOST(idConta, idCartao)
+> [Extrato] extratosUsingPOST(idConta, idCartao)
 
-Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+Extratos de transa\u00C3\u00A7oes
 
-Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
 
 ### Example
 ```javascript
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Transacao]**](Transacao.md)
+[**[Extrato]**](Extrato.md)
 
 ### Authorization
 

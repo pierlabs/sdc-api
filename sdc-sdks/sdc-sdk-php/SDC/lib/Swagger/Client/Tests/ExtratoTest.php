@@ -1,6 +1,6 @@
 <?php
 /**
- * TransacaoTest
+ * ExtratoTest
  *
  * PHP version 5
  *
@@ -34,7 +34,7 @@
 namespace br.com.conductor.sdc.api.v1.model;
 
 /**
- * TransacaoTest Class Doc Comment
+ * ExtratoTest Class Doc Comment
  *
  * @category    Class
  * @description 
@@ -43,7 +43,7 @@ namespace br.com.conductor.sdc.api.v1.model;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TransacaoTest extends \PHPUnit_Framework_TestCase
+class ExtratoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -61,9 +61,9 @@ class TransacaoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test Transacao
+     * Test Extrato
      */
-    public function testTransacao() {
+    public function testExtrato() {
 
     }
 

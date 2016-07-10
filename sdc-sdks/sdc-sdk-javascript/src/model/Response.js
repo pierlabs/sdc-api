@@ -28,7 +28,6 @@
    */
   var exports = function() {
 
-
   };
 
   /**
@@ -42,18 +41,10 @@
     if (data) { 
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('msg')) {
-        obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
-      }
     }
     return obj;
   }
 
-
-  /**
-   * @member {String} msg
-   */
-  exports.prototype['msg'] = undefined;
 
 
 

@@ -1,4 +1,4 @@
-package br.com.conductor.sbc.util;
+package br.com.conductor.sbc.util.dto;
 
 import javax.persistence.Transient;
 

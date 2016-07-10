@@ -15,45 +15,51 @@ namespace Conductor.SDC.Model
     /// 
     /// </summary>
     [DataContract]
-    public partial class Transacao :  IEquatable<Transacao>
+    public partial class Extrato :  IEquatable<Extrato>
     { 
     
         /// <summary>
-        /// Initializes a new instance of the <see cref="Transacao" /> class.
-        /// Initializes a new instance of the <see cref="Transacao" />class.
+        /// Gets or Sets Tipo
         /// </summary>
-        /// <param name="DataTransacao">DataTransacao.</param>
-        /// <param name="Id">Id.</param>
-        /// <param name="Msg">Msg.</param>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TipoEnum {
+            
+            [EnumMember(Value = "CREDITO")]
+            Credito,
+            
+            [EnumMember(Value = "DEBITO")]
+            Debito
+        }
+
+    
+        /// <summary>
+        /// Gets or Sets Tipo
+        /// </summary>
+        [DataMember(Name="tipo", EmitDefaultValue=false)]
+        public TipoEnum? Tipo { get; set; }
+    
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Extrato" /> class.
+        /// Initializes a new instance of the <see cref="Extrato" />class.
+        /// </summary>
+        /// <param name="Data">Data.</param>
+        /// <param name="Tipo">Tipo.</param>
         /// <param name="Valor">Valor.</param>
 
-        public Transacao(DateTime? DataTransacao = null, long? Id = null, string Msg = null, double? Valor = null)
+        public Extrato(DateTime? Data = null, TipoEnum? Tipo = null, double? Valor = null)
         {
-            this.DataTransacao = DataTransacao;
-            this.Id = Id;
-            this.Msg = Msg;
+            this.Data = Data;
+            this.Tipo = Tipo;
             this.Valor = Valor;
             
         }
         
     
         /// <summary>
-        /// Gets or Sets DataTransacao
+        /// Gets or Sets Data
         /// </summary>
-        [DataMember(Name="dataTransacao", EmitDefaultValue=false)]
-        public DateTime? DataTransacao { get; set; }
-    
-        /// <summary>
-        /// Gets or Sets Id
-        /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
-        public long? Id { get; set; }
-    
-        /// <summary>
-        /// Gets or Sets Msg
-        /// </summary>
-        [DataMember(Name="msg", EmitDefaultValue=false)]
-        public string Msg { get; set; }
+        [DataMember(Name="data", EmitDefaultValue=false)]
+        public DateTime? Data { get; set; }
     
         /// <summary>
         /// Gets or Sets Valor
@@ -68,10 +74,9 @@ namespace Conductor.SDC.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Transacao {\n");
-            sb.Append("  DataTransacao: ").Append(DataTransacao).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Msg: ").Append(Msg).Append("\n");
+            sb.Append("class Extrato {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Tipo: ").Append(Tipo).Append("\n");
             sb.Append("  Valor: ").Append(Valor).Append("\n");
             
             sb.Append("}\n");
@@ -95,15 +100,15 @@ namespace Conductor.SDC.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as Transacao);
+            return this.Equals(obj as Extrato);
         }
 
         /// <summary>
-        /// Returns true if Transacao instances are equal
+        /// Returns true if Extrato instances are equal
         /// </summary>
-        /// <param name="other">Instance of Transacao to be compared</param>
+        /// <param name="other">Instance of Extrato to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Transacao other)
+        public bool Equals(Extrato other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -111,19 +116,14 @@ namespace Conductor.SDC.Model
 
             return 
                 (
-                    this.DataTransacao == other.DataTransacao ||
-                    this.DataTransacao != null &&
-                    this.DataTransacao.Equals(other.DataTransacao)
+                    this.Data == other.Data ||
+                    this.Data != null &&
+                    this.Data.Equals(other.Data)
                 ) && 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
-                ) && 
-                (
-                    this.Msg == other.Msg ||
-                    this.Msg != null &&
-                    this.Msg.Equals(other.Msg)
+                    this.Tipo == other.Tipo ||
+                    this.Tipo != null &&
+                    this.Tipo.Equals(other.Tipo)
                 ) && 
                 (
                     this.Valor == other.Valor ||
@@ -144,14 +144,11 @@ namespace Conductor.SDC.Model
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
                 
-                if (this.DataTransacao != null)
-                    hash = hash * 59 + this.DataTransacao.GetHashCode();
+                if (this.Data != null)
+                    hash = hash * 59 + this.Data.GetHashCode();
                 
-                if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
-                
-                if (this.Msg != null)
-                    hash = hash * 59 + this.Msg.GetHashCode();
+                if (this.Tipo != null)
+                    hash = hash * 59 + this.Tipo.GetHashCode();
                 
                 if (this.Valor != null)
                     hash = hash * 59 + this.Valor.GetHashCode();

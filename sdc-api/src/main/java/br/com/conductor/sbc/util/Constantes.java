@@ -3,6 +3,8 @@ package br.com.conductor.sbc.util;
 
 import org.junit.Ignore;
 
+import br.com.conductor.sbc.util.dto.Response;
+
 @Ignore
 public class Constantes{
 

@@ -11,12 +11,14 @@ import java.util.*;
 import br.com.conductor.sdc.api.v1.model.Conta;
 import br.com.conductor.sdc.api.v1.model.Response;
 
+
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 
 import java.util.Map;
 import java.util.HashMap;
 import java.io.File;
+
 
 public class ContaApi {
   String basePath = "https://localhost/";
@@ -100,7 +102,7 @@ public class ContaApi {
   
   /**
    * Deleta uma conta
-   * Deleta um cart\u00C3\u00A3o
+   * Deleta uma conta
    * @param id id
    * @return Response
    */
@@ -329,3 +331,4 @@ public class ContaApi {
   }
   
 }
+

@@ -15,6 +15,4 @@
 @interface SDCResponse : SDCObject
 
 
-@property(nonatomic) NSString* msg;
-
 @end

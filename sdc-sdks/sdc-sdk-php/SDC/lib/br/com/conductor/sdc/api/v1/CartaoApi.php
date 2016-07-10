@@ -680,11 +680,11 @@ class CartaoApi
     /**
      * extratosUsingPOST
      *
-     * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+     * Extratos de transa\u00C3\u00A7oes
      *
      * @param int $id_conta ID da Conta (required)
      * @param int $id_cartao ID do cart\u00C3\u00A3o (required)
-     * @return \br.com.conductor.sdc.api.v1.model\Transacao[]
+     * @return \br.com.conductor.sdc.api.v1.model\Extrato[]
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function extratosUsingPOST($id_conta, $id_cartao)
@@ -697,11 +697,11 @@ class CartaoApi
     /**
      * extratosUsingPOSTWithHttpInfo
      *
-     * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+     * Extratos de transa\u00C3\u00A7oes
      *
      * @param int $id_conta ID da Conta (required)
      * @param int $id_cartao ID do cart\u00C3\u00A3o (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\Transacao[], HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Extrato[], HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function extratosUsingPOSTWithHttpInfo($id_conta, $id_cartao)
@@ -772,19 +772,19 @@ class CartaoApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\Transacao[]'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Extrato[]'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Transacao[]', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Extrato[]', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Transacao[]', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Extrato[]', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }

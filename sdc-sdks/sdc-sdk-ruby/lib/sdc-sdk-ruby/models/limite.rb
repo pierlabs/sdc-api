@@ -18,15 +18,11 @@ require 'date'
 
 module SDC
   class Limite
-    attr_accessor :msg
-
     attr_accessor :valor
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        
-        :'msg' => :'msg',
         
         :'valor' => :'valor'
         
@@ -36,8 +32,6 @@ module SDC
     # Attribute type mapping.
     def self.swagger_types
       {
-        
-        :'msg' => :'String',
         
         :'valor' => :'Float'
         
@@ -51,15 +45,6 @@ module SDC
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
-
-      
-      if attributes[:'msg']
-        
-        
-        self.msg = attributes[:'msg']
-        
-      
-      end
 
       
       if attributes[:'valor']
@@ -90,17 +75,8 @@ module SDC
       
       
       
-      
-      
-      
-      
     end
 
-    
-    
-    
-    
-    
     
     
     
@@ -112,7 +88,6 @@ module SDC
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          msg == o.msg &&
           valor == o.valor
     end
 
@@ -125,7 +100,7 @@ module SDC
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [msg, valor].hash
+      [valor].hash
     end
 
     # Builds the object from hash

@@ -10,7 +10,6 @@ import Foundation
 
 public class Limite: JSONEncodable {
 
-    public var msg: String?
     public var valor: Double?
     
 
@@ -19,7 +18,6 @@ public class Limite: JSONEncodable {
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
-        nillableDictionary["msg"] = self.msg
         nillableDictionary["valor"] = self.valor
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary

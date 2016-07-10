@@ -17,12 +17,10 @@ Terms of Service: http://pierlabs.io/terms/
 require 'date'
 
 module SDC
-  class Transacao
-    attr_accessor :data_transacao
+  class Extrato
+    attr_accessor :data
 
-    attr_accessor :id
-
-    attr_accessor :msg
+    attr_accessor :tipo
 
     attr_accessor :valor
 
@@ -30,11 +28,9 @@ module SDC
     def self.attribute_map
       {
         
-        :'data_transacao' => :'dataTransacao',
+        :'data' => :'data',
         
-        :'id' => :'id',
-        
-        :'msg' => :'msg',
+        :'tipo' => :'tipo',
         
         :'valor' => :'valor'
         
@@ -45,11 +41,9 @@ module SDC
     def self.swagger_types
       {
         
-        :'data_transacao' => :'DateTime',
+        :'data' => :'DateTime',
         
-        :'id' => :'Integer',
-        
-        :'msg' => :'String',
+        :'tipo' => :'String',
         
         :'valor' => :'Float'
         
@@ -65,28 +59,19 @@ module SDC
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
       
-      if attributes[:'dataTransacao']
+      if attributes[:'data']
         
         
-        self.data_transacao = attributes[:'dataTransacao']
-        
-      
-      end
-
-      
-      if attributes[:'id']
-        
-        
-        self.id = attributes[:'id']
+        self.data = attributes[:'data']
         
       
       end
 
       
-      if attributes[:'msg']
+      if attributes[:'tipo']
         
         
-        self.msg = attributes[:'msg']
+        self.tipo = attributes[:'tipo']
         
       
       end
@@ -122,9 +107,10 @@ module SDC
       
       
       
-      
-      
-      
+      allowed_values = ["CREDITO", "DEBITO"]
+      if @tipo && !allowed_values.include?(@tipo)
+        return false
+      end
       
       
       
@@ -141,12 +127,16 @@ module SDC
     
     
     
-    
-    
-    
-    
-    
-    
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] tipo Object to be assigned
+    def tipo=(tipo)
+      allowed_values = ["CREDITO", "DEBITO"]
+      if tipo && !allowed_values.include?(tipo)
+        fail ArgumentError, "invalid value for 'tipo', must be one of #{allowed_values}."
+      end
+      @tipo = tipo
+    end
+
     
     
     
@@ -160,9 +150,8 @@ module SDC
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          data_transacao == o.data_transacao &&
-          id == o.id &&
-          msg == o.msg &&
+          data == o.data &&
+          tipo == o.tipo &&
           valor == o.valor
     end
 
@@ -175,7 +164,7 @@ module SDC
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [data_transacao, id, msg, valor].hash
+      [data, tipo, valor].hash
     end
 
     # Builds the object from hash

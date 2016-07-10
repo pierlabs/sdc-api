@@ -123,12 +123,12 @@ describe 'CartaoApi' do
   end
 
   # unit tests for extratos_using_post
-  # Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
-  # Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+  # Extratos de transa\u00C3\u00A7oes
+  # Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
   # @param id_conta ID da Conta
   # @param id_cartao ID do cart\u00C3\u00A3o
   # @param [Hash] opts the optional parameters
-  # @return [Array<Transacao>]
+  # @return [Array<Extrato>]
   describe 'extratos_using_post test' do
     it "should work" do
       # assertion here

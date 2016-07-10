@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**create_using_post**](CartaoApi.md#create_using_post) | **POST** /v1/contas/{idConta}/cartoes | Cria um cart\u00C3\u00A3o
 [**creditar_using_put**](CartaoApi.md#creditar_using_put) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/creditar | Creditar dinheiro em um cart\u00C3\u00A3o
 [**desbloquear_using_put**](CartaoApi.md#desbloquear_using_put) | **PUT** /v1/contas/{idConta}/cartoes/{idCartao}/desbloquear | Desbloquear um cart\u00C3\u00A3o.
-[**extratos_using_post**](CartaoApi.md#extratos_using_post) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/extratos | Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+[**extratos_using_post**](CartaoApi.md#extratos_using_post) | **POST** /v1/contas/{idConta}/cartoes/{idCartao}/extratos | Extratos de transa\u00C3\u00A7oes
 [**get_all_using_get**](CartaoApi.md#get_all_using_get) | **GET** /v1/contas/{idConta}/cartoes | Retona todos os cart\u00C3\u00A3o de uma conta
 [**get_one_using_get**](CartaoApi.md#get_one_using_get) | **GET** /v1/contas/{idConta}/cartoes/{idCartao} | Retorna um cart\u00C3\u00A3o
 [**limite_using_get**](CartaoApi.md#limite_using_get) | **GET** /v1/contas/{idConta}/cartoes/{idCartao}/limite | Retorna o limite do cart\u00C3\u00A3o
@@ -307,11 +307,11 @@ Name | Type | Description  | Notes
 
 
 # **extratos_using_post**
-> Array&lt;Transacao&gt; extratos_using_post(id_conta, id_cartao)
+> Array&lt;Extrato&gt; extratos_using_post(id_conta, id_cartao)
 
-Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+Extratos de transa\u00C3\u00A7oes
 
-Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
 
 ### Example
 ```ruby
@@ -333,7 +333,7 @@ id_cartao = 789 # Integer | ID do cart\u00C3\u00A3o
 
 
 begin
-  #Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+  #Extratos de transa\u00C3\u00A7oes
   result = api_instance.extratos_using_post(id_conta, id_cartao)
   p result
 rescue SDC::ApiError => e
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;Transacao&gt;**](Transacao.md)
+[**Array&lt;Extrato&gt;**](Extrato.md)
 
 ### Authorization
 

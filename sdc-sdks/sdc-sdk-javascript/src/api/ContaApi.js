@@ -87,7 +87,7 @@
 
     /**
      * Deleta uma conta
-     * Deleta um cart\u00C3\u00A3o
+     * Deleta uma conta
      * @param {Integer} id id
      * @param {module:api/ContaApi~deleteUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Response}

@@ -2,6 +2,7 @@ package br.com.conductor.sdc.api.v1.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -10,69 +11,72 @@ import java.util.Date;
 
 
 
+
+
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-public class Transacao   {
+public class Extrato   {
   
-  private Date dataTransacao = null;
-  private Long id = null;
-  private String msg = null;
+  private Date data = null;
+
+
+  public enum TipoEnum {
+    CREDITO("CREDITO"),
+    DEBITO("DEBITO");
+
+    private String value;
+
+    TipoEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return value;
+    }
+  }
+
+  private TipoEnum tipo = null;
   private Double valor = null;
 
   
   /**
    **/
-  public Transacao dataTransacao(Date dataTransacao) {
-    this.dataTransacao = dataTransacao;
+  public Extrato data(Date data) {
+    this.data = data;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dataTransacao")
-  public Date getDataTransacao() {
-    return dataTransacao;
+  @JsonProperty("data")
+  public Date getData() {
+    return data;
   }
-  public void setDataTransacao(Date dataTransacao) {
-    this.dataTransacao = dataTransacao;
+  public void setData(Date data) {
+    this.data = data;
   }
 
   
   /**
    **/
-  public Transacao id(Long id) {
-    this.id = id;
+  public Extrato tipo(TipoEnum tipo) {
+    this.tipo = tipo;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public Long getId() {
-    return id;
+  @JsonProperty("tipo")
+  public TipoEnum getTipo() {
+    return tipo;
   }
-  public void setId(Long id) {
-    this.id = id;
+  public void setTipo(TipoEnum tipo) {
+    this.tipo = tipo;
   }
 
   
   /**
    **/
-  public Transacao msg(String msg) {
-    this.msg = msg;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("msg")
-  public String getMsg() {
-    return msg;
-  }
-  public void setMsg(String msg) {
-    this.msg = msg;
-  }
-
-  
-  /**
-   **/
-  public Transacao valor(Double valor) {
+  public Extrato valor(Double valor) {
     this.valor = valor;
     return this;
   }
@@ -96,26 +100,24 @@ public class Transacao   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Transacao transacao = (Transacao) o;
-    return Objects.equals(this.dataTransacao, transacao.dataTransacao) &&
-        Objects.equals(this.id, transacao.id) &&
-        Objects.equals(this.msg, transacao.msg) &&
-        Objects.equals(this.valor, transacao.valor);
+    Extrato extrato = (Extrato) o;
+    return Objects.equals(this.data, extrato.data) &&
+        Objects.equals(this.tipo, extrato.tipo) &&
+        Objects.equals(this.valor, extrato.valor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataTransacao, id, msg, valor);
+    return Objects.hash(data, tipo, valor);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Transacao {\n");
+    sb.append("class Extrato {\n");
     
-    sb.append("    dataTransacao: ").append(toIndentedString(dataTransacao)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    tipo: ").append(toIndentedString(tipo)).append("\n");
     sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -132,4 +134,6 @@ public class Transacao   {
     return o.toString().replace("\n", "\n    ");
   }
 }
+
+
 

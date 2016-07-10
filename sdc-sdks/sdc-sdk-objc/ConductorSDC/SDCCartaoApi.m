@@ -2,7 +2,7 @@
 #import "SDCQueryParamCollection.h"
 #import "SDCResponse.h"
 #import "SDCCartao.h"
-#import "SDCTransacao.h"
+#import "SDCExtrato.h"
 #import "SDCLimite.h"
 
 
@@ -548,17 +548,17 @@ static SDCCartaoApi* singletonAPI = nil;
 }
 
 ///
-/// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
-/// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+/// Extratos de transa\u00C3\u00A7oes
+/// Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
 ///  @param idConta ID da Conta 
 ///
 ///  @param idCartao ID do cart\u00C3\u00A3o 
 ///
-///  @returns NSArray<SDCTransacao>*
+///  @returns NSArray<SDCExtrato>*
 ///
 -(NSNumber*) extratosUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(NSArray<SDCTransacao>* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<SDCExtrato>* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idConta' is set
@@ -634,9 +634,9 @@ static SDCCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSArray<SDCTransacao>*"
+                              responseType: @"NSArray<SDCExtrato>*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((NSArray<SDCTransacao>*)data, error);
+                               handler((NSArray<SDCExtrato>*)data, error);
                            }
           ];
 }

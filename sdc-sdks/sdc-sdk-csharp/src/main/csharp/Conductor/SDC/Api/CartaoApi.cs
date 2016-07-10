@@ -140,28 +140,28 @@ namespace Conductor.SDC.Api
         ApiResponse<Response> DesbloquearUsingPUTWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+        /// Extratos de transa\u00C3\u00A7oes
         /// </summary>
         /// <remarks>
-        /// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+        /// Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
-        /// <returns>List&lt;Transacao&gt;</returns>
-        List<Transacao> ExtratosUsingPOST (long? idConta, long? idCartao);
+        /// <returns>List&lt;Extrato&gt;</returns>
+        List<Extrato> ExtratosUsingPOST (long? idConta, long? idCartao);
   
         /// <summary>
-        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+        /// Extratos de transa\u00C3\u00A7oes
         /// </summary>
         /// <remarks>
-        /// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+        /// Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
-        /// <returns>ApiResponse of List&lt;Transacao&gt;</returns>
-        ApiResponse<List<Transacao>> ExtratosUsingPOSTWithHttpInfo (long? idConta, long? idCartao);
+        /// <returns>ApiResponse of List&lt;Extrato&gt;</returns>
+        ApiResponse<List<Extrato>> ExtratosUsingPOSTWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
         /// Retona todos os cart\u00C3\u00A3o de uma conta
@@ -438,28 +438,28 @@ namespace Conductor.SDC.Api
         System.Threading.Tasks.Task<ApiResponse<Response>> DesbloquearUsingPUTAsyncWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
-        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+        /// Extratos de transa\u00C3\u00A7oes
         /// </summary>
         /// <remarks>
-        /// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+        /// Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
-        /// <returns>Task of List&lt;Transacao&gt;</returns>
-        System.Threading.Tasks.Task<List<Transacao>> ExtratosUsingPOSTAsync (long? idConta, long? idCartao);
+        /// <returns>Task of List&lt;Extrato&gt;</returns>
+        System.Threading.Tasks.Task<List<Extrato>> ExtratosUsingPOSTAsync (long? idConta, long? idCartao);
 
         /// <summary>
-        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+        /// Extratos de transa\u00C3\u00A7oes
         /// </summary>
         /// <remarks>
-        /// Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+        /// Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
-        /// <returns>Task of ApiResponse (List&lt;Transacao&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Transacao>>> ExtratosUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao);
+        /// <returns>Task of ApiResponse (List&lt;Extrato&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Extrato>>> ExtratosUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao);
         
         /// <summary>
         /// Retona todos os cart\u00C3\u00A3o de uma conta
@@ -1653,26 +1653,26 @@ namespace Conductor.SDC.Api
         }
         
         /// <summary>
-        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+        /// Extratos de transa\u00C3\u00A7oes Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
         /// <param name="idCartao">ID do cart\u00C3\u00A3o</param> 
-        /// <returns>List&lt;Transacao&gt;</returns>
-        public List<Transacao> ExtratosUsingPOST (long? idConta, long? idCartao)
+        /// <returns>List&lt;Extrato&gt;</returns>
+        public List<Extrato> ExtratosUsingPOST (long? idConta, long? idCartao)
         {
-             ApiResponse<List<Transacao>> localVarResponse = ExtratosUsingPOSTWithHttpInfo(idConta, idCartao);
+             ApiResponse<List<Extrato>> localVarResponse = ExtratosUsingPOSTWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+        /// Extratos de transa\u00C3\u00A7oes Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param> 
         /// <param name="idCartao">ID do cart\u00C3\u00A3o</param> 
-        /// <returns>ApiResponse of List&lt;Transacao&gt;</returns>
-        public ApiResponse< List<Transacao> > ExtratosUsingPOSTWithHttpInfo (long? idConta, long? idCartao)
+        /// <returns>ApiResponse of List&lt;Extrato&gt;</returns>
+        public ApiResponse< List<Extrato> > ExtratosUsingPOSTWithHttpInfo (long? idConta, long? idCartao)
         {
             
             // verify the required parameter 'idConta' is set
@@ -1738,35 +1738,35 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling ExtratosUsingPOST: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
     
-            return new ApiResponse<List<Transacao>>(localVarStatusCode,
+            return new ApiResponse<List<Extrato>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<Transacao>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Transacao>)));
+                (List<Extrato>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Extrato>)));
             
         }
 
         
         /// <summary>
-        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+        /// Extratos de transa\u00C3\u00A7oes Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
-        /// <returns>Task of List&lt;Transacao&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Transacao>> ExtratosUsingPOSTAsync (long? idConta, long? idCartao)
+        /// <returns>Task of List&lt;Extrato&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Extrato>> ExtratosUsingPOSTAsync (long? idConta, long? idCartao)
         {
-             ApiResponse<List<Transacao>> localVarResponse = await ExtratosUsingPOSTAsyncWithHttpInfo(idConta, idCartao);
+             ApiResponse<List<Extrato>> localVarResponse = await ExtratosUsingPOSTAsyncWithHttpInfo(idConta, idCartao);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+        /// Extratos de transa\u00C3\u00A7oes Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="idConta">ID da Conta</param>
         /// <param name="idCartao">ID do cart\u00C3\u00A3o</param>
-        /// <returns>Task of ApiResponse (List&lt;Transacao&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<Transacao>>> ExtratosUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao)
+        /// <returns>Task of ApiResponse (List&lt;Extrato&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Extrato>>> ExtratosUsingPOSTAsyncWithHttpInfo (long? idConta, long? idCartao)
         {
             // verify the required parameter 'idConta' is set
             if (idConta == null) throw new ApiException(400, "Missing required parameter 'idConta' when calling ExtratosUsingPOST");
@@ -1829,9 +1829,9 @@ namespace Conductor.SDC.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling ExtratosUsingPOST: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<List<Transacao>>(localVarStatusCode,
+            return new ApiResponse<List<Extrato>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<Transacao>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Transacao>)));
+                (List<Extrato>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Extrato>)));
             
         }
         

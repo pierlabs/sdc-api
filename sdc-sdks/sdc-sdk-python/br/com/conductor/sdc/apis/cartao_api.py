@@ -468,8 +468,8 @@ class CartaoApi(object):
 
     def extratos_using_post(self, id_conta, id_cartao, **kwargs):
         """
-        Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
-        Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+        Extratos de transa\u00C3\u00A7oes
+        Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -483,7 +483,7 @@ class CartaoApi(object):
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
         :param int id_cartao: ID do cart\u00C3\u00A3o (required)
-        :return: list[Transacao]
+        :return: list[Extrato]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -544,7 +544,7 @@ class CartaoApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[Transacao]',
+                                            response_type='list[Extrato]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

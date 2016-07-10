@@ -72,13 +72,11 @@ public class ContaAPI: APIBase {
      Deleta uma conta
      
      - DELETE /v1/contas/{id}
-     - Deleta um cart\u00C3\u00A3o
+     - Deleta uma conta
      - API Key:
        - type: apiKey access_token 
        - name: access_token
-     - examples: [{contentType=application/json, example={
-  "msg" : "aeiou"
-}}]
+     - examples: [{contentType=application/json, example={ }}]
      
      - parameter id: (path) id 
 

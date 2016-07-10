@@ -125,7 +125,7 @@ class ContaApi(object):
     def delete_using_delete(self, id, **kwargs):
         """
         Deleta uma conta
-        Deleta um cart\u00C3\u00A3o
+        Deleta uma conta
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -100,8 +100,8 @@
   (:data (desbloquear-using-put-with-http-info id-conta id-cartao)))
 
 (defn extratos-using-post-with-http-info
-  "Retonar os extratos de transaÃ§oes do cartÃ£o
-  Retorna os extratos de todas as transaÃ§oes de um determinado cartÃ£o"
+  "Extratos de transaÃ§oes
+  Retorna o extratos de transaÃ§oes de crÃ©dito e dÃ©bito de um determinado cartÃ£o"
   [id-conta id-cartao ]
   (call-api "/v1/contas/{idConta}/cartoes/{idCartao}/extratos" :post
             {:path-params   {"idConta" id-conta "idCartao" id-cartao }
@@ -113,8 +113,8 @@
              :auth-names    ["access_token"]}))
 
 (defn extratos-using-post
-  "Retonar os extratos de transaÃ§oes do cartÃ£o
-  Retorna os extratos de todas as transaÃ§oes de um determinado cartÃ£o"
+  "Extratos de transaÃ§oes
+  Retorna o extratos de transaÃ§oes de crÃ©dito e dÃ©bito de um determinado cartÃ£o"
   [id-conta id-cartao ]
   (:data (extratos-using-post-with-http-info id-conta id-cartao)))
 

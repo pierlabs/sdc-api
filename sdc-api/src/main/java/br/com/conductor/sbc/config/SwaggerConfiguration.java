@@ -19,7 +19,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Lists;
 
 import br.com.conductor.sbc.util.Constantes;
-import br.com.conductor.sbc.util.Response;
+import br.com.conductor.sbc.util.dto.Response;
 import br.com.twsoftware.alfred.object.Objeto;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.service.ApiInfo;

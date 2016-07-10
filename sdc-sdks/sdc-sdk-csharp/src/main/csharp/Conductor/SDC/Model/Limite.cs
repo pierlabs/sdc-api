@@ -22,22 +22,14 @@ namespace Conductor.SDC.Model
         /// Initializes a new instance of the <see cref="Limite" /> class.
         /// Initializes a new instance of the <see cref="Limite" />class.
         /// </summary>
-        /// <param name="Msg">Msg.</param>
         /// <param name="Valor">Valor.</param>
 
-        public Limite(string Msg = null, double? Valor = null)
+        public Limite(double? Valor = null)
         {
-            this.Msg = Msg;
             this.Valor = Valor;
             
         }
         
-    
-        /// <summary>
-        /// Gets or Sets Msg
-        /// </summary>
-        [DataMember(Name="msg", EmitDefaultValue=false)]
-        public string Msg { get; set; }
     
         /// <summary>
         /// Gets or Sets Valor
@@ -53,7 +45,6 @@ namespace Conductor.SDC.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Limite {\n");
-            sb.Append("  Msg: ").Append(Msg).Append("\n");
             sb.Append("  Valor: ").Append(Valor).Append("\n");
             
             sb.Append("}\n");
@@ -93,11 +84,6 @@ namespace Conductor.SDC.Model
 
             return 
                 (
-                    this.Msg == other.Msg ||
-                    this.Msg != null &&
-                    this.Msg.Equals(other.Msg)
-                ) && 
-                (
                     this.Valor == other.Valor ||
                     this.Valor != null &&
                     this.Valor.Equals(other.Valor)
@@ -115,9 +101,6 @@ namespace Conductor.SDC.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                
-                if (this.Msg != null)
-                    hash = hash * 59 + this.Msg.GetHashCode();
                 
                 if (this.Valor != null)
                     hash = hash * 59 + this.Valor.GetHashCode();

@@ -1,11 +1,10 @@
-# SDC::Transacao
+# SDC::Extrato
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data_transacao** | **DateTime** |  | [optional] 
-**id** | **Integer** |  | [optional] 
-**msg** | **String** |  | [optional] 
+**data** | **DateTime** |  | [optional] 
+**tipo** | **String** |  | [optional] 
 **valor** | **Float** |  | [optional] 
 
 

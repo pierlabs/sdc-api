@@ -34,9 +34,7 @@ public class CartaoAPI: APIBase {
      - API Key:
        - type: apiKey access_token 
        - name: access_token
-     - examples: [{contentType=application/json, example={
-  "msg" : "aeiou"
-}}]
+     - examples: [{contentType=application/json, example={ }}]
      
      - parameter idConta: (path) ID da Conta 
      - parameter idCartao: (path) Cart\u00C3\u00A3o a ser bloqueado 
@@ -81,9 +79,7 @@ public class CartaoAPI: APIBase {
      - API Key:
        - type: apiKey access_token 
        - name: access_token
-     - examples: [{contentType=application/json, example={
-  "msg" : "aeiou"
-}}]
+     - examples: [{contentType=application/json, example={ }}]
      
      - parameter idConta: (path) ID da Conta 
      - parameter idCartao: (path) Cart\u00C3\u00A3o a ser cancelado 
@@ -179,9 +175,7 @@ public class CartaoAPI: APIBase {
      - API Key:
        - type: apiKey access_token 
        - name: access_token
-     - examples: [{contentType=application/json, example={
-  "msg" : "aeiou"
-}}]
+     - examples: [{contentType=application/json, example={ }}]
      
      - parameter idConta: (path) ID da Conta 
      - parameter idCartao: (path) ID do Cartao a ser creditado 
@@ -226,9 +220,7 @@ public class CartaoAPI: APIBase {
      - API Key:
        - type: apiKey access_token 
        - name: access_token
-     - examples: [{contentType=application/json, example={
-  "msg" : "aeiou"
-}}]
+     - examples: [{contentType=application/json, example={ }}]
      
      - parameter idConta: (path) ID da Conta 
      - parameter idCartao: (path) Cart\u00C3\u00A3o a ser desbloqueado 
@@ -251,13 +243,13 @@ public class CartaoAPI: APIBase {
 
     /**
      
-     Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+     Extratos de transa\u00C3\u00A7oes
      
      - parameter idConta: (path) ID da Conta 
      - parameter idCartao: (path) ID do cart\u00C3\u00A3o 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func extratosUsingPOST(idConta idConta: Int, idCartao: Int, completion: ((data: [Transacao]?, error: ErrorType?) -> Void)) {
+    public class func extratosUsingPOST(idConta idConta: Int, idCartao: Int, completion: ((data: [Extrato]?, error: ErrorType?) -> Void)) {
         extratosUsingPOSTWithRequestBuilder(idConta: idConta, idCartao: idCartao).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -266,26 +258,25 @@ public class CartaoAPI: APIBase {
 
     /**
      
-     Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+     Extratos de transa\u00C3\u00A7oes
      
      - POST /v1/contas/{idConta}/cartoes/{idCartao}/extratos
-     - Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+     - Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
      - API Key:
        - type: apiKey access_token 
        - name: access_token
      - examples: [{contentType=application/json, example=[ {
-  "msg" : "aeiou",
-  "valor" : 1.3579000000000001069366817318950779736042022705078125,
-  "id" : 123456789,
-  "dataTransacao" : "2000-01-23T04:56:07.000+0000"
+  "tipo" : "aeiou",
+  "data" : "2000-01-23T04:56:07.000+0000",
+  "valor" : 1.3579000000000001069366817318950779736042022705078125
 } ]}]
      
      - parameter idConta: (path) ID da Conta 
      - parameter idCartao: (path) ID do cart\u00C3\u00A3o 
 
-     - returns: RequestBuilder<[Transacao]> 
+     - returns: RequestBuilder<[Extrato]> 
      */
-    public class func extratosUsingPOSTWithRequestBuilder(idConta idConta: Int, idCartao: Int) -> RequestBuilder<[Transacao]> {
+    public class func extratosUsingPOSTWithRequestBuilder(idConta idConta: Int, idCartao: Int) -> RequestBuilder<[Extrato]> {
         var path = "/v1/contas/{idConta}/cartoes/{idCartao}/extratos"
         path = path.stringByReplacingOccurrencesOfString("{idConta}", withString: "\(idConta)", options: .LiteralSearch, range: nil)
         path = path.stringByReplacingOccurrencesOfString("{idCartao}", withString: "\(idCartao)", options: .LiteralSearch, range: nil)
@@ -294,7 +285,7 @@ public class CartaoAPI: APIBase {
         let nillableParameters: [String:AnyObject?] = [:]
         let parameters = APIHelper.rejectNil(nillableParameters)
 
-        let requestBuilder: RequestBuilder<[Transacao]>.Type = SDCAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<[Extrato]>.Type = SDCAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: URLString, parameters: parameters, isBody: true)
     }
@@ -425,7 +416,6 @@ public class CartaoAPI: APIBase {
        - type: apiKey access_token 
        - name: access_token
      - examples: [{contentType=application/json, example={
-  "msg" : "aeiou",
   "valor" : 1.3579000000000001069366817318950779736042022705078125
 }}]
      
@@ -473,9 +463,7 @@ public class CartaoAPI: APIBase {
      - API Key:
        - type: apiKey access_token 
        - name: access_token
-     - examples: [{contentType=application/json, example={
-  "msg" : "aeiou"
-}}]
+     - examples: [{contentType=application/json, example={ }}]
      
      - parameter idConta: (path) ID da Conta 
      - parameter idCartao: (path) ID do Cartao a ser creditado 
@@ -522,9 +510,7 @@ public class CartaoAPI: APIBase {
      - API Key:
        - type: apiKey access_token 
        - name: access_token
-     - examples: [{contentType=application/json, example={
-  "msg" : "aeiou"
-}}]
+     - examples: [{contentType=application/json, example={ }}]
      
      - parameter idConta: (path) ID da Conta do cart\u00C3\u00A3o de origem 
      - parameter idCartao: (path) ID do cart\u00C3\u00A3o de origem 

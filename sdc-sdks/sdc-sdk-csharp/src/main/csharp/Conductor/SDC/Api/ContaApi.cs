@@ -43,7 +43,7 @@ namespace Conductor.SDC.Api
         /// Deleta uma conta
         /// </summary>
         /// <remarks>
-        /// Deleta um cart\u00C3\u00A3o
+        /// Deleta uma conta
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
@@ -54,7 +54,7 @@ namespace Conductor.SDC.Api
         /// Deleta uma conta
         /// </summary>
         /// <remarks>
-        /// Deleta um cart\u00C3\u00A3o
+        /// Deleta uma conta
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
@@ -155,7 +155,7 @@ namespace Conductor.SDC.Api
         /// Deleta uma conta
         /// </summary>
         /// <remarks>
-        /// Deleta um cart\u00C3\u00A3o
+        /// Deleta uma conta
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
@@ -166,7 +166,7 @@ namespace Conductor.SDC.Api
         /// Deleta uma conta
         /// </summary>
         /// <remarks>
-        /// Deleta um cart\u00C3\u00A3o
+        /// Deleta uma conta
         /// </remarks>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
@@ -513,7 +513,7 @@ namespace Conductor.SDC.Api
         }
         
         /// <summary>
-        /// Deleta uma conta Deleta um cart\u00C3\u00A3o
+        /// Deleta uma conta Deleta uma conta
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param> 
@@ -525,7 +525,7 @@ namespace Conductor.SDC.Api
         }
 
         /// <summary>
-        /// Deleta uma conta Deleta um cart\u00C3\u00A3o
+        /// Deleta uma conta Deleta uma conta
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param> 
@@ -599,7 +599,7 @@ namespace Conductor.SDC.Api
 
         
         /// <summary>
-        /// Deleta uma conta Deleta um cart\u00C3\u00A3o
+        /// Deleta uma conta Deleta uma conta
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
@@ -612,7 +612,7 @@ namespace Conductor.SDC.Api
         }
 
         /// <summary>
-        /// Deleta uma conta Deleta um cart\u00C3\u00A3o
+        /// Deleta uma conta Deleta uma conta
         /// </summary>
         /// <exception cref="Conductor.SDC.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>

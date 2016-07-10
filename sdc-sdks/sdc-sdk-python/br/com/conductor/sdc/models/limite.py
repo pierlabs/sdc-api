@@ -37,39 +37,14 @@ class Limite(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'msg': 'str',
             'valor': 'float'
         }
 
         self.attribute_map = {
-            'msg': 'msg',
             'valor': 'valor'
         }
 
-        self._msg = None
         self._valor = None
-
-    @property
-    def msg(self):
-        """
-        Gets the msg of this Limite.
-
-
-        :return: The msg of this Limite.
-        :rtype: str
-        """
-        return self._msg
-
-    @msg.setter
-    def msg(self, msg):
-        """
-        Sets the msg of this Limite.
-
-
-        :param msg: The msg of this Limite.
-        :type: str
-        """
-        self._msg = msg
 
     @property
     def valor(self):

@@ -51,7 +51,7 @@ class Response implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'msg' => 'string'
+        
     );
   
     static function swaggerTypes() {
@@ -63,7 +63,7 @@ class Response implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'msg' => 'msg'
+        
     );
   
     static function attributeMap() {
@@ -75,7 +75,7 @@ class Response implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'msg' => 'setMsg'
+        
     );
   
     static function setters() {
@@ -87,19 +87,13 @@ class Response implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'msg' => 'getMsg'
+        
     );
   
     static function getters() {
         return self::$getters;
     }
 
-    
-    /**
-      * $msg 
-      * @var string
-      */
-    protected $msg;
     
 
     /**
@@ -110,29 +104,8 @@ class Response implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->msg = $data["msg"];
+            
         }
-    }
-    
-    /**
-     * Gets msg
-     * @return string
-     */
-    public function getMsg()
-    {
-        return $this->msg;
-    }
-  
-    /**
-     * Sets msg
-     * @param string $msg 
-     * @return $this
-     */
-    public function setMsg($msg)
-    {
-        
-        $this->msg = $msg;
-        return $this;
     }
     
     /**

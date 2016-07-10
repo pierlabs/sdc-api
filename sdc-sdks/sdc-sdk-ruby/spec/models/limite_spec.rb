@@ -36,16 +36,6 @@ describe 'Limite' do
       @instance.should be_a(SDC::Limite) 
     end
   end
-  describe 'test attribute "msg"' do
-    it 'should work' do
-       # assertion here
-       # should be_a()
-       # should be_nil
-       # should ==
-       # should_not ==
-    end
-  end
-
   describe 'test attribute "valor"' do
     it 'should work' do
        # assertion here

@@ -22,20 +22,12 @@ namespace Conductor.SDC.Model
         /// Initializes a new instance of the <see cref="Response" /> class.
         /// Initializes a new instance of the <see cref="Response" />class.
         /// </summary>
-        /// <param name="Msg">Msg.</param>
 
-        public Response(string Msg = null)
+        public Response()
         {
-            this.Msg = Msg;
             
         }
         
-    
-        /// <summary>
-        /// Gets or Sets Msg
-        /// </summary>
-        [DataMember(Name="msg", EmitDefaultValue=false)]
-        public string Msg { get; set; }
     
         /// <summary>
         /// Returns the string presentation of the object
@@ -45,7 +37,6 @@ namespace Conductor.SDC.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Response {\n");
-            sb.Append("  Msg: ").Append(Msg).Append("\n");
             
             sb.Append("}\n");
             return sb.ToString();
@@ -82,12 +73,7 @@ namespace Conductor.SDC.Model
             if (other == null)
                 return false;
 
-            return 
-                (
-                    this.Msg == other.Msg ||
-                    this.Msg != null &&
-                    this.Msg.Equals(other.Msg)
-                );
+            return false;
         }
 
         /// <summary>
@@ -101,9 +87,6 @@ namespace Conductor.SDC.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                
-                if (this.Msg != null)
-                    hash = hash * 59 + this.Msg.GetHashCode();
                 
                 return hash;
             }

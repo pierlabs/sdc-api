@@ -156,6 +156,21 @@ class Decoders {
             }
 			
 
+			// Decoder for [Extrato]
+            Decoders.addDecoder(clazz: [Extrato].self) { (source: AnyObject) -> [Extrato] in
+                return Decoders.decode(clazz: [Extrato].self, source: source)
+            }
+			// Decoder for Extrato
+            Decoders.addDecoder(clazz: Extrato.self) { (source: AnyObject) -> Extrato in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = Extrato()
+                instance.data = Decoders.decodeOptional(clazz: NSDate.self, source: sourceDictionary["data"])
+                instance.tipo = Extrato.Tipo(rawValue: (sourceDictionary["tipo"] as? String) ?? "") 
+                instance.valor = Decoders.decodeOptional(clazz: Double.self, source: sourceDictionary["valor"])
+                return instance
+            }
+			
+
 			// Decoder for [Limite]
             Decoders.addDecoder(clazz: [Limite].self) { (source: AnyObject) -> [Limite] in
                 return Decoders.decode(clazz: [Limite].self, source: source)
@@ -164,7 +179,6 @@ class Decoders {
             Decoders.addDecoder(clazz: Limite.self) { (source: AnyObject) -> Limite in
                 let sourceDictionary = source as! [NSObject:AnyObject]
                 let instance = Limite()
-                instance.msg = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["msg"])
                 instance.valor = Decoders.decodeOptional(clazz: Double.self, source: sourceDictionary["valor"])
                 return instance
             }
@@ -178,23 +192,6 @@ class Decoders {
             Decoders.addDecoder(clazz: Response.self) { (source: AnyObject) -> Response in
                 let sourceDictionary = source as! [NSObject:AnyObject]
                 let instance = Response()
-                instance.msg = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["msg"])
-                return instance
-            }
-			
-
-			// Decoder for [Transacao]
-            Decoders.addDecoder(clazz: [Transacao].self) { (source: AnyObject) -> [Transacao] in
-                return Decoders.decode(clazz: [Transacao].self, source: source)
-            }
-			// Decoder for Transacao
-            Decoders.addDecoder(clazz: Transacao.self) { (source: AnyObject) -> Transacao in
-                let sourceDictionary = source as! [NSObject:AnyObject]
-                let instance = Transacao()
-                instance.dataTransacao = Decoders.decodeOptional(clazz: NSDate.self, source: sourceDictionary["dataTransacao"])
-                instance.id = Decoders.decodeOptional(clazz: Int.self, source: sourceDictionary["id"])
-                instance.msg = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["msg"])
-                instance.valor = Decoders.decodeOptional(clazz: Double.self, source: sourceDictionary["valor"])
                 return instance
             }
 			

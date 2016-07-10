@@ -9,6 +9,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
+
+
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
 public class Conta   {
   
@@ -91,4 +93,6 @@ public class Conta   {
     return o.toString().replace("\n", "\n    ");
   }
 }
+
+
 

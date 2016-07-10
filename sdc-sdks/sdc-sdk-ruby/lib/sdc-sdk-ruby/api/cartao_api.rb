@@ -409,23 +409,23 @@ module SDC
       return data, status_code, headers
     end
 
-    # Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
-    # Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+    # Extratos de transa\u00C3\u00A7oes
+    # Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
     # @param id_conta ID da Conta
     # @param id_cartao ID do cart\u00C3\u00A3o
     # @param [Hash] opts the optional parameters
-    # @return [Array<Transacao>]
+    # @return [Array<Extrato>]
     def extratos_using_post(id_conta, id_cartao, opts = {})
       data, _status_code, _headers = extratos_using_post_with_http_info(id_conta, id_cartao, opts)
       return data
     end
 
-    # Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
-    # Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+    # Extratos de transa\u00C3\u00A7oes
+    # Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
     # @param id_conta ID da Conta
     # @param id_cartao ID do cart\u00C3\u00A3o
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<Transacao>, Fixnum, Hash)>] Array<Transacao> data, response status code and response headers
+    # @return [Array<(Array<Extrato>, Fixnum, Hash)>] Array<Extrato> data, response status code and response headers
     def extratos_using_post_with_http_info(id_conta, id_cartao, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CartaoApi.extratos_using_post ..."
@@ -477,7 +477,7 @@ module SDC
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<Transacao>')
+        :return_type => 'Array<Extrato>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CartaoApi#extratos_using_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

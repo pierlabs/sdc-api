@@ -4,7 +4,9 @@ package br.com.conductor.sbc.rest;
 import static br.com.conductor.sbc.util.Constantes.json;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codahale.metrics.annotation.Timed;
+import com.google.common.collect.Lists;
 
 import br.com.conductor.sbc.entidades.Cartao;
 import br.com.conductor.sbc.entidades.Cartao.StatusCartao;
@@ -31,9 +34,11 @@ import br.com.conductor.sbc.repositorios.CreditoRepositorio;
 import br.com.conductor.sbc.repositorios.TransacaoRepositorio;
 import br.com.conductor.sbc.util.Constantes;
 import br.com.conductor.sbc.util.CreditCardNumberGenerator;
-import br.com.conductor.sbc.util.Response;
 import br.com.conductor.sbc.util.Transacional;
+import br.com.conductor.sbc.util.dto.Extrato;
 import br.com.conductor.sbc.util.dto.Limite;
+import br.com.conductor.sbc.util.dto.Response;
+import br.com.conductor.sbc.util.dto.Extrato.TipoTransacao;
 import br.com.twsoftware.alfred.object.Objeto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -196,7 +201,7 @@ public class CartaoResource extends GenericResource{
                     
                }else if(valor.compareTo(BigDecimal.ZERO) <= 0){
                     
-                    response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json("não � poss�vel creditar um valor menor ou igual a zero"));
+                    response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json("Não é possível creditar um valor menor ou igual a zero"));
                     
                }else if(!cartao.getStatus().equals(StatusCartao.ATIVO)){
                     
@@ -204,12 +209,9 @@ public class CartaoResource extends GenericResource{
                     
                }else{
                     
-                    Credito credito = new Credito();
-                    credito.setCartao(cartao);
-                    credito.setValor(valor);
-                    creditoRepositorio.save(credito);
-                    
+                    creditoRepositorio.creditar(cartao, valor);
                     response = ResponseEntity.ok().body(json("Credito realizado com sucesso."));
+                    
                }
                
           } catch (Exception e) {
@@ -360,7 +362,7 @@ public class CartaoResource extends GenericResource{
      @Timed
      @Transacional
      @ResponseBody
-     @ApiOperation(value = "Retonar os extratos de transaçoes do cartão", notes = "Retorna os extratos de todas as transaçoes de um determinado cartão", response = Transacao.class, responseContainer="List")
+     @ApiOperation(value = "Extratos de transaçoes", notes = "Retorna o extratos de transaçoes de crédito e débito de um determinado cartão", response = Extrato.class, responseContainer="List")
      @RequestMapping(value = "/{idCartao}/extratos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity extratos(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
@@ -375,19 +377,37 @@ public class CartaoResource extends GenericResource{
                
           } else {
                
+               List<Extrato> extratos = Lists.newArrayList();
                List<Transacao> transacoes = transacaoRepositorio.findByCartaoId(idCartao);
-               if(Objeto.isBlank(transacoes)){
+               List<Credito> creditos = creditoRepositorio.findByCartaoId(cartao.getId());
+               
+               if(Objeto.notBlank(transacoes)){
+                    
+                    extratos.addAll(transacoes.stream().map(t -> new Extrato(t.getValor(), t.getDataTransacao(), TipoTransacao.DEBITO)).collect(Collectors.toList()));
+                    
+               }
+               
+               if(Objeto.notBlank(creditos)){
+                    
+                    extratos.addAll(creditos.stream().map(c -> new Extrato(c.getValor(), c.getDataCredito(), TipoTransacao.CREDITO)).collect(Collectors.toList()));
+                    
+               }
+                    
+               if(Objeto.isBlank(extratos)){
                     
                     response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(json("Nenhuma transação encontrada para esse cartão"));
                     
                }else{
                     
-                    response = ResponseEntity.ok(transacoes);
+                    extratos = extratos.stream().sorted((e1, e2) -> e1.getData().compareTo(e2.getData())).collect(Collectors.toList());
+                    response = ResponseEntity.ok(extratos);
+                    
                }
                
           }
           
           return response;
+          
      }     
 
      @Override

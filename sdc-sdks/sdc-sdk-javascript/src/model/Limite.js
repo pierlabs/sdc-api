@@ -29,7 +29,6 @@
   var exports = function() {
 
 
-
   };
 
   /**
@@ -43,9 +42,6 @@
     if (data) { 
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('msg')) {
-        obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
-      }
       if (data.hasOwnProperty('valor')) {
         obj['valor'] = ApiClient.convertToType(data['valor'], 'Number');
       }
@@ -53,11 +49,6 @@
     return obj;
   }
 
-
-  /**
-   * @member {String} msg
-   */
-  exports.prototype['msg'] = undefined;
 
   /**
    * @member {Number} valor

@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/Response', '../model/Cartao', '../model/Transacao', '../model/Limite'], factory);
+    define(['../ApiClient', '../model/Response', '../model/Cartao', '../model/Extrato', '../model/Limite'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Response'), require('../model/Cartao'), require('../model/Transacao'), require('../model/Limite'));
+    module.exports = factory(require('../ApiClient'), require('../model/Response'), require('../model/Cartao'), require('../model/Extrato'), require('../model/Limite'));
   } else {
     // Browser globals (root is window)
     if (!root.SDC) {
       root.SDC = {};
     }
-    root.SDC.CartaoApi = factory(root.SDC.ApiClient, root.SDC.Response, root.SDC.Cartao, root.SDC.Transacao, root.SDC.Limite);
+    root.SDC.CartaoApi = factory(root.SDC.ApiClient, root.SDC.Response, root.SDC.Cartao, root.SDC.Extrato, root.SDC.Limite);
   }
-}(this, function(ApiClient, Response, Cartao, Transacao, Limite) {
+}(this, function(ApiClient, Response, Cartao, Extrato, Limite) {
   'use strict';
 
   /**
@@ -306,17 +306,17 @@
      * Callback function to receive the result of the extratosUsingPOST operation.
      * @callback module:api/CartaoApi~extratosUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Transacao>} data The data returned by the service call.
+     * @param {Array.<module:model/Extrato>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
-     * Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
+     * Extratos de transa\u00C3\u00A7oes
+     * Retorna o extratos de transa\u00C3\u00A7oes de cr\u00C3\u00A9dito e d\u00C3\u00A9bito de um determinado cart\u00C3\u00A3o
      * @param {Integer} idConta ID da Conta
      * @param {Integer} idCartao ID do cart\u00C3\u00A3o
      * @param {module:api/CartaoApi~extratosUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {Array.<module:model/Transacao>}
+     * data is of type: {Array.<module:model/Extrato>}
      */
     this.extratosUsingPOST = function(idConta, idCartao, callback) {
       var postBody = null;
@@ -346,7 +346,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [Transacao];
+      var returnType = [Extrato];
 
       return this.apiClient.callApi(
         '/v1/contas/{idConta}/cartoes/{idCartao}/extratos', 'POST',

@@ -15,8 +15,6 @@
 @interface SDCLimite : SDCObject
 
 
-@property(nonatomic) NSString* msg;
-
 @property(nonatomic) NSNumber* valor;
 
 @end

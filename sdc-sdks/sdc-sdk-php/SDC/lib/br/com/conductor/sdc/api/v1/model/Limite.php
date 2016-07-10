@@ -51,7 +51,6 @@ class Limite implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'msg' => 'string',
         'valor' => 'double'
     );
   
@@ -64,7 +63,6 @@ class Limite implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'msg' => 'msg',
         'valor' => 'valor'
     );
   
@@ -77,7 +75,6 @@ class Limite implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'msg' => 'setMsg',
         'valor' => 'setValor'
     );
   
@@ -90,7 +87,6 @@ class Limite implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'msg' => 'getMsg',
         'valor' => 'getValor'
     );
   
@@ -98,12 +94,6 @@ class Limite implements ArrayAccess
         return self::$getters;
     }
 
-    
-    /**
-      * $msg 
-      * @var string
-      */
-    protected $msg;
     
     /**
       * $valor 
@@ -120,30 +110,8 @@ class Limite implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->msg = $data["msg"];
             $this->valor = $data["valor"];
         }
-    }
-    
-    /**
-     * Gets msg
-     * @return string
-     */
-    public function getMsg()
-    {
-        return $this->msg;
-    }
-  
-    /**
-     * Sets msg
-     * @param string $msg 
-     * @return $this
-     */
-    public function setMsg($msg)
-    {
-        
-        $this->msg = $msg;
-        return $this;
     }
     
     /**

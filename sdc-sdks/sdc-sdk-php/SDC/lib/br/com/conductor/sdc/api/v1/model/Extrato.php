@@ -1,6 +1,6 @@
 <?php
 /**
- * Transacao
+ * Extrato
  *
  * PHP version 5
  *
@@ -35,7 +35,7 @@ namespace br.com.conductor.sdc.api.v1.model;
 
 use \ArrayAccess;
 /**
- * Transacao Class Doc Comment
+ * Extrato Class Doc Comment
  *
  * @category    Class
  * @description 
@@ -44,16 +44,15 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Transacao implements ArrayAccess
+class Extrato implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'data_transacao' => '\DateTime',
-        'id' => 'int',
-        'msg' => 'string',
+        'data' => '\DateTime',
+        'tipo' => 'string',
         'valor' => 'double'
     );
   
@@ -66,9 +65,8 @@ class Transacao implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'data_transacao' => 'dataTransacao',
-        'id' => 'id',
-        'msg' => 'msg',
+        'data' => 'data',
+        'tipo' => 'tipo',
         'valor' => 'valor'
     );
   
@@ -81,9 +79,8 @@ class Transacao implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'data_transacao' => 'setDataTransacao',
-        'id' => 'setId',
-        'msg' => 'setMsg',
+        'data' => 'setData',
+        'tipo' => 'setTipo',
         'valor' => 'setValor'
     );
   
@@ -96,9 +93,8 @@ class Transacao implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'data_transacao' => 'getDataTransacao',
-        'id' => 'getId',
-        'msg' => 'getMsg',
+        'data' => 'getData',
+        'tipo' => 'getTipo',
         'valor' => 'getValor'
     );
   
@@ -108,22 +104,16 @@ class Transacao implements ArrayAccess
 
     
     /**
-      * $data_transacao 
+      * $data 
       * @var \DateTime
       */
-    protected $data_transacao;
+    protected $data;
     
     /**
-      * $id 
-      * @var int
-      */
-    protected $id;
-    
-    /**
-      * $msg 
+      * $tipo 
       * @var string
       */
-    protected $msg;
+    protected $tipo;
     
     /**
       * $valor 
@@ -140,73 +130,54 @@ class Transacao implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->data_transacao = $data["data_transacao"];
-            $this->id = $data["id"];
-            $this->msg = $data["msg"];
+            $this->data = $data["data"];
+            $this->tipo = $data["tipo"];
             $this->valor = $data["valor"];
         }
     }
     
     /**
-     * Gets data_transacao
+     * Gets data
      * @return \DateTime
      */
-    public function getDataTransacao()
+    public function getData()
     {
-        return $this->data_transacao;
+        return $this->data;
     }
   
     /**
-     * Sets data_transacao
-     * @param \DateTime $data_transacao 
+     * Sets data
+     * @param \DateTime $data 
      * @return $this
      */
-    public function setDataTransacao($data_transacao)
+    public function setData($data)
     {
         
-        $this->data_transacao = $data_transacao;
+        $this->data = $data;
         return $this;
     }
     
     /**
-     * Gets id
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-  
-    /**
-     * Sets id
-     * @param int $id 
-     * @return $this
-     */
-    public function setId($id)
-    {
-        
-        $this->id = $id;
-        return $this;
-    }
-    
-    /**
-     * Gets msg
+     * Gets tipo
      * @return string
      */
-    public function getMsg()
+    public function getTipo()
     {
-        return $this->msg;
+        return $this->tipo;
     }
   
     /**
-     * Sets msg
-     * @param string $msg 
+     * Sets tipo
+     * @param string $tipo 
      * @return $this
      */
-    public function setMsg($msg)
+    public function setTipo($tipo)
     {
-        
-        $this->msg = $msg;
+        $allowed_values = array("CREDITO", "DEBITO");
+        if (!in_array($tipo, $allowed_values)) {
+            throw new \InvalidArgumentException("Invalid value for 'tipo', must be one of 'CREDITO', 'DEBITO'");
+        }
+        $this->tipo = $tipo;
         return $this;
     }
     

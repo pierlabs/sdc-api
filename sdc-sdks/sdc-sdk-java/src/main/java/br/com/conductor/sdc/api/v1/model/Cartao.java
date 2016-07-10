@@ -10,6 +10,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
+
+
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
 public class Cartao   {
   
@@ -192,4 +194,6 @@ public class Cartao   {
     return o.toString().replace("\n", "\n    ");
   }
 }
+
+
 

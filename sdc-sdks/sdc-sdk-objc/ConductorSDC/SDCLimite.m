@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"msg": @"msg", @"valor": @"valor" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"valor": @"valor" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"msg", @"valor"];
+  NSArray *optionalProperties = @[@"valor"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

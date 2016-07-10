@@ -10,20 +10,20 @@
     if (!root.SDC) {
       root.SDC = {};
     }
-    root.SDC.Transacao = factory(root.SDC.ApiClient);
+    root.SDC.Extrato = factory(root.SDC.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
   /**
-   * The Transacao model module.
-   * @module model/Transacao
+   * The Extrato model module.
+   * @module model/Extrato
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>Transacao</code>.
-   * @alias module:model/Transacao
+   * Constructs a new <code>Extrato</code>.
+   * @alias module:model/Extrato
    * @class
    */
   var exports = function() {
@@ -31,28 +31,24 @@
 
 
 
-
   };
 
   /**
-   * Constructs a <code>Transacao</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Extrato</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Transacao} obj Optional instance to populate.
-   * @return {module:model/Transacao} The populated <code>Transacao</code> instance.
+   * @param {module:model/Extrato} obj Optional instance to populate.
+   * @return {module:model/Extrato} The populated <code>Extrato</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) { 
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('dataTransacao')) {
-        obj['dataTransacao'] = ApiClient.convertToType(data['dataTransacao'], 'Date');
+      if (data.hasOwnProperty('data')) {
+        obj['data'] = ApiClient.convertToType(data['data'], 'Date');
       }
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
-      }
-      if (data.hasOwnProperty('msg')) {
-        obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
+      if (data.hasOwnProperty('tipo')) {
+        obj['tipo'] = ApiClient.convertToType(data['tipo'], 'String');
       }
       if (data.hasOwnProperty('valor')) {
         obj['valor'] = ApiClient.convertToType(data['valor'], 'Number');
@@ -63,19 +59,14 @@
 
 
   /**
-   * @member {Date} dataTransacao
+   * @member {Date} data
    */
-  exports.prototype['dataTransacao'] = undefined;
+  exports.prototype['data'] = undefined;
 
   /**
-   * @member {Integer} id
+   * @member {module:model/Extrato.TipoEnum} tipo
    */
-  exports.prototype['id'] = undefined;
-
-  /**
-   * @member {String} msg
-   */
-  exports.prototype['msg'] = undefined;
+  exports.prototype['tipo'] = undefined;
 
   /**
    * @member {Number} valor
@@ -83,7 +74,24 @@
   exports.prototype['valor'] = undefined;
 
 
-
+  /**
+   * Allowed values for the <code>tipo</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.TipoEnum = { 
+    /**
+     * value: CREDITO
+     * @const
+     */
+    CREDITO: "CREDITO",
+    
+    /**
+     * value: DEBITO
+     * @const
+     */
+    DEBITO: "DEBITO"
+  };
 
   return exports;
 }));

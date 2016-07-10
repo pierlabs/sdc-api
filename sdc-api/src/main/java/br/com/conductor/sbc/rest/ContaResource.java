@@ -19,7 +19,7 @@ import com.codahale.metrics.annotation.Timed;
 import br.com.conductor.sbc.entidades.Conta;
 import br.com.conductor.sbc.repositorios.ContaRepositorio;
 import br.com.conductor.sbc.util.Constantes;
-import br.com.conductor.sbc.util.Response;
+import br.com.conductor.sbc.util.dto.Response;
 import br.com.twsoftware.alfred.object.Objeto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

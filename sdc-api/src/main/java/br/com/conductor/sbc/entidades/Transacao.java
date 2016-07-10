@@ -17,7 +17,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import br.com.conductor.sbc.util.Response;
+import br.com.conductor.sbc.util.dto.Response;
 import lombok.Data;
 
 @Table(name = "TRANSACOES")
@@ -36,6 +36,7 @@ public class Transacao extends Response implements GenericEntity{
      private BigDecimal valor;
      
      @Column(name = "DATA_TRANSACAO")
+     @JsonIgnore
      private LocalDateTime dataTransacao;
      
      @ManyToOne

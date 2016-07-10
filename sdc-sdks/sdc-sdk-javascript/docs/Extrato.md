@@ -1,11 +1,10 @@
-# SDC.Transacao
+# SDC.Extrato
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dataTransacao** | **Date** |  | [optional] 
-**id** | **Integer** |  | [optional] 
-**msg** | **String** |  | [optional] 
+**data** | **Date** |  | [optional] 
+**tipo** | **String** |  | [optional] 
 **valor** | **Number** |  | [optional] 
 
 

@@ -37,36 +37,13 @@ class Response(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'msg': 'str'
+            
         }
 
         self.attribute_map = {
-            'msg': 'msg'
+            
         }
 
-        self._msg = None
-
-    @property
-    def msg(self):
-        """
-        Gets the msg of this Response.
-
-
-        :return: The msg of this Response.
-        :rtype: str
-        """
-        return self._msg
-
-    @msg.setter
-    def msg(self, msg):
-        """
-        Sets the msg of this Response.
-
-
-        :param msg: The msg of this Response.
-        :type: str
-        """
-        self._msg = msg
 
     def to_dict(self):
         """

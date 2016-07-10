@@ -118,7 +118,7 @@ class CartaoApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for extratosUsingPOST
      *
-     * Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
+     * Extratos de transa\u00C3\u00A7oes
      *
      */
     public function test_extratosUsingPOST() {

@@ -1,9 +1,8 @@
 package br.com.conductor.sdc.api.v1.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+
+
 
 
 
@@ -12,24 +11,6 @@ import io.swagger.annotations.ApiModelProperty;
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
 public class Response   {
   
-  private String msg = null;
-
-  
-  /**
-   **/
-  public Response msg(String msg) {
-    this.msg = msg;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("msg")
-  public String getMsg() {
-    return msg;
-  }
-  public void setMsg(String msg) {
-    this.msg = msg;
-  }
 
   
 
@@ -41,13 +22,12 @@ public class Response   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Response response = (Response) o;
-    return Objects.equals(this.msg, response.msg);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(msg);
+    return Objects.hash();
   }
 
   @Override
@@ -55,7 +35,6 @@ public class Response   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Response {\n");
     
-    sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -71,4 +50,6 @@ public class Response   {
     return o.toString().replace("\n", "\n    ");
   }
 }
+
+
 

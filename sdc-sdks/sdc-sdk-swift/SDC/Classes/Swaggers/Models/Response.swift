@@ -10,7 +10,6 @@ import Foundation
 
 public class Response: JSONEncodable {
 
-    public var msg: String?
     
 
     public init() {}
@@ -18,7 +17,6 @@ public class Response: JSONEncodable {
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
-        nillableDictionary["msg"] = self.msg
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary
     }

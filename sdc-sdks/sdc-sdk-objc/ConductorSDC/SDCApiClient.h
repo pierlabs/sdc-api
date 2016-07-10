@@ -14,9 +14,9 @@
 
 #import "SDCCartao.h"
 #import "SDCConta.h"
+#import "SDCExtrato.h"
 #import "SDCLimite.h"
 #import "SDCResponse.h"
-#import "SDCTransacao.h"
 
 
 @class SDCConfiguration;

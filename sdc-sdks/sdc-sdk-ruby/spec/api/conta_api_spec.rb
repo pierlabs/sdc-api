@@ -54,7 +54,7 @@ describe 'ContaApi' do
 
   # unit tests for delete_using_delete
   # Deleta uma conta
-  # Deleta um cart\u00C3\u00A3o
+  # Deleta uma conta
   # @param id id
   # @param [Hash] opts the optional parameters
   # @return [Response]

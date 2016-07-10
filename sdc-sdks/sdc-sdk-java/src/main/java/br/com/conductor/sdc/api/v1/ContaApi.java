@@ -10,12 +10,16 @@ import br.com.conductor.sdc.api.v1.invoker.Pair;
 import br.com.conductor.sdc.api.v1.model.Conta;
 import br.com.conductor.sdc.api.v1.model.Response;
 
+
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
+
 public class ContaApi {
   private ApiClient apiClient;
 
@@ -84,7 +88,7 @@ public class ContaApi {
   
   /**
    * Deleta uma conta
-   * Deleta um cart\u00C3\u00A3o
+   * Deleta uma conta
    * @param id id
    * @return Response
    */
@@ -263,3 +267,4 @@ public class ContaApi {
   }
   
 }
+
