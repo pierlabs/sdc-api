@@ -684,7 +684,7 @@ class CartaoApi
      *
      * @param int $id_conta ID da Conta (required)
      * @param int $id_cartao ID do cart\u00C3\u00A3o (required)
-     * @return \br.com.conductor.sdc.api.v1.model\Response
+     * @return \br.com.conductor.sdc.api.v1.model\Transacao[]
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function extratosUsingPOST($id_conta, $id_cartao)
@@ -701,7 +701,7 @@ class CartaoApi
      *
      * @param int $id_conta ID da Conta (required)
      * @param int $id_cartao ID do cart\u00C3\u00A3o (required)
-     * @return Array of \br.com.conductor.sdc.api.v1.model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \br.com.conductor.sdc.api.v1.model\Transacao[], HTTP status code, HTTP response headers (array of strings)
      * @throws \br.com.conductor.sdc.api.v1.invoker\ApiException on non-2xx response
      */
     public function extratosUsingPOSTWithHttpInfo($id_conta, $id_cartao)
@@ -772,19 +772,19 @@ class CartaoApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
                 $queryParams, $httpBody,
-                $headerParams, '\br.com.conductor.sdc.api.v1.model\Response'
+                $headerParams, '\br.com.conductor.sdc.api.v1.model\Transacao[]'
             );
             
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Response', $httpHeader), $statusCode, $httpHeader);
+            return array(\br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($response, '\br.com.conductor.sdc.api.v1.model\Transacao[]', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Response', $e->getResponseHeaders());
+                $data = \br.com.conductor.sdc.api.v1.invoker\ObjectSerializer::deserialize($e->getResponseBody(), '\br.com.conductor.sdc.api.v1.model\Transacao[]', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }

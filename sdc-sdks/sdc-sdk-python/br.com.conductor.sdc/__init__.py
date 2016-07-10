@@ -5,6 +5,7 @@ from .models.cartao import Cartao
 from .models.conta import Conta
 from .models.limite import Limite
 from .models.response import Response
+from .models.transacao import Transacao
 
 # import apis into sdk package
 from .apis.cartao_api import CartaoApi

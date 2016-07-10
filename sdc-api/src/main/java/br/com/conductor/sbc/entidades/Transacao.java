@@ -1,7 +1,7 @@
 package br.com.conductor.sbc.entidades;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +17,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import br.com.conductor.sbc.util.Response;
 import lombok.Data;
 
 @Table(name = "TRANSACOES")
@@ -24,7 +25,7 @@ import lombok.Data;
 @Data
 @DynamicInsert
 @DynamicUpdate
-public class Transacao implements GenericEntity{
+public class Transacao extends Response implements GenericEntity{
      
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +36,7 @@ public class Transacao implements GenericEntity{
      private BigDecimal valor;
      
      @Column(name = "DATA_TRANSACAO")
-     private Date dataTransacao;
+     private LocalDateTime dataTransacao;
      
      @ManyToOne
      @JsonIgnore

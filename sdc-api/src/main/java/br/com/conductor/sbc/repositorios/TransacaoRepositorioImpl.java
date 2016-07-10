@@ -1,7 +1,7 @@
 package br.com.conductor.sbc.repositorios;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,7 +17,7 @@ public class TransacaoRepositorioImpl implements TransacaoRepositorioCustom{
           
           Transacao t = new Transacao();
           t.setCartao(cartao);
-          t.setDataTransacao(new Date());
+          t.setDataTransacao(LocalDateTime.now());
           t.setValor(valor);
           return transacaoRepositorio.save(t);          
           

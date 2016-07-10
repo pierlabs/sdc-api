@@ -10,6 +10,7 @@ import java.util.*;
 
 import br.com.conductor.sdc.api.v1.model.Response;
 import br.com.conductor.sdc.api.v1.model.Cartao;
+import br.com.conductor.sdc.api.v1.model.Transacao;
 import br.com.conductor.sdc.api.v1.model.Limite;
 
 import org.apache.http.HttpEntity;
@@ -376,9 +377,9 @@ public class CartaoApi {
    * Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
    * @param idCartao ID do cart\u00C3\u00A3o
-   * @return Response
+   * @return List<Transacao>
    */
-  public Response  extratosUsingPOST (Long idConta, Long idCartao) throws ApiException {
+  public List<Transacao>  extratosUsingPOST (Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'idConta' is set
@@ -426,7 +427,7 @@ public class CartaoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (Response) ApiInvoker.deserialize(response, "", Response.class);
+        return (List<Transacao>) ApiInvoker.deserialize(response, "array", Transacao.class);
       }
       else {
         return null;

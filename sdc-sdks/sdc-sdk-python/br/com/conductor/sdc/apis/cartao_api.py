@@ -483,7 +483,7 @@ class CartaoApi(object):
             for asynchronous request. (optional)
         :param int id_conta: ID da Conta (required)
         :param int id_cartao: ID do cart\u00C3\u00A3o (required)
-        :return: Response
+        :return: list[Transacao]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -544,7 +544,7 @@ class CartaoApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Response',
+                                            response_type='list[Transacao]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

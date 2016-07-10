@@ -414,7 +414,7 @@ module SDC
     # @param id_conta ID da Conta
     # @param id_cartao ID do cart\u00C3\u00A3o
     # @param [Hash] opts the optional parameters
-    # @return [Response]
+    # @return [Array<Transacao>]
     def extratos_using_post(id_conta, id_cartao, opts = {})
       data, _status_code, _headers = extratos_using_post_with_http_info(id_conta, id_cartao, opts)
       return data
@@ -425,7 +425,7 @@ module SDC
     # @param id_conta ID da Conta
     # @param id_cartao ID do cart\u00C3\u00A3o
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Response, Fixnum, Hash)>] Response data, response status code and response headers
+    # @return [Array<(Array<Transacao>, Fixnum, Hash)>] Array<Transacao> data, response status code and response headers
     def extratos_using_post_with_http_info(id_conta, id_cartao, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CartaoApi.extratos_using_post ..."
@@ -477,7 +477,7 @@ module SDC
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Response')
+        :return_type => 'Array<Transacao>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CartaoApi#extratos_using_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

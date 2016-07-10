@@ -5,3 +5,4 @@ from .cartao import Cartao
 from .conta import Conta
 from .limite import Limite
 from .response import Response
+from .transacao import Transacao

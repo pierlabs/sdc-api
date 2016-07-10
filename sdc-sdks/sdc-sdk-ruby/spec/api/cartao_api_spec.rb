@@ -128,7 +128,7 @@ describe 'CartaoApi' do
   # @param id_conta ID da Conta
   # @param id_cartao ID do cart\u00C3\u00A3o
   # @param [Hash] opts the optional parameters
-  # @return [Response]
+  # @return [Array<Transacao>]
   describe 'extratos_using_post test' do
     it "should work" do
       # assertion here

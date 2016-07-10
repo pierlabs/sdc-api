@@ -25,6 +25,7 @@ require 'sdc-sdk-ruby/models/cartao'
 require 'sdc-sdk-ruby/models/conta'
 require 'sdc-sdk-ruby/models/limite'
 require 'sdc-sdk-ruby/models/response'
+require 'sdc-sdk-ruby/models/transacao'
 
 # APIs
 require 'sdc-sdk-ruby/api/cartao_api'

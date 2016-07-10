@@ -1,7 +1,6 @@
 package br.com.conductor.sbc.entidades;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +13,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -35,7 +35,7 @@ public class Credito implements GenericEntity{
      private BigDecimal valor;
      
      @Column(name = "DATA_CREDITO")
-     private Date dataCredito;
+     private DateTime dataCredito;
      
      @JsonIgnore
      @ManyToOne

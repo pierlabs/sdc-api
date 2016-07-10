@@ -2,6 +2,7 @@
 #import "SDCQueryParamCollection.h"
 #import "SDCResponse.h"
 #import "SDCCartao.h"
+#import "SDCTransacao.h"
 #import "SDCLimite.h"
 
 
@@ -553,11 +554,11 @@ static SDCCartaoApi* singletonAPI = nil;
 ///
 ///  @param idCartao ID do cart\u00C3\u00A3o 
 ///
-///  @returns SDCResponse*
+///  @returns NSArray<SDCTransacao>*
 ///
 -(NSNumber*) extratosUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(SDCResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<SDCTransacao>* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idConta' is set
@@ -633,9 +634,9 @@ static SDCCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SDCResponse*"
+                              responseType: @"NSArray<SDCTransacao>*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((SDCResponse*)data, error);
+                               handler((NSArray<SDCTransacao>*)data, error);
                            }
           ];
 }

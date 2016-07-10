@@ -51,6 +51,10 @@ public class JsonUtil {
       return new TypeToken<List<Response>>(){}.getType();
     }
     
+    if ("Transacao".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Transacao>>(){}.getType();
+    }
+    
     return new TypeToken<List<Object>>(){}.getType();
   }
 
@@ -71,6 +75,10 @@ public class JsonUtil {
     
     if ("Response".equalsIgnoreCase(className)) {
       return new TypeToken<Response>(){}.getType();
+    }
+    
+    if ("Transacao".equalsIgnoreCase(className)) {
+      return new TypeToken<Transacao>(){}.getType();
     }
     
     return new TypeToken<Object>(){}.getType();

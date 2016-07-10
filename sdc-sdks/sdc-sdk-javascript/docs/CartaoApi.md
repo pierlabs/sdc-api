@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 <a name="extratosUsingPOST"></a>
 # **extratosUsingPOST**
-> Response extratosUsingPOST(idConta, idCartao)
+> [Transacao] extratosUsingPOST(idConta, idCartao)
 
 Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Response**](Response.md)
+[**[Transacao]**](Transacao.md)
 
 ### Authorization
 

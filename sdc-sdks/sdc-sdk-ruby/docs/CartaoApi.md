@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 
 # **extratos_using_post**
-> Response extratos_using_post(id_conta, id_cartao)
+> Array&lt;Transacao&gt; extratos_using_post(id_conta, id_cartao)
 
 Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Response**](Response.md)
+[**Array&lt;Transacao&gt;**](Transacao.md)
 
 ### Authorization
 

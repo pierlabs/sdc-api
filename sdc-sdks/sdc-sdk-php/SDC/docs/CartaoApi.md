@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **extratosUsingPOST**
-> \br.com.conductor.sdc.api.v1.model\Response extratosUsingPOST($id_conta, $id_cartao)
+> \br.com.conductor.sdc.api.v1.model\Transacao[] extratosUsingPOST($id_conta, $id_cartao)
 
 Retonar os extratos de transa\u00C3\u00A7oes do cart\u00C3\u00A3o
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\br.com.conductor.sdc.api.v1.model\Response**](Response.md)
+[**\br.com.conductor.sdc.api.v1.model\Transacao[]**](Transacao.md)
 
 ### Authorization
 

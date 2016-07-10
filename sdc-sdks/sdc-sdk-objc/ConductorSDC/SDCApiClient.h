@@ -16,6 +16,7 @@
 #import "SDCConta.h"
 #import "SDCLimite.h"
 #import "SDCResponse.h"
+#import "SDCTransacao.h"
 
 
 @class SDCConfiguration;

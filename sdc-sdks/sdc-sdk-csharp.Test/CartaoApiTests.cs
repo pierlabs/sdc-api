@@ -135,7 +135,7 @@ namespace Conductor.SDC.Test
             long? idCartao = null; // TODO: replace null with proper value
             
             var response = instance.ExtratosUsingPOST(idConta, idCartao);
-            Assert.IsInstanceOf<Response> (response, "response is Response"); 
+            Assert.IsInstanceOf<List<Transacao>> (response, "response is List<Transacao>"); 
         }
         
         /// <summary>

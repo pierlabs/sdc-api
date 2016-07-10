@@ -9,6 +9,7 @@ import br.com.conductor.sdc.api.v1.invoker.Pair;
 
 import br.com.conductor.sdc.api.v1.model.Response;
 import br.com.conductor.sdc.api.v1.model.Cartao;
+import br.com.conductor.sdc.api.v1.model.Transacao;
 import br.com.conductor.sdc.api.v1.model.Limite;
 
 import java.util.ArrayList;
@@ -317,9 +318,9 @@ public class CartaoApi {
    * Retorna os extratos de todas as transa\u00C3\u00A7oes de um determinado cart\u00C3\u00A3o
    * @param idConta ID da Conta
    * @param idCartao ID do cart\u00C3\u00A3o
-   * @return Response
+   * @return List<Transacao>
    */
-  public Response extratosUsingPOST(Long idConta, Long idCartao) throws ApiException {
+  public List<Transacao> extratosUsingPOST(Long idConta, Long idCartao) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
@@ -361,7 +362,7 @@ public class CartaoApi {
     String[] authNames = new String[] {"client_id", "access_token" };
 
     
-    GenericType<Response> returnType = new GenericType<Response>() {};
+    GenericType<List<Transacao>> returnType = new GenericType<List<Transacao>>() {};
     return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }

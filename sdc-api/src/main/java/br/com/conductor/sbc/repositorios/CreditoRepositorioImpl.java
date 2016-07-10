@@ -1,8 +1,8 @@
 package br.com.conductor.sbc.repositorios;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.conductor.sbc.entidades.Cartao;
@@ -17,7 +17,7 @@ public class CreditoRepositorioImpl implements CreditoRepositorioCustom{
           
           Credito credito = new Credito();
           credito.setCartao(cartao);
-          credito.setDataCredito(new Date());
+          credito.setDataCredito(DateTime.now());
           credito.setValor(valor);
           return creditoRepositorio.save(credito);          
           

@@ -1,12 +1,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['./ApiClient', './model/Cartao', './model/Conta', './model/Limite', './model/Response', './api/CartaoApi', './api/ContaApi'], factory);
+    define(['./ApiClient', './model/Cartao', './model/Conta', './model/Limite', './model/Response', './model/Transacao', './api/CartaoApi', './api/ContaApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Cartao'), require('./model/Conta'), require('./model/Limite'), require('./model/Response'), require('./api/CartaoApi'), require('./api/ContaApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Cartao'), require('./model/Conta'), require('./model/Limite'), require('./model/Response'), require('./model/Transacao'), require('./api/CartaoApi'), require('./api/ContaApi'));
   }
-}(function(ApiClient, Cartao, Conta, Limite, Response, CartaoApi, ContaApi) {
+}(function(ApiClient, Cartao, Conta, Limite, Response, Transacao, CartaoApi, ContaApi) {
   'use strict';
 
   /**
@@ -66,6 +66,11 @@
      * @property {module:model/Response}
      */
     Response: Response,
+    /**
+     * The Transacao model constructor.
+     * @property {module:model/Transacao}
+     */
+    Transacao: Transacao,
     /**
      * The CartaoApi service constructor.
      * @property {module:api/CartaoApi}

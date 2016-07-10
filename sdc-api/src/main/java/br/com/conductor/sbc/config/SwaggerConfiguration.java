@@ -5,6 +5,7 @@ import static com.google.common.collect.Lists.newArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.boot.bind.RelaxedPropertyResolver;
@@ -21,7 +22,6 @@ import br.com.conductor.sbc.util.Constantes;
 import br.com.conductor.sbc.util.Response;
 import br.com.twsoftware.alfred.object.Objeto;
 import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.schema.AlternateTypeRule;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.ApiKey;
 import springfox.documentation.service.AuthorizationScope;
@@ -58,6 +58,10 @@ public class SwaggerConfiguration implements EnvironmentAware{
                     .apiInfo(apiInfo())
                     .genericModelSubstitutes(ResponseEntity.class)
                     .directModelSubstitute(ResponseEntity.class, Response.class)
+                    .ignoredParameterTypes(java.sql.Date.class)
+                    .directModelSubstitute(java.time.LocalDate.class, java.sql.Date.class)
+                    .directModelSubstitute(java.time.ZonedDateTime.class, Date.class)
+                    .directModelSubstitute(java.time.LocalDateTime.class, Date.class)
                     .forCodeGeneration(true)
                     .securitySchemes(apiKeys())
                     .securityContexts(newArrayList(securityContext()))

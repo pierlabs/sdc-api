@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/Response', '../model/Cartao', '../model/Limite'], factory);
+    define(['../ApiClient', '../model/Response', '../model/Cartao', '../model/Transacao', '../model/Limite'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Response'), require('../model/Cartao'), require('../model/Limite'));
+    module.exports = factory(require('../ApiClient'), require('../model/Response'), require('../model/Cartao'), require('../model/Transacao'), require('../model/Limite'));
   } else {
     // Browser globals (root is window)
     if (!root.SDC) {
       root.SDC = {};
     }
-    root.SDC.CartaoApi = factory(root.SDC.ApiClient, root.SDC.Response, root.SDC.Cartao, root.SDC.Limite);
+    root.SDC.CartaoApi = factory(root.SDC.ApiClient, root.SDC.Response, root.SDC.Cartao, root.SDC.Transacao, root.SDC.Limite);
   }
-}(this, function(ApiClient, Response, Cartao, Limite) {
+}(this, function(ApiClient, Response, Cartao, Transacao, Limite) {
   'use strict';
 
   /**
@@ -306,7 +306,7 @@
      * Callback function to receive the result of the extratosUsingPOST operation.
      * @callback module:api/CartaoApi~extratosUsingPOSTCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Response} data The data returned by the service call.
+     * @param {Array.<module:model/Transacao>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -316,7 +316,7 @@
      * @param {Integer} idConta ID da Conta
      * @param {Integer} idCartao ID do cart\u00C3\u00A3o
      * @param {module:api/CartaoApi~extratosUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/Response}
+     * data is of type: {Array.<module:model/Transacao>}
      */
     this.extratosUsingPOST = function(idConta, idCartao, callback) {
       var postBody = null;
@@ -346,7 +346,7 @@
       var authNames = ['access_token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = Response;
+      var returnType = [Transacao];
 
       return this.apiClient.callApi(
         '/v1/contas/{idConta}/cartoes/{idCartao}/extratos', 'POST',

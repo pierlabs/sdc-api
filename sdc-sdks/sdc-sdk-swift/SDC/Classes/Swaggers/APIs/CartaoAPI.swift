@@ -257,7 +257,7 @@ public class CartaoAPI: APIBase {
      - parameter idCartao: (path) ID do cart\u00C3\u00A3o 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func extratosUsingPOST(idConta idConta: Int, idCartao: Int, completion: ((data: Response?, error: ErrorType?) -> Void)) {
+    public class func extratosUsingPOST(idConta idConta: Int, idCartao: Int, completion: ((data: [Transacao]?, error: ErrorType?) -> Void)) {
         extratosUsingPOSTWithRequestBuilder(idConta: idConta, idCartao: idCartao).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -273,16 +273,19 @@ public class CartaoAPI: APIBase {
      - API Key:
        - type: apiKey access_token 
        - name: access_token
-     - examples: [{contentType=application/json, example={
-  "msg" : "aeiou"
-}}]
+     - examples: [{contentType=application/json, example=[ {
+  "msg" : "aeiou",
+  "valor" : 1.3579000000000001069366817318950779736042022705078125,
+  "id" : 123456789,
+  "dataTransacao" : "2000-01-23T04:56:07.000+0000"
+} ]}]
      
      - parameter idConta: (path) ID da Conta 
      - parameter idCartao: (path) ID do cart\u00C3\u00A3o 
 
-     - returns: RequestBuilder<Response> 
+     - returns: RequestBuilder<[Transacao]> 
      */
-    public class func extratosUsingPOSTWithRequestBuilder(idConta idConta: Int, idCartao: Int) -> RequestBuilder<Response> {
+    public class func extratosUsingPOSTWithRequestBuilder(idConta idConta: Int, idCartao: Int) -> RequestBuilder<[Transacao]> {
         var path = "/v1/contas/{idConta}/cartoes/{idCartao}/extratos"
         path = path.stringByReplacingOccurrencesOfString("{idConta}", withString: "\(idConta)", options: .LiteralSearch, range: nil)
         path = path.stringByReplacingOccurrencesOfString("{idCartao}", withString: "\(idCartao)", options: .LiteralSearch, range: nil)
@@ -291,7 +294,7 @@ public class CartaoAPI: APIBase {
         let nillableParameters: [String:AnyObject?] = [:]
         let parameters = APIHelper.rejectNil(nillableParameters)
 
-        let requestBuilder: RequestBuilder<Response>.Type = SDCAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<[Transacao]>.Type = SDCAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: URLString, parameters: parameters, isBody: true)
     }

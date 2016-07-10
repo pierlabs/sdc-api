@@ -238,7 +238,7 @@ public class CartaoResource extends GenericResource{
                     
                }else if(valor.compareTo(BigDecimal.ZERO) <= 0){
                     
-                    response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json("Não é poss�vel transacionar um valor menor ou igual a zero"));
+                    response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json("Não é possével transacionar um valor menor ou igual a zero"));
                     
                }else if(!cartao.getStatus().equals(StatusCartao.ATIVO)){
                     
@@ -253,7 +253,7 @@ public class CartaoResource extends GenericResource{
                          
                     }else{
                          
-                         response = ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(json("Limite indispon�vel."));
+                         response = ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(json("Limite indisponével."));
                          
                     }
                     
@@ -360,7 +360,7 @@ public class CartaoResource extends GenericResource{
      @Timed
      @Transacional
      @ResponseBody
-     @ApiOperation(value = "Retonar os extratos de transaçoes do cartão", notes = "Retorna os extratos de todas as transaçoes de um determinado cartão", response = Response.class)
+     @ApiOperation(value = "Retonar os extratos de transaçoes do cartão", notes = "Retorna os extratos de todas as transaçoes de um determinado cartão", response = Transacao.class, responseContainer="List")
      @RequestMapping(value = "/{idCartao}/extratos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
      public ResponseEntity extratos(
                @ApiParam(value = "ID da Conta", required = true) @PathVariable("idConta") Long idConta,
