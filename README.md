@@ -1,5 +1,6 @@
 # SDC-API
 ![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)  ![travis](https://travis-ci.org/pierlabs/sdc-api.svg?branch=master)
+![jitpack](https://jitpack.io/v/pierlabs/sdc-api.svg)
 
 ### API desenvolvida para a 15ª semanda da computação da UFPB em 2016
 
@@ -109,9 +110,9 @@ A forma de consumo mais fácil da nossa API é utilizando os nossos SDKs. Todos 
 ### Dependência
 ```xml
 	<dependency>
-	    <groupId>com.github.pierlabs.sdc-api.sdc-sdks</groupId>
-	    <artifactId>sdc-sdk-java</artifactId>
-	    <version>1.0.0</version>
+		<groupId>com.github.pierlabs.sdc-api</groupId>
+		<artifactId>sdc-sdk-java</artifactId>
+		<version>1.0.0</version>
 	</dependency>
 ```
 
