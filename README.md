@@ -234,3 +234,19 @@ Para acessar esse console entre no [PIER Labs](htttp://pierlabs.io), logue com s
 ### [API Browser 01](http://pierlabs.io/api-portal/swagger/sdc-2016)
 
 ![swagger-ui-1](https://raw.githubusercontent.com/pierlabs/sdc-api/master/sdc-api/src/main/resources/static/images/swagger-ui-01.png)
+
+## Server
+
+Caso deseje rodar o servidor da API localmente em sua máquina, basta seguir os seguintes passos:
+
+```
+git clone https://github.com/pierlabs/sdc-api.git
+cd sdc-api\sdc-api
+```
+
+Para levandtar o `tomcat` execute o comando abaixo. Após o comando executado, no seu browser acesse [http://localhost:8080](http://localhost:8080)
+```
+mvn spring-boot:run
+```
+
+**Obs.: Para a competição da 15ª SDC você deverá utilizar a API que está levantada em [https://api.conductor.com.br/sdc/](https://api.conductor.com.br/sdc/)**
