@@ -338,17 +338,13 @@ public class CartaoResource extends GenericResource{
                     if (cartaoRepositorio.limiteDisponivel(idCartaoOrigem, valor)) {
                          
                          transacaoRepositorio.transacionar(origem, valor);
-                         
-                         Credito c = new Credito();
-                         c.setCartao(destino);
-                         c.setValor(valor);
-                         creditoRepositorio.save(c);
+                         creditoRepositorio.creditar(destino, valor);
                          
                          response = ResponseEntity.ok().body(json("Transfer�ncia realizada com sucesso"));
                          
                     } else {
                          
-                         response = ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(json("Limite indispon�vel."));
+                         response = ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(json("Limite indisponível."));
                          
                     }
                     
