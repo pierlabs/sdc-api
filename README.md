@@ -99,6 +99,8 @@ A forma de consumo mais fácil da nossa API é utilizando os nossos SDKs. Todos 
 
 ## Consumo em Java
 
+### Maven 
+
 #### Repositórios
 ```xml
 	<repositories>
@@ -106,17 +108,37 @@ A forma de consumo mais fácil da nossa API é utilizando os nossos SDKs. Todos 
 		    <id>jitpack.io</id>
 		    <url>https://jitpack.io</url>
 		</repository>
-	</repositorie
+	</repositories>
 ```
 
 #### Dependência
 ```xml
 	<dependency>
-		<groupId>com.github.pierlabs.sdc-api</groupId>
-		<artifactId>sdc-sdk-java</artifactId>
-		<version>1.1.0</version>
+	    <groupId>com.github.pierlabs.sdc-api</groupId>
+	    <artifactId>sdc-sdk-java</artifactId>
+	    <version>1.0.1</version>
 	</dependency>
 ```
+
+### Gradle
+
+#### Repositórios
+```groovy
+	allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
+```
+
+#### Dependência
+```groovy
+	dependencies {
+	        compile 'com.github.pierlabs.sdc-api:sdc-sdk-java:1.0.1'
+	}
+```
+
 
 Abaixo segue uma classe Java consumindo as principais funcionalidades da API. Antes de tudo lembre de se cadastrar no [PIER Labs](htttp://pierlabs.io) para pegar seu acess_token e client_id, depois basta seguir o exemplo abaixo.
 
@@ -227,6 +249,8 @@ public class Main{
 
 ## Consumo em Android
 
+### Maven
+
 #### Repositórios
 ```xml
 	<repositories>
@@ -234,16 +258,35 @@ public class Main{
 		    <id>jitpack.io</id>
 		    <url>https://jitpack.io</url>
 		</repository>
-	</repositorie
+	</repositories>
 ```
 
 #### Dependência
 ```xml
 	<dependency>
-		<groupId>com.github.pierlabs.sdc-api</groupId>
-		<artifactId>sdc-sdk-android</artifactId>
-		<version>1.1.0</version>
+	    <groupId>com.github.pierlabs.sdc-api</groupId>
+	    <artifactId>sdc-sdk-android</artifactId>
+	    <version>1.0.1</version>
 	</dependency>
+```
+
+### Gradle
+
+#### Repositórios
+```groovy
+	allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
+```
+
+#### Dependência
+```groovy
+	dependencies {
+	        compile 'com.github.pierlabs.sdc-api:sdc-sdk-android:1.0.1'
+	}
 ```
 
 Abaixo segue uma classe Java consumindo as principais funcionalidades da API porém utilizando do sdk Android. Antes de tudo lembre de se cadastrar no [PIER Labs](htttp://pierlabs.io) para pegar seu acess_token e client_id, depois basta seguir o exemplo abaixo.
