@@ -271,8 +271,8 @@ public class Main{
           /**
            * Setando o access_token e client_id de acesso. Você pode conseguir os seus se cadastrando em http://pierlabs.io
            */
-          ApiInvoker.getInstance().addDefaultHeader("access_token", "G92Yo2yBIMon");
-          ApiInvoker.getInstance().addDefaultHeader("client_id", "5LOgmbu8fedH");
+          ApiInvoker.getInstance().addDefaultHeader("access_token", "ACCESS_TOKEN");
+          ApiInvoker.getInstance().addDefaultHeader("client_id", "CLIENT_ID");
 
           CartaoApi cartaoApi = new CartaoApi();
           cartaoApi.setBasePath(BASE_PATH);
