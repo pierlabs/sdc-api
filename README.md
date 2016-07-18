@@ -114,7 +114,7 @@ A forma de consumo mais fácil da nossa API é utilizando os nossos SDKs. Todos 
 	<dependency>
 		<groupId>com.github.pierlabs.sdc-api</groupId>
 		<artifactId>sdc-sdk-java</artifactId>
-		<version>1.0.1</version>
+		<version>1.1.0</version>
 	</dependency>
 ```
 
@@ -242,7 +242,7 @@ public class Main{
 	<dependency>
 		<groupId>com.github.pierlabs.sdc-api</groupId>
 		<artifactId>sdc-sdk-android</artifactId>
-		<version>1.0.1</version>
+		<version>1.1.0</version>
 	</dependency>
 ```
 
