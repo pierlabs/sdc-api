@@ -72,19 +72,6 @@ Para utilizar algum SDK basta fazer o clone do projeto, ir até a pasta `sdc-sdk
 - [sdc-sdk-ruby](https://github.com/devconductor/sdc-api/tree/master/sdc-sdks/sdc-sdk-ruby)
 - [sdc-sdk-swift](https://github.com/devconductor/sdc-api/tree/master/sdc-sdks/sdc-sdk-swift)
 
-## Build
-Partindo do suposto que você já tem o maven em seu classpath, basta seguir os seguintes passos para realizar o build:
-
-1 - baixar o projeto
-```
-git clone https://github.com/devconductor/sdc-api.git
-cd sdc-api
-```
-
-2 - Executar o empacotamento
-```
-  mvn clean package
-```
 ## Utilização
 
 Para que você consiga consumir a API é necessário ter em mãos um `TOKEN` de acesso. Esse token pode ser obtido fazendo o seu cadastro no portal do [PIER Labs](htttp://pierlabs.io). Abaixo segue os passos que você deve seguir para obter o seu token.
@@ -407,6 +394,20 @@ Para acessar esse console entre no [PIER Labs](htttp://pierlabs.io), logue com s
 ### [API Browser 01](http://pierlabs.io/api-portal/swagger/sdc-2016)
 
 ![swagger-ui-1](https://raw.githubusercontent.com/pierlabs/sdc-api/master/sdc-api/src/main/resources/static/images/swagger-ui-01.png)
+
+## Build
+Partindo do suposto que você já tem o maven em seu classpath, basta seguir os seguintes passos para realizar o build:
+
+1 - baixar o projeto
+```
+git clone https://github.com/devconductor/sdc-api.git
+cd sdc-api
+```
+
+2 - Executar o empacotamento
+```
+  mvn clean package
+```
 
 ## Server
 
