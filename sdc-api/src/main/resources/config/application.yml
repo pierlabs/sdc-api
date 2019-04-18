@@ -1,0 +1,44 @@
+spring:
+    jackson:
+        #date-format: yyyy-MM-dd'T'HH:mm:ssZ
+        serialization.INDENT_OUTPUT: true
+    datasource:
+        dataBaseType: H2
+        dataSourceClassName: org.h2.jdbcx.JdbcDataSource
+        url: jdbc:h2:mem:cgm;DB_CLOSE_DELAY=-1
+        databaseName:
+        serverName:
+        username:
+        password:
+    jpa:
+        database-platform: br.com.conductor.sbc.util.FixedH2Dialect
+        database: H2
+        openInView: false
+        show_sql: true
+        generate-ddl: true
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+            
+endpoints:
+    cors:
+        allowed-headers: '*' 
+        allowed-methods: '*' 
+        allowed-origins: '*' 
+            
+info:
+    app:
+        name: PIER Labs - Primeiro Hach Day SBC UFPB
+        description: Primeiro Hack day do PIER LABS
+        version: @project.version@
+        
+swagger:
+    title: API SDC 2016 
+    description: API desenvolvida para a 15ª semanda da computação da UFPB em 2016
+    version: @project.version@
+    termsOfServiceUrl: http://pierlabs.io/terms/
+    contact:
+    license: Apache 2.0
+    licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html
+                  
+springfox.documentation.swagger.v2.path: /v1/docs    
