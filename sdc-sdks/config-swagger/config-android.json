@@ -1,8 +1,0 @@
-{
-    "groupId": "br.com.conductor.sdc",
-    "artifactId": "sdc-sdk-android",
-    "artifactVersion":"@version@",
-    "apiPackage": "br.com.conductor.sdc.api.v1",
-    "modelPackage": "br.com.conductor.sdc.api.v1.model",
-    "invokerPackage": "br.com.conductor.sdc.api.v1.invoker"
-}

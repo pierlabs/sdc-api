@@ -1,7 +1,0 @@
-{
-    "classPrefix": "SDC",
-    "podName": "ConductorSDC",
-    "podVersion": "@version@",
-    "authorName": "Thiago Sampaio"
-}
-
