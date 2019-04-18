@@ -14,6 +14,10 @@
 
 	<name>SDC API Project</name>
 
+	<prerequisites>
+    	<maven>3.6.0</maven>
+  	</prerequisites>	
+
 	<properties>
 		<assertj-core.version>3.1.0</assertj-core.version>
 		<awaitility.version>1.4.0</awaitility.version>
@@ -70,33 +74,33 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-hibernate4</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-hppc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-jsr310</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-json-org</artifactId>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.fasterxml.jackson.datatype</groupId> -->
+<!-- 			<artifactId>jackson-datatype-hibernate4</artifactId> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.fasterxml.jackson.datatype</groupId> -->
+<!-- 			<artifactId>jackson-datatype-hppc</artifactId> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.fasterxml.jackson.datatype</groupId> -->
+<!-- 			<artifactId>jackson-datatype-jsr310</artifactId> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.fasterxml.jackson.datatype</groupId> -->
+<!-- 			<artifactId>jackson-datatype-json-org</artifactId> -->
+<!-- 		</dependency> -->
 
 
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.spring-projects</groupId>
-			<artifactId>spring-data-envers</artifactId>
-			<version>0.3.0.RELEASE</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.zaxxer</groupId> -->
+<!-- 			<artifactId>HikariCP</artifactId> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.github.spring-projects</groupId> -->
+<!-- 			<artifactId>spring-data-envers</artifactId> -->
+<!-- 			<version>0.3.0.RELEASE</version> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>com.github.thiagonego</groupId>
 			<artifactId>alfred</artifactId>

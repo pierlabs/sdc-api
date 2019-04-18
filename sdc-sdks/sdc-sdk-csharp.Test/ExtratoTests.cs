@@ -61,6 +61,15 @@ namespace Conductor.SDC.Test
         }
         
         /// <summary>
+        /// Test the property 'Msg' 
+        /// </summary>
+        [Test]
+        public void MsgTest()
+        {
+            // TODO: unit test for the property 'Msg' 
+        }
+        
+        /// <summary>
         /// Test the property 'Tipo' 
         /// </summary>
         [Test]
